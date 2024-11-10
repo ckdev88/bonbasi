@@ -12,7 +12,6 @@ let g:colors_name = 'bonbasi'
 hi! link netrwExe Normal
 hi! link netrwList Normal
 hi! link tsxAttrib Normal
-hi! link typescriptAsyncFuncKeyword Normal
 hi! link typescriptBOMWindowProp Normal
 hi! link typescriptBoolean Normal
 hi! link typescriptDOMDocProp Normal
@@ -60,8 +59,8 @@ hi cssClassName ctermfg=10 guifg=#00ff00
 
 hi! link lCursor Cursor
 hi! link CursorIM Cursor
-hi Cursor ctermfg=10 ctermbg=NONE cterm=NONE guifg=#00ff00 guibg=#000000 gui=NONE
-hi HighlightedyankRegion ctermfg=16 ctermbg=10 guifg=#000000 guibg=#00ff00
+hi Cursor ctermfg=220 ctermbg=NONE cterm=NONE guifg=#ffd700 guibg=#000000 gui=NONE
+hi HighlightedyankRegion ctermfg=16 ctermbg=220 guifg=#000000 guibg=#ffd700
 
 hi! link PmenuThumb	CursorLine
 hi! link ColorColumn CursorLine
@@ -82,7 +81,7 @@ hi! link vimLet Define
 hi! link vimOption Define
 hi! link tsxAttrib Define
 hi Define ctermfg=187 ctermbg=NONE cterm=NONE guifg=#d7d7af guibg=NONE gui=NONE
-hi DiffText ctermfg=208 ctermbg=fg cterm=NONE guifg=#ffffff guibg=#ff5f00 gui=reverse
+hi DiffText ctermfg=202 ctermbg=fg cterm=NONE guifg=#ffffff guibg=#ff5f00 gui=reverse
 hi DiffChange ctermfg=fg ctermbg=bg cterm=NONE guibg=bg gui=NONE
 
 hi! link NonText EndOfBuffer
@@ -130,14 +129,14 @@ hi! link typescriptFuncComma Delimiter
 hi! link typescriptDestructureComma Delimiter
 hi! link typescriptTypeAnnotation Delimiter
 hi! link typescriptArrowFunc Delimiter
+hi! link typescriptAsyncFuncKeyword Delimiter
 hi! link Delimiter LineNr
 hi! link netrwComma LineNr
 hi! link typescriptCastKeyword LineNr
 hi! link typescriptEndColons LineNr
-hi! link typescriptDotNotation LineNr
-hi! link typescriptParens LineNr
-hi! link typescriptTernaryOp LineNr
 hi! link typescriptBinaryOp LineNr
+hi! link typescriptDotNotation LineNr
+hi! link typescriptTernaryOp LineNr
 hi! link vimFuncBang LineNr
 hi! link vimFuncBody LineNr
 hi! link vimHiBang LineNr
@@ -145,6 +144,7 @@ hi! link phpComparison LineNr
 hi! link cssBraces LineNr
 hi LineNr ctermfg=242 ctermbg=NONE cterm=NONE guifg=#6c6c6c guibg=NONE gui=NONE
 hi Macro ctermfg=107 ctermbg=NONE cterm=NONE guifg=#afd700 guibg=NONE gui=NONE cterm=NONE
+hi MatchParen ctermfg=251 ctermbg=66 cterm=bold guifg=#e4e4e4 guibg=#5f8787 gui=bold
 
 hi! link CocListFgBlue MessageWindow
 hi! link CocVirtualText MessageWindow
@@ -155,7 +155,7 @@ hi! link CocNotificationProgress MessageWindow
 hi! link CocSearch MessageWindow
 hi! link MoreMsg MessageWindow
 hi! link PopupNotification MessageWindow
-hi MessageWindow 	 ctermbg=52 cterm=NONE guibg=#330000 gui=NONE
+hi MessageWindow ctermbg=52 cterm=NONE guibg=#800000 gui=NONE
 
 hi! link Directory Method
 hi! link cssFunctionName Method
@@ -185,8 +185,8 @@ hi diffRemoved ctermfg=255 ctermbg=10 cterm=NONE guifg=#ffffff guibg=#870000 gui
 hi Removed ctermfg=88 ctermbg=fg cterm=reverse guifg=#870000 guibg=fg gui=reverse
 
 hi! link CurSearch Search
-hi! link matchParen Search
 hi Search ctermfg=254 ctermbg=66 cterm=NONE guifg=#e4e4e4 guibg=#5f8787 gui=NONE
+hi QuickfixLine cterm=none ctermbg=256 guibg=#5f8787 
 hi SignColumn ctermfg=138 ctermbg=233 cterm=NONE guifg=#af8787 guibg=#1c1c1c gui=NONE
 hi Special ctermfg=220 ctermbg=NONE cterm=NONE guifg=#ffd700 guibg=NONE gui=NONE
 hi SpellBad ctermfg=9 ctermbg=NONE cterm=underline guifg=#ff0000 guibg=NONE guisp=#ff0000 gui=undercurl
@@ -236,7 +236,11 @@ hi tsxTagName ctermfg=45 ctermbg=NONE cterm=NONE guifg=#58c4dc guibg=NONE gui=NO
 hi! link htmlH1 Title
 hi! link VimwikiHeader1 Title
 hi Title ctermfg=220 ctermbg=234 cterm=bold guifg=#ffd700 guibg=#1c1c1c gui=bold
+hi! link vimTodo Todo
 hi Todo ctermfg=10 ctermbg=238 cterm=bold guifg=#00ff00 guibg=#444444 gui=bold
+hi Todo2 ctermfg=220 ctermbg=238 cterm=bold guifg=#ffd700 guibg=#444444 gui=bold
+hi Todo3 ctermfg=9 ctermbg=238 cterm=bold guifg=#ff0000 guibg=#444444 gui=bold
+hi Todo4 ctermfg=202 ctermbg=238 cterm=bold guifg=#ff5f00 guibg=#444444 gui=bold
 hi ToolbarLine ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 
 hi! link Structure Type
@@ -248,7 +252,7 @@ hi Underlined guifg=#83a598 guibg=NONE gui=underline ctermbg=NONE cterm=underlin
 hi VertSplit ctermfg=236 ctermbg=234 cterm=NONE guifg=#303030 guibg=#1c1c1c gui=NONE
 
 hi! link VisualNOS Visual
-hi Visual ctermfg=fg ctermbg=52 cterm=NONE guifg=fg guibg=#330000 gui=NONE
+hi Visual ctermfg=fg ctermbg=238 cterm=NONE guifg=fg guibg=#453d41 gui=NONE
 hi typescriptGlobal	ctermfg=254 ctermbg=NONE cterm=NONE guifg=#e4e4e4 guibg=NONE gui=NONE
 
 hi! link typescriptExport typescriptStatementKeyword
@@ -257,6 +261,7 @@ hi typescriptStatementKeyword ctermfg=46 ctermbg=none cterm=none guifg=#00ff00 g
 hi typescriptObjectLiteral ctermfg=64 ctermbg=none cterm=none guifg=#8ba986 guibg=NONE gui=none
 hi typescriptBoolean ctermfg=138 guifg=#AF8E87
 
+hi! link typescriptParens javascriptBraces
 hi! link typescriptBraces javascriptBraces
 hi! link javascriptBraces typescriptArrayMethod
 hi typescriptArrayMethod ctermfg=108 guifg=#95a99f
