@@ -64,13 +64,14 @@ hi! link CursorIM Cursor
 hi Cursor ctermfg=220 ctermbg=NONE cterm=NONE guifg=#ffd700 guibg=#000000 gui=NONE
 hi HighlightedyankRegion ctermfg=16 ctermbg=220 guifg=#000000 guibg=#ffd700
 
-hi! link PmenuThumb	CursorLine
-hi! link ColorColumn CursorLine
-hi! link CocListLine CursorLine
+hi CursorLineNr cterm=none gui=none guifg=fg
+hi CursorLine cterm=none guibg=bg
+
+hi! link PmenuThumb	CocListLine
+hi! link ColorColumn CocListLine
+hi CocListLine ctermfg=NONE ctermbg=10 cterm=NONE guifg=NONE guibg=#222222 gui=NONE
 hi CursorColumn ctermfg=60 ctermbg=fg cterm=reverse guifg=#453d41 guibg=fg gui=reverse
-hi CursorLine ctermfg=NONE ctermbg=10 cterm=NONE guifg=NONE guibg=#222222 gui=NONE
 hi CursorLineFold ctermfg=40 ctermbg=235 cterm=bold guifg=#00d700 guibg=#262626 gui=bold
-hi CursorLineNr ctermfg=NONE ctermbg=233 cterm=bold guifg=NONE guibg=#1c1c1c gui=bold
 hi CursorLineSign ctermfg=39 ctermbg=235 cterm=bold guifg=#00afff guibg=#262626 gui=bold
 hi Debug ctermfg=88 ctermbg=NONE cterm=NONE guifg=#870000 guibg=NONE gui=NONE
 
