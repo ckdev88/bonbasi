@@ -13,12 +13,10 @@ hi! link netrwExe Normal
 hi! link netrwList Normal
 hi! link tsxAttrib Normal
 hi! link typescriptBOMWindowProp Normal
-hi! link typescriptBoolean Normal
 hi! link typescriptDOMDocProp Normal
 hi! link typescriptDOMFormProp Normal
 hi! link typescriptFuncCallArg Normal
 hi! link typescriptURLUtilsProp Normal
-hi! link typescriptNull Normal
 hi! link typescriptPaymentShippingOptionProp Normal
 hi! link phpIdentifier Normal
 hi! link vimCommentTitle Normal
@@ -28,6 +26,11 @@ hi! link vimHiGroup Normal
 hi! link vimGroup Normal
 hi! link vimOption Normal
 hi! link vimVar Normal
+hi! link htmlTag Normal
+hi! link typescriptBlock Normal
+hi! link javaScript Normal
+hi! link javaScriptMember Normal
+hi! link javaScriptGlobal Normal
 hi Normal ctermfg=15 ctermbg=232 cterm=NONE guifg=#ffffff guibg=#121212 gui=NONE
 
 hi! link DiffAdd DiffAdded
@@ -39,15 +42,6 @@ hi CocVirtualText ctermfg=240 ctermbg=NONE cterm=NONE guifg=#585858 guibg=NONE g
 
 hi! link Conceal Comment
 hi Comment ctermfg=246 ctermbg=237 cterm=NONE guifg=#949494 guibg=#3a3a3a gui=NONE
-
-hi! link Identifier Conditional
-hi! link typescriptConditional Conditional
-hi! link typescriptPromiseMethod Conditional
-hi! link phpInclude Conditional
-hi! link typescriptConditional Conditional
-hi! link typescriptCase Conditional
-hi! link typescriptDefault Conditional
-hi Conditional ctermfg=202 ctermbg=NONE cterm=BOLD guifg=#ff5f00 guibg=NONE gui=NONE
 
 hi! link typescriptObjectLabel Constant
 hi! link Label Constant
@@ -64,8 +58,8 @@ hi! link CursorIM Cursor
 hi Cursor ctermfg=220 ctermbg=NONE cterm=NONE guifg=#ffd700 guibg=#000000 gui=NONE
 hi HighlightedyankRegion ctermfg=16 ctermbg=220 guifg=#000000 guibg=#ffd700
 
-hi CursorLineNr cterm=none gui=none guifg=fg
-hi CursorLine cterm=none guibg=bg
+hi CursorLineNr cterm=NONE gui=NONE guifg=fg
+hi CursorLine cterm=NONE gui=NONE guibg=bg
 
 hi! link PmenuThumb	CocListLine
 hi! link ColorColumn CocListLine
@@ -76,7 +70,7 @@ hi CursorLineSign ctermfg=39 ctermbg=235 cterm=bold guifg=#00afff guibg=#262626 
 hi Debug ctermfg=88 ctermbg=NONE cterm=NONE guifg=#870000 guibg=NONE gui=NONE
 
 hi! link typescriptDestructureVariable typescriptVariableDeclaration
-hi typescriptVariableDeclaration ctermfg=16 ctermbg=NONE cterm=NONE guifg=#ffd700 guibg=NONE gui=NONE
+hi typescriptVariableDeclaration ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
 hi DiffText ctermfg=202 ctermbg=fg cterm=NONE guifg=#ffffff guibg=#ff5f00 gui=reverse
 hi DiffChange ctermfg=fg ctermbg=bg cterm=NONE guibg=bg gui=NONE
 
@@ -107,35 +101,57 @@ hi! link typescriptOperator Function
 hi! link javascriptOperator Function
 hi! link PreProc Function
 hi! link tsxEscapeJs Normal
-hi! link typescriptConsoleMethod Function
 hi! link phpVarSelector Function
-hi! link typescriptJSONStaticMethod Function
-hi! link typescriptDOMStorageMethod Function
-hi! link typescriptDateStaticMethod Function
-hi! link typescriptCacheMethod Function
-hi! link typescriptDomDocMethod Function
-hi! link typescriptDomNodeMethod Function
-hi! link typescriptStringMethod Function
-hi! link typescriptGlobalMethod Function
-hi! link typescriptDomEventTargetMethod Function
-hi! link typescriptArrayMethod Function
+hi! link typescriptConsoleMethod Method
+hi! link typescriptJSONStaticMethod Method
+hi! link typescriptURLStaticMethod Method
+hi! link typescriptDOMStorageMethod Method
+hi! link typescriptDateStaticMethod Method
+hi! link typescriptCacheMethod Method
+hi! link typescriptDomDocMethod Method
+hi! link typescriptDomNodeMethod Method
+hi! link typescriptStringMethod Method
+hi! link typescriptGlobalMethod Method
+hi! link typescriptHeadersMethod Method
+hi! link typescriptDateMethod Method
+hi! link typescriptDomEventTargetMethod Method
+hi! link typescriptBomLocationMethod Method
+hi! link typescriptArrayMethod Method
 hi Function ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
 
 hi Ignore ctermfg=NONE ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
 hi IncSearch ctermfg=220 ctermbg=0 cterm=reverse guifg=#ffd700 guibg=#000000 gui=reverse
 
+hi! link Exception Keyword
 hi! link typescriptTry Keyword
 hi! link vimCommand Keyword
 hi! link vimHighlight Keyword
 hi! link phpStatement Keyword 
 hi! link vimFuncKey Keyword
-hi Keyword ctermfg=202 ctermbg=NONE cterm=NONE guifg=#ff5f00 guibg=NONE gui=NONE cterm=NONE
+hi! link typescriptFuncKeyword Keyword
+hi! link Identifier Keyword
+hi! link typescriptConditional Keyword
+hi! link typescriptPromiseMethod Keyword
+hi! link phpInclude Keyword
+hi! link typescriptConditional Keyword
+hi! link typescriptCase Keyword
+hi! link typescriptDefault Keyword
+hi! link Conditional Keyword
+hi! link phpDefine Keyword
+hi! link netrwDir Keyword
+hi! link typescriptExport Keyword
+hi! link javascriptStatement Keyword
+hi! link typescriptStatementKeyword Keyword
+hi! link typescriptVariable Keyword
+hi! link javascriptReserved Keyword
+hi Keyword ctermfg=10 ctermbg=NONE cterm=bold guifg=#ffd700  guibg=NONE gui=bold
+" TODO match ctermfg to guifg
 
 hi! link typescriptFuncComma Subtle
+hi! link typescriptAsyncFuncKeyword Subtle
 hi! link typescriptDestructureComma Subtle
 hi! link typescriptTypeAnnotation Subtle
 hi! link typescriptArrowFunc Subtle
-hi! link typescriptAsyncFuncKeyword Subtle
 hi! link Delimiter Subtle
 hi! link netrwComma Subtle
 hi! link typescriptCastKeyword Subtle
@@ -150,15 +166,12 @@ hi! link vimHiBang Subtle
 hi! link phpComparison Subtle
 hi! link cssBraces Subtle
 hi! link LineNr Subtle
-hi! link typescriptVariable Subtle
-hi! link typescriptFuncKeyword Subtle
-hi! link phpDefine Subtle
 hi! link javascriptFunction Subtle
-hi! link javascriptReserved Subtle
 hi! link vimLet Subtle
 hi! link typescriptInterfaceKeyword Subtle
 hi! link typescriptAliasKeyword Subtle
 hi! link Define Subtle
+hi! link jsonQuote Subtle
 hi Subtle ctermfg=242 ctermbg=NONE cterm=NONE guifg=#6c6c6c guibg=NONE gui=NONE
 
 hi Macro ctermfg=107 ctermbg=NONE cterm=NONE guifg=#afd700 guibg=NONE gui=NONE cterm=NONE
@@ -177,16 +190,16 @@ hi MessageWindow ctermbg=52 cterm=NONE guibg=#800000 gui=NONE
 hi! link Directory Method
 hi! link netrwClassify Method
 hi! link typescriptBOM Method
-hi! link typescriptBlock Method
 hi! link vimUserFunc Method
-hi Method ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
+hi Method ctermbg=NONE cterm=NONE guifg=#95a99f guibg=NONE gui=NONE
+" TODO find matching ctermfg
 
 hi! link phpRegion FuncName
 hi! link cssFunctionName FuncName
 hi! link vimFuncName FuncName
-hi! link netrwDir FuncName
 hi! link typescriptFuncName FuncName
-hi FuncName ctermfg=10 ctermbg=NONE cterm=bold guifg=#ffd700 guibg=NONE gui=bold
+hi FuncName ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
+" TODO find matching ctermfg
 
 hi ModeMsg ctermfg=255 ctermbg=NONE cterm=NONE guifg=#ffffff guibg=NONE gui=NONE
 hi Number ctermfg=253 ctermbg=NONE cterm=NONE guibg=NONE guifg=#dadada gui=NONE 
@@ -197,7 +210,7 @@ hi! link WildMenu Pmenu
 hi Pmenu ctermfg=148 ctermbg=16 cterm=NONE guifg=#ffaf00 guibg=#000000 gui=NONE
 
 hi! link CocMenuSel PmenuSel
-hi PmenuSel ctermfg=255 ctermbg=66 cterm=none guifg=#ffffff guibg=#5f8787 gui=NONE 
+hi PmenuSel ctermfg=255 ctermbg=66 cterm=NONE guifg=#ffffff guibg=#5f8787 gui=NONE 
 
 hi PreCondit ctermfg=148 ctermbg=NONE cterm=NONE guifg=#afd700 guibg=NONE gui=NONE cterm=NONE
 hi Question ctermfg=208 ctermbg=NONE cterm=NONE guifg=#ff8700 guibg=NONE gui=NONE
@@ -208,7 +221,8 @@ hi Removed ctermfg=88 ctermbg=fg cterm=reverse guifg=#870000 guibg=fg gui=revers
 
 hi! link CurSearch Search
 hi Search ctermfg=254 ctermbg=66 cterm=NONE guifg=#e4e4e4 guibg=#5f8787 gui=NONE
-hi QuickfixLine cterm=none ctermbg=256 guibg=#5f8787 
+hi QuickfixLine cterm=NONE ctermbg=256 guibg=#5f8787 
+hi QuickfixActive guibg=#ff0000
 hi SignColumn ctermfg=138 ctermbg=233 cterm=NONE guifg=#af8787 guibg=#1c1c1c gui=NONE
 hi! link VimwikiCode Special
 hi Special ctermfg=220 ctermbg=NONE cterm=NONE guifg=#ffd700 guibg=NONE gui=NONE
@@ -233,20 +247,18 @@ hi StorageClass	ctermfg=208 ctermbg=NONE cterm=NONE guifg=#ff8700 guibg=NONE gui
 hi typescriptBranch	ctermfg=124 guifg=#af0000
 
 hi! link typescriptDOMEventProp htmlTag
-hi! link typescriptCall htmlTag
 hi! link typescriptMember htmlTag
-hi! link tsxCloseTag htmlTag
 hi! link htmlEndTag htmlTag
-hi! link Boolean htmlTag
+" hi! link Boolean htmlTag
+hi! link htmlTagName htmlTag 
 hi! link tsxTag htmlTag
-hi htmlTag ctermfg=249 ctermbg=NONE cterm=NONE guifg=#b4b4bf guibg=NONE gui=NONE
+hi! link tsxCloseString htmlTag
+
+
+hi tsxTagName ctermfg=45 ctermbg=NONE cterm=NONE guifg=#58c4dc guibg=NONE gui=NONE
 hi String ctermfg=249 ctermbg=NONE cterm=NONE guifg=#8ec07c guibg=NONE gui=NONE
 hi TabLine ctermfg=238 ctermbg=0 cterm=NONE guifg=#444444 guibg=#000000 gui=NONE 
 hi TabLineFill ctermfg=NONE ctermbg=0 cterm=NONE guifg=NONE guibg=#000000 gui=NONE 
-
-hi! link tsxCloseString Normal
-
-hi tsxTagName ctermfg=45 ctermbg=NONE cterm=NONE guifg=#58c4dc guibg=NONE gui=NONE
 
 hi! link htmlH1 Title
 hi! link VimwikiHeader1 Title
@@ -270,11 +282,11 @@ hi VertSplit ctermfg=236 ctermbg=234 cterm=NONE guifg=#303030 guibg=#1c1c1c gui=
 hi! link VisualNOS Visual
 hi Visual ctermfg=fg ctermbg=238 cterm=NONE guifg=fg guibg=#53655c gui=NONE
 hi typescriptGlobal	ctermfg=254 ctermbg=NONE cterm=NONE guifg=#e4e4e4 guibg=NONE gui=NONE
-hi! link typescriptExport typescriptStatementKeyword
-hi! link javascriptStatement typescriptStatementKeyword
-hi typescriptStatementKeyword ctermfg=46 ctermbg=none cterm=none guifg=#00ff00 gui=none
+" hi typescriptStatementKeyword ctermfg=46 ctermbg=none cterm=none guifg=#00ff00 gui=none
 hi typescriptObjectLiteral ctermfg=64 ctermbg=none cterm=none guifg=#8ba986 guibg=NONE gui=none
-hi typescriptBoolean ctermfg=138 guifg=#AF8E87
+hi! link typescriptBoolean Boolean
+hi! link typescriptNull Boolean
+hi Boolean ctermfg=138 guifg=#af8e87 
 
 hi! link typescriptParens javascriptBraces
 hi! link typescriptBraces javascriptBraces
