@@ -89,7 +89,6 @@ hi! link CocInlayHintType Exception
 hi! link CocWarningFloat Exception
 hi! link FgCocHintFloatBgCocFloating Exception
 hi! link typescriptExceptions Exception
-hi Exception ctermfg=15 ctermbg=NONE cterm=NONE guifg=#ffffff guibg=NONE gui=NONE
 hi Float ctermfg=253 ctermbg=NONE cterm=NONE guifg=#dadada guibg=NONE gui=NONE
 hi CocFloatingDiagnostic guibg=#870000
 hi CocFloatingDiagnosticBorder guifg=#ffff00 guibg=#ffffff
@@ -144,6 +143,7 @@ hi! link javascriptStatement Keyword
 hi! link typescriptStatementKeyword Keyword
 hi! link typescriptVariable Keyword
 hi! link javascriptReserved Keyword
+hi! link tsxEscJs Keyword
 hi Keyword ctermfg=10 ctermbg=NONE cterm=bold guifg=#ffd700  guibg=NONE gui=bold
 " TODO match ctermfg to guifg
 
@@ -158,7 +158,6 @@ hi! link typescriptCastKeyword Subtle
 hi! link typescriptEndColons Subtle
 hi! link typescriptDotNotation Subtle
 hi! link typescriptTernaryOp Subtle
-hi! link typescriptBinaryOp Subtle
 hi! link typescriptImport Define
 hi! link vimFuncBang Subtle
 hi! link vimFuncBody Subtle
