@@ -223,7 +223,6 @@ hi Search ctermfg=254 ctermbg=66 cterm=NONE guifg=#e4e4e4 guibg=#5f8787 gui=NONE
 hi QuickfixLine cterm=NONE ctermbg=256 guibg=#5f8787 
 hi QuickfixActive guibg=#ff0000
 hi SignColumn ctermfg=138 ctermbg=233 cterm=NONE guifg=#af8787 guibg=#1c1c1c gui=NONE
-hi! link VimwikiCode Special
 hi Special ctermfg=220 ctermbg=NONE cterm=NONE guifg=#ffd700 guibg=NONE gui=NONE
 hi SpellBad ctermfg=9 ctermbg=NONE cterm=underline guifg=#ff0000 guibg=NONE guisp=#ff0000 gui=undercurl
 hi SpellCap ctermfg=220 ctermbg=NONE cterm=underline guifg=#ffd700 guibg=NONE guisp=#ffd700 gui=undercurl 
@@ -298,4 +297,28 @@ hi VimwikiHeader5 ctermfg=103 cterm=bold
 hi VimwikiSuperScript ctermfg=220 cterm=reverse,italic
 hi VimwikiBold ctermfg=15 ctermbg=16 cterm=bold guifg=#ffffff guibg=#000000 gui=bold
 
-" OPTIMIZE #95a99f nice light green, gruber darker: quartz 
+" Ruby - many of these point automatically to Statement, TODO maybe review Statement styling
+" TODO organize this Ruby stuff
+hi! link RubyMethodName FuncName
+hi! link RubyRepeat FuncName
+hi! link RubyInstanceVariable FuncName
+
+hi! link RubyControl Keyword
+hi! link RubyViewHelper Keyword
+
+hi! link RubyPredefinedConstant typescriptObjectLiteral
+
+hi RubyRoute guifg=#95a99f
+hi RubySymbol guifg=#95a99f
+hi erubyExpression guifg=#95a99f
+
+hi! link RubyClass Class
+hi! link Class Keyword
+hi! link RubyDefine Keyword
+
+hi! link yamlBlockMappingKey Keyword
+
+" TODO add to main
+hi! link VimwikiCode markdownCode
+hi markdownCode ctermfg=10 guifg=#00ff00
+
