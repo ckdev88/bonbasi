@@ -15,25 +15,15 @@ let black1_bg = 'ctermbg='.black1[0].' guibg='.black1[1]
 let black1_fg = 'ctermfg='.black1[0].' guifg='.black1[1]
 let black2 = [233,'#121212'] " .07
 let black2_bg = 'ctermbg='.black2[0].' guibg='.black2[1]
-let black3 = ['234','#1c1c1c'] " .11
+let black3 = [234,'#1c1c1c'] " .11
 let black3_bg = 'ctermbg='.black3[0].' guibg='.black3[1]
+let black3_fg = 'ctermfg='.black3[0].' guifg='.black3[1]
 let black4=[235,'#262626'] " .15
 let black4_bg='ctermbg='.black4[0].' guibg='.black4[1]
 let black4_fg='ctermfg='.black4[0].' guifg='.black4[1]
 let black5=[237,'#3a3a3a'] " .23
 let black5_bg='ctermbg='.black5[0].' guibg='.black5[1]
 let black5_fg='ctermfg='.black5[0].' guifg='.black5[1]
-" TODO: black6 and black2 are too similar
-let black6=[233,'#222222'] " .13
-let black6_bg='ctermbg='.black6[0].' guibg='.black6[1]
-let black6_fg='ctermfg='.black6[0].' guifg='.black6[1]
-" TODO black7 wordt maar 1 keer gebruikt
-let black7=[236,'#303030'] " .19
-let black7_bg='ctermbg='.black7[0].' guibg='.black7[1]
-let black7_fg='ctermfg='.black7[0].' guifg='.black7[1]
-let blackred =  [235,'#453d41'] " TODO only used once, so better cleanup
-let blackred_bg = 'ctermbg='.blackred[0].' guibg='.blackred[1]
-let blackred_fg = 'ctermfg='.blackred[0].' guifg='.blackred[1]
 let creme=[229,'#f3f2cc']
 let creme_bg='ctermbg='.creme[0].' guibg='.creme[1]
 let creme_fg='ctermfg='.creme[0].' guifg='.creme[1]
@@ -45,10 +35,12 @@ let deepskyblue_bg = 'ctermbg='.deepskyblue[0].' guibg='.deepskyblue[1]
 let deepskyblue_fg = 'ctermfg='.deepskyblue[0].' guifg='.deepskyblue[1]
 let gold = [220,'#ffd700']
 let gold_fg = 'ctermfg='.gold[0].' guifg='.gold[1]
+let gold_bg = 'ctermbg='.gold[0].' guibg='.gold[1]
 let gray1 =  [242,'#6c6c6c']
 let gray1_fg = 'ctermfg='.gray1[0].' guifg='.gray1[1]
 let gray2 =  [254,'#e4e4e4']
 let gray2_fg = 'ctermfg='.gray2[0].' guifg='.gray2[1]
+let gray2_bg = 'ctermbg='.gray2[0].' guibg='.gray2[1]
 let gray3 =  [238,'#444444']
 let gray3_bg = 'ctermbg='.gray3[0].' guibg='.gray3[1]
 let gray3_fg = 'ctermfg='.gray3[0].' guifg='.gray3[1]
@@ -58,9 +50,10 @@ let gray4_fg = 'ctermfg='.gray4[0].' guifg='.gray4[1]
 let gray5 =  [246,'#949494']
 let gray5_bg = 'ctermbg='.gray5[0].' guibg='.gray5[1]
 let gray5_fg = 'ctermfg='.gray5[0].' guifg='.gray5[1]
-let green1 = ['10','#00ff00'] " .5
+let green1 = [10,'#00ff00'] " .5
+let green1_bg = 'ctermbg='.green1[0].' guibg='.green1[1]
 let green1_fg = 'ctermfg='.green1[0].' guifg='.green1[1]
-let green2 = ['22','#005f00'] " .19
+let green2 = [22,'#005f00'] " .19
 let green3 = [40,'#00d700'] " .42 
 let green3_fg = 'ctermfg='.green3[0].' guifg='.green3[1]
 let green4 = [2,'#008000'] " .25
@@ -115,10 +108,10 @@ let rosybrown_fg = 'ctermfg='.rosybrown[0].' guifg='.rosybrown[1]
 let turquoise = [45,'#58c4dc']
 let turquoise_bg = 'ctermbg='.turquoise[0].' guibg='.turquoise[1]
 let turquoise_fg = 'ctermfg='.turquoise[0].' guifg='.turquoise[1]
-let white1 = ['15','#ffffff'] " 1
+let white1 = [15,'#ffffff'] " 1
 let white1_bg = 'ctermbg='.white1[0].' guibg='.white1[1]
 let white1_fg = 'ctermfg='.white1[0].' guifg='.white1[1]
-let white2 = ['253','#dadada'] " .85
+let white2 = [253,'#dadada'] " .85
 let white2_fg = 'ctermfg='.white2[0].' guifg='.white2[1]
 let yellow0=[11,'#ffff00']
 let yellow0_fg='ctermfg='.yellow0[0].' guifg='.yellow0[1]
@@ -128,7 +121,7 @@ let yellow1_fg='ctermfg='.yellow1[0].' guifg='.yellow1[1]
 " FIXME Added... use bg=green2 or fg=green2
 " exec 'hi Added ctermfg=fg ctermbg='.green2[0].' guifg='.green2[1].' cterm=NONE guibg=fg gui=reverse'
 
-exec 'hi Normal '.white1_fg.' ctermbg='.black2[0].' cterm=NONE guibg='.black2[1].' gui=NONE'
+exec 'hi Normal '.white1_fg.' '.black2_bg.' cterm=NONE gui=NONE'
 
 hi CursorLineNr cterm=NONE gui=NONE guifg=fg
 hi CursorLine cterm=NONE gui=NONE guibg=NONE
@@ -147,12 +140,13 @@ exec 'hi Character '.white2_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
 exec 'hi CocErrorVirtualText '.red1_fg.' '.black4_bg
 exec 'hi CocFloatingDiagnostic '.red2_bg
 exec 'hi CocFloatingDiagnosticBorder '.yellow0_fg.' '.white1_bg
-exec 'hi CocListLine ctermfg=NONE cterm=NONE guifg=NONE '.black6_bg.' gui=NONE'
+exec 'hi CocListLine ctermfg=NONE cterm=NONE guifg=NONE '.red2_bg.' gui=NONE'
 exec 'hi CocVirtualText ctermbg=NONE cterm=NONE '.gray4_fg.' guibg=NONE gui=NONE'
 exec 'hi Comment cterm=NONE '.gray5_fg.' '.black5_bg.' gui=NONE'
 exec 'hi Constant '.white2_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
 exec 'hi Cursor '.gold_fg.' cterm=NONE gui=NONE'
-exec 'hi CursorColumn ctermfg=60 ctermbg=fg cterm=reverse '.blackred_fg.' guibg=fg gui=reverse'
+" exec 'hi CursorColumn ctermfg=60 ctermbg=fg cterm=reverse '.blackred_fg.' guibg=fg gui=reverse'
+" hi! link CursorColumn CursorLine
 exec 'hi CursorLineFold '.green3_fg.' '.black4_bg.' cterm=bold gui=bold'
 exec 'hi CursorLineSign '.deepskyblue_fg.' '.black4_bg.' cterm=bold gui=bold'
 exec 'hi Debug ctermbg=NONE cterm=NONE '.red2_fg.' guibg=NONE gui=NONE'
@@ -163,7 +157,7 @@ exec 'hi ErrorMsg '.white1_fg.' cterm=NONE '.red3_bg.' gui=NONE'
 exec 'hi Float '.white2_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
 exec 'hi FoldColumn '.green3_fg.' '.black3_bg.' cterm=NONE gui=NONE'
 exec 'hi Folded '.green3_fg.' '.black4_bg.' cterm=NONE gui=NONE'
-exec 'hi HighlightedyankRegion '.black1_fg.' '.gold_fg
+exec 'hi HighlightedyankRegion '.black1_fg.' '.gold_bg
 exec 'hi IncSearch '.gold_fg.' '.black1_bg.' cterm=reverse gui=reverse'
 exec 'hi Keyword '.gold_fg.' ctermbg=NONE cterm=bold guibg=NONE gui=bold'
 exec 'hi Macro '.yellow1_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE cterm=NONE'
@@ -172,7 +166,7 @@ exec 'hi MessageWindow cterm=NONE '.maroon_bg.' gui=NONE'
 exec 'hi Method ctermbg=NONE cterm=NONE '.green5_fg.' guibg=NONE gui=NONE'
 exec 'hi ModeMsg '.white1_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
 exec 'hi Number '.white2_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE '
-exec 'hi Pmenu '.orange_fg.' '.black2_bg.' cterm=NONE gui=NONE'
+exec 'hi Pmenu '.maroon_bg.' cterm=NONE gui=NONE'
 exec 'hi PmenuSel '.white1_fg.' '.paleturquoise_bg.' cterm=NONE gui=NONE'
 exec 'hi PreCondit '.yellow1_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE cterm=NONE'
 exec 'hi Question '.darkorange_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
@@ -203,7 +197,7 @@ exec 'hi Todo3 '.red1_fg.' '.gray3_bg.' cterm=bold gui=bold'
 exec 'hi Todo4 '.orangered_fg.' '.gray3_bg.' cterm=bold gui=bold'
 exec 'hi Type '.paletpurple_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
 exec 'hi Underlined '.green9_fg.' guibg=NONE gui=underline ctermbg=NONE cterm=underline'
-exec 'hi VertSplit '.black7_fg.' '.black3_bg.' cterm=NONE gui=NONE'
+exec 'hi VertSplit '.black3_fg.' '.black3_bg.' cterm=NONE gui=NONE'
 exec 'hi VimwikiBold '.white1_fg.' cterm=bold '.black1_bg.' gui=bold'
 exec 'hi VimwikiHeader2 '.darkorange_fg.' cterm=bold'
 exec 'hi VimwikiHeader3 ctermfg=4 cterm=bold'
@@ -391,8 +385,6 @@ hi! link vimGroup Normal
 hi! link vimHiAttrib Normal
 hi! link vimHiBang Subtle
 hi! link vimHiGroup Normal
-hi! link vimHighlight Keyword
-hi! link vimLet Subtle
 hi! link vimOption Normal
 hi! link vimTodo Todo
 hi! link vimUserFunc Method
