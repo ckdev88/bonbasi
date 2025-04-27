@@ -4,225 +4,158 @@
 " Maintainer: CK
 " Website: https://ckdev88.github.io
 " License: Vim License (see `:help license`)
-" Last Updated: 2025-04-25 06:37
+" Last Updated: 2025-04-27 17:14
 
 hi clear
 let g:colors_name = 'bonbasi'
 
 " variable colors
-let black1 = [232,'#080808'] " .03
-let black1_bg = 'ctermbg='.black1[0].' guibg='.black1[1]
-let black1_fg = 'ctermfg='.black1[0].' guifg='.black1[1]
-let black2 = [233,'#121212'] " .07
-let black2_bg = 'ctermbg='.black2[0].' guibg='.black2[1]
-let black3 = [234,'#1c1c1c'] " .11
-let black3_bg = 'ctermbg='.black3[0].' guibg='.black3[1]
-let black3_fg = 'ctermfg='.black3[0].' guifg='.black3[1]
-let black4=[235,'#262626'] " .15
-let black4_bg='ctermbg='.black4[0].' guibg='.black4[1]
-let black4_fg='ctermfg='.black4[0].' guifg='.black4[1]
-let black5=[237,'#3a3a3a'] " .23
-let black5_bg='ctermbg='.black5[0].' guibg='.black5[1]
-let black5_fg='ctermfg='.black5[0].' guifg='.black5[1]
-let creme=[229,'#f3f2cc']
-let creme_bg='ctermbg='.creme[0].' guibg='.creme[1]
-let creme_fg='ctermfg='.creme[0].' guifg='.creme[1]
-let darkorange=[208,'#ff8700']
-let darkorange_bg='ctermbg='.darkorange[0].' guibg='.darkorange[1]
-let darkorange_fg='ctermfg='.darkorange[0].' guifg='.darkorange[1]
-let deepskyblue =  [103,'#7979a0']
-let deepskyblue_bg = 'ctermbg='.deepskyblue[0].' guibg='.deepskyblue[1]
-let deepskyblue_fg = 'ctermfg='.deepskyblue[0].' guifg='.deepskyblue[1]
-let gold = [220,'#ffd700']
-let gold_fg = 'ctermfg='.gold[0].' guifg='.gold[1]
-let gold_bg = 'ctermbg='.gold[0].' guibg='.gold[1]
-let gray1 =  [242,'#6c6c6c']
-let gray1_fg = 'ctermfg='.gray1[0].' guifg='.gray1[1]
-let gray2 =  [254,'#e4e4e4']
-let gray2_fg = 'ctermfg='.gray2[0].' guifg='.gray2[1]
-let gray2_bg = 'ctermbg='.gray2[0].' guibg='.gray2[1]
-let gray3 =  [238,'#444444']
-let gray3_bg = 'ctermbg='.gray3[0].' guibg='.gray3[1]
-let gray3_fg = 'ctermfg='.gray3[0].' guifg='.gray3[1]
-let gray4 =  [240,'#585858']
-let gray4_bg = 'ctermbg='.gray4[0].' guibg='.gray4[1]
-let gray4_fg = 'ctermfg='.gray4[0].' guifg='.gray4[1]
-let gray5 =  [246,'#949494']
-let gray5_bg = 'ctermbg='.gray5[0].' guibg='.gray5[1]
-let gray5_fg = 'ctermfg='.gray5[0].' guifg='.gray5[1]
-let green1 = [10,'#00ff00'] " .5
-let green1_bg = 'ctermbg='.green1[0].' guibg='.green1[1]
-let green1_fg = 'ctermfg='.green1[0].' guifg='.green1[1]
-let green2 = [22,'#005f00'] " .19
-let green3 = [40,'#00d700'] " .42 
-let green3_fg = 'ctermfg='.green3[0].' guifg='.green3[1]
-let green4 = [2,'#008000'] " .25
-let green4_bg = 'ctermfg='.green4[0].' guibg='.green4[1]
-let green4_fg = 'ctermfg='.green4[0].' guifg='.green4[1]
-let green5 = [108,'#95a99f'] " .62 very matte
-let green5_bg = 'ctermfg='.green5[0].' guibg='.green5[1]
-let green5_fg = 'ctermfg='.green5[0].' guifg='.green5[1]
-let green6 = [112,'#8ec07c'] " .62 more greenish
-let green6_bg = 'ctermfg='.green6[0].' guibg='.green6[1]
-let green6_fg = 'ctermfg='.green6[0].' guifg='.green6[1]
-let green7 = [65,'#53655c'] " .36 dark greenblueish
-let green7_bg = 'ctermfg='.green7[0].' guibg='.green7[1]
-let green7_fg = 'ctermfg='.green7[0].' guifg='.green7[1]
-let green8 = [71,'#8ba986'] " .59 light matte
-let green8_bg = 'ctermfg='.green8[0].' guibg='.green8[1]
-let green8_fg = 'ctermfg='.green8[0].' guifg='.green8[1]
-let green9 = [43,'#83a598'] " .58 light matte green blueish
-let green9_bg = 'ctermfg='.green9[0].' guibg='.green9[1]
-let green9_fg = 'ctermfg='.green9[0].' guifg='.green9[1]
-let maroon = [1,'#800000'] " .25
-let maroon_bg = 'ctermbg='.maroon[0].' guibg='.maroon[1]
-let maroon_fg = 'ctermfg='.maroon[0].' guifg='.maroon[1]
-let navy = [4,'#000080']
-let orange=[214,'#ffaf00']
-let orange_bg='ctermbg='.orange[0].' guibg='.orange[1]
-let orange_fg='ctermfg='.orange[0].' guifg='.orange[1]
-let orangered=[202,'#ff5f00']
-let orangered_bg='ctermbg='.orangered[0].' guibg='.orangered[1]
-let orangered_fg='ctermfg='.orangered[0].' guifg='.orangered[1]
-let orchid= [213,'#ff87ff']
-let orchid_bg='ctermbg='.orchid[0].' guibg='.orchid[1]
-let orchid_fg='ctermfg='.orchid[0].' guifg='.orchid[1]
-let paletpurple =  [103,'#7979a0']
-let paletpurple_bg = 'ctermbg='.paletpurple[0].' guibg='.paletpurple[1]
-let paletpurple_fg = 'ctermfg='.paletpurple[0].' guifg='.paletpurple[1]
-let paleturquoise =  [66,'#5f8787']
-let paleturquoise_bg = 'ctermbg='.paleturquoise[0].' guibg='.paleturquoise[1]
-let paleturquoise_fg = 'ctermfg='.paleturquoise[0].' guifg='.paleturquoise[1]
-let red1= [9,'#ff0000']
-let red1_bg='ctermbg='.red1[0].' guibg='.red1[1]
-let red1_fg='ctermfg='.red1[0].' guifg='.red1[1]
-let red2=[88,'#870000']
-let red2_bg='ctermbg='.red2[0].' guibg='.red2[1]
-let red2_fg='ctermfg='.red2[0].' guifg='.red2[1]
-let red3=[124,'#af0000']
-let red3_bg='ctermfg='.red3[0].' guibg='.red3[1]
-let red3_fg='ctermfg='.red3[0].' guifg='.red3[1]
-let rosybrown =  [138,'#af8787']
-let rosybrown_bg = 'ctermbg='.rosybrown[0].' guibg='.rosybrown[1]
-let rosybrown_fg = 'ctermfg='.rosybrown[0].' guifg='.rosybrown[1]
-let turquoise = [45,'#58c4dc']
-let turquoise_bg = 'ctermbg='.turquoise[0].' guibg='.turquoise[1]
-let turquoise_fg = 'ctermfg='.turquoise[0].' guifg='.turquoise[1]
-let white1 = [15,'#ffffff'] " 1
-let white1_bg = 'ctermbg='.white1[0].' guibg='.white1[1]
-let white1_fg = 'ctermfg='.white1[0].' guifg='.white1[1]
-let white2 = [253,'#dadada'] " .85
-let white2_fg = 'ctermfg='.white2[0].' guifg='.white2[1]
-let yellow0=[11,'#ffff00']
-let yellow0_fg='ctermfg='.yellow0[0].' guifg='.yellow0[1]
-let yellow1=[148,'#afd700']
-let yellow1_fg='ctermfg='.yellow1[0].' guifg='.yellow1[1]
+let s:black1 = [232,'#080808'] " .03
+let s:black2 = [233,'#121212'] " .07
+let s:black3 = [234,'#1c1c1c'] " .11
+let s:black4 = [235,'#262626'] " .15
+let s:black5 = [237,'#3a3a3a'] " .23
+let s:creme =  [229,'#f3f2cc']
+let s:darkorange = [208,'#ff8700']
+let s:deepskyblue =  [103,'#7979a0']
+let s:gold  = [220,'#ffd700']
+let s:gray1 = [242,'#6c6c6c']
+let s:gray2 = [254,'#e4e4e4']
+let s:gray3 = [238,'#444444']
+let s:gray4 = [240,'#585858']
+let s:gray5 = [246,'#949494']
+let s:green1 = [10,'#00ff00'] " .5
+let s:green2 = [22,'#005f00'] " .19
+let s:green3 = [40,'#00d700'] " .42 
+let s:green4 = [2,'#008000'] " .25
+let s:green5 = [108,'#95a99f'] " .62 very matte
+let s:green6 = [112,'#8ec07c'] " .62 more greenish
+let s:green7 = [65,'#53655c'] " .36 dark greenblueish
+let s:green8 = [71,'#8ba986'] " .59 light matte
+let s:green9 = [43,'#83a598'] " .58 light matte green blueish
+let s:maroon = [1,'#800000'] " .25
+let s:navy = [4,'#000080']
+let s:orange=[214,'#ffaf00']
+let s:orangered=[202,'#ff5f00']
+let s:orchid = [213,'#ff87ff']
+let s:paletpurple =  [103,'#7979a0']
+let s:paleturquoise =  [66,'#5f8787']
+let s:red1= [9,'#ff0000']
+let s:red2=[88,'#870000']
+let s:red3=[124,'#af0000']
+let s:rosybrown =  [138,'#af8787']
+let s:turquoise = [45,'#58c4dc']
+let s:white1 = [15,'#ffffff'] " 1
+let s:white2 = [253,'#dadada'] " .85
+let s:yellow0=[11,'#ffff00']
+let s:yellow1=[148,'#afd700']
+let s:NONE=['NONE','NONE']
 
-" FIXME Added... use bg=green2 or fg=green2
-" exec 'hi Added ctermfg=fg ctermbg='.green2[0].' guifg='.green2[1].' cterm=NONE guibg=fg gui=reverse'
+let s:fg = s:white1
+let s:bg = s:black2
 
-exec 'hi Normal '.white1_fg.' '.black2_bg.' cterm=NONE gui=NONE'
+function! <sid>hi(group, fg=[], bg=[], attr="")
+  if !empty(a:fg)
+    exec "hi " . a:group . " ctermfg=" . a:fg[0]
+    exec "hi " . a:group . " guifg=" .  a:fg[1]
+  endif
+  if !empty(a:bg)
+    exec "hi " . a:group . " ctermbg=" . a:bg[0]
+    exec "hi " . a:group . " guibg=" .  a:bg[1]
+  endif
+  if a:attr != ""
+    exec "hi " . a:group . " gui=" .   a:attr
+    exec "hi " . a:group . " cterm=" . a:attr
+  endif
+endfunction
 
-hi CursorLineNr cterm=NONE gui=NONE guifg=fg
-hi CursorLine cterm=NONE gui=NONE guibg=NONE
-hi typescriptVariableDeclaration ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
-hi DiffChange ctermfg=fg ctermbg=bg cterm=NONE guibg=bg gui=NONE
-hi Function ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
-hi Ignore ctermfg=NONE ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
-hi FuncName ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
-hi Operator ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE 
-hi EndOfBuffer ctermfg=bg ctermbg=NONE cterm=NONE guifg=bg guibg=NONE gui=NONE
-hi ToolbarLine ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-
-exec 'hi Boolean '.rosybrown_fg
-exec 'hi Changed ctermfg=fg ctermbg='.navy[0].' guifg='.navy[1].' cterm=NONE guibg=fg gui=reverse'
-exec 'hi Character '.white2_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
-exec 'hi CocErrorVirtualText '.red1_fg.' '.black4_bg
-exec 'hi CocFloatingDiagnostic '.red2_bg
-exec 'hi CocFloatingDiagnosticBorder '.yellow0_fg.' '.white1_bg
-exec 'hi CocListLine ctermfg=NONE cterm=NONE guifg=NONE '.red2_bg.' gui=NONE'
-exec 'hi CocVirtualText ctermbg=NONE cterm=NONE '.gray4_fg.' guibg=NONE gui=NONE'
-exec 'hi Comment cterm=NONE '.gray5_fg.' '.black5_bg.' gui=NONE'
-exec 'hi Constant '.white2_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
-exec 'hi Cursor '.gold_fg.' cterm=NONE gui=NONE'
-" exec 'hi CursorColumn ctermfg=60 ctermbg=fg cterm=reverse '.blackred_fg.' guibg=fg gui=reverse'
-" hi! link CursorColumn CursorLine
-exec 'hi CursorLineFold '.green3_fg.' '.black4_bg.' cterm=bold gui=bold'
-exec 'hi CursorLineSign '.deepskyblue_fg.' '.black4_bg.' cterm=bold gui=bold'
-exec 'hi Debug ctermbg=NONE cterm=NONE '.red2_fg.' guibg=NONE gui=NONE'
-exec 'hi DiffAdded '.white1_fg.' '.green4_bg.' cterm=NONE gui=NONE'
-exec 'hi DiffText '.white1_fg.' cterm=NONE '.orangered_bg.' gui=reverse'
-exec 'hi Error '.black3_bg.' cterm=NONE '.red3_fg.' gui=NONE'
-exec 'hi ErrorMsg '.white1_fg.' cterm=NONE '.red3_bg.' gui=NONE'
-exec 'hi Float '.white2_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
-exec 'hi FoldColumn '.green3_fg.' '.black3_bg.' cterm=NONE gui=NONE'
-exec 'hi Folded '.green3_fg.' '.black4_bg.' cterm=NONE gui=NONE'
-exec 'hi HighlightedyankRegion '.black1_fg.' '.gold_bg
-exec 'hi IncSearch '.gold_fg.' '.black1_bg.' cterm=reverse gui=reverse'
-exec 'hi Keyword '.gold_fg.' ctermbg=NONE cterm=bold guibg=NONE gui=bold'
-exec 'hi Macro '.yellow1_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE cterm=NONE'
-exec 'hi MatchParen cterm=bold '.gray2_fg.' '.paleturquoise_bg.' gui=bold'
-exec 'hi MessageWindow cterm=NONE '.maroon_bg.' gui=NONE'
-exec 'hi Method ctermbg=NONE cterm=NONE '.green5_fg.' guibg=NONE gui=NONE'
-exec 'hi ModeMsg '.white1_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
-exec 'hi Number '.white2_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE '
-exec 'hi Pmenu '.maroon_bg.' cterm=NONE gui=NONE'
-exec 'hi PmenuSel '.white1_fg.' '.paleturquoise_bg.' cterm=NONE gui=NONE'
-exec 'hi PreCondit '.yellow1_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE cterm=NONE'
-exec 'hi Question '.darkorange_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
-exec 'hi QuickfixActive '.red1_bg
-exec 'hi QuickfixLine cterm=NONE '.paleturquoise_bg
-exec 'hi Removed '.red2_fg.' ctermbg=fg cterm=reverse guibg=fg gui=reverse'
-exec 'hi RubyRoute '.green5_fg
-exec 'hi RubySymbol '.green5_fg
-exec 'hi Search '.gray2_fg.' '.paleturquoise_bg.' cterm=NONE gui=NONE'
-exec 'hi SignColumn cterm=NONE '.rosybrown_fg.' '.black3_bg.' gui=NONE'
-exec 'hi Special '.gold_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
-exec 'hi SpellBad '.red1_fg.' ctermbg=NONE cterm=underline guibg=NONE gui=undercurl'
-exec 'hi SpellCap '.gold_fg.' ctermbg=NONE cterm=underline guibg=NONE gui=undercurl'
-exec 'hi SpellLocal '.yellow1_fg.' ctermbg=NONE cterm=underline guibg=NONE guisp='.green6[1].' gui=undercurl'
-exec 'hi SpellRare '.orchid_fg.' ctermbg=NONE cterm=underline guibg=NONE guisp='.orchid[1].' gui=undercurl'
-exec 'hi Statement '.gold_fg.' ctermbg=NONE guibg=NONE gui=NONE cterm=NONE'
-exec 'hi StatusLine '.gray2_fg.' '.black1_bg.' cterm=reverse gui=reverse'
-exec 'hi StatusLineNC cterm=reverse '.black1_fg.' '.gray3_bg.' gui=reverse'
-exec 'hi String '.green6_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
-exec 'hi Subtle '.gray1_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
-exec 'hi TabLine '.gray3_fg.' '.black1_bg.' cterm=NONE gui=NONE'
-exec 'hi TabLineFill ctermfg=NONE '.black1_bg.' cterm=NONE guifg=NONE gui=NONE' 
-exec 'hi TabLineSel '.gold_fg.' cterm=bold '.black3_bg.' gui=bold'
-exec 'hi Title '.gold_fg.' '.black3_bg.' cterm=bold gui=bold'
-exec 'hi Todo '.green1_fg.' '.gray3_bg.' cterm=bold gui=bold'
-exec 'hi Todo2 '.gold_fg.' '.gray3_bg.' cterm=bold gui=bold'
-exec 'hi Todo3 '.red1_fg.' '.gray3_bg.' cterm=bold gui=bold'
-exec 'hi Todo4 '.orangered_fg.' '.gray3_bg.' cterm=bold gui=bold'
-exec 'hi Type '.paletpurple_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
-exec 'hi Underlined '.green9_fg.' guibg=NONE gui=underline ctermbg=NONE cterm=underline'
-exec 'hi VertSplit '.black3_fg.' '.black3_bg.' cterm=NONE gui=NONE'
-exec 'hi VimwikiBold '.white1_fg.' cterm=bold '.black1_bg.' gui=bold'
-exec 'hi VimwikiHeader2 '.darkorange_fg.' cterm=bold'
-exec 'hi VimwikiHeader3 ctermfg=4 cterm=bold'
-exec 'hi VimwikiHeader4 ctermfg=107 cterm=bold'
-exec 'hi VimwikiHeader5 '.paletpurple_fg.' cterm=bold'
-exec 'hi VimwikiSuperScript '.gold_fg.' cterm=reverse,italic'
-exec 'hi Visual ctermfg=fg '.green7_bg.' cterm=NONE guifg=fg gui=NONE'
-exec 'hi cssClassName '.green1_fg
-exec 'hi diffRemoved '.white1_fg.' '.red2_bg.' cterm=NONE gui=NONE'
-exec 'hi erubyExpression '.green5_fg
-exec 'hi htmlStrike '.black5_fg
-exec 'hi htmlTag '.creme_fg
-exec 'hi javascriptBraces '.green5_fg
-exec 'hi markdownCode ctermfg='.green1[0].' guifg='.green1[1]
-exec 'hi markdownH2 '.darkorange_fg.' cterm=bold'
-exec 'hi markdownH3 ctermfg=4 cterm=bold'
-exec 'hi markdownH4 ctermfg=107 cterm=bold'
-exec 'hi markdownH5 '.paletpurple_fg.' cterm=bold'
-exec 'hi shRepeat ctermfg='.green1[0].' guifg='.green1[1]
-exec 'hi tsxTagName ctermbg=NONE cterm=NONE '.turquoise_fg.' guibg=NONE gui=NONE'
-exec 'hi typescriptBranch '.red3_fg
-exec 'hi typescriptDocParamType '.black5_bg.' '.paletpurple_fg
-exec 'hi typescriptDocTags '.black5_bg.' '.gold_fg
-exec 'hi typescriptGlobal '.gray2_fg.' ctermbg=NONE cterm=NONE guibg=NONE gui=NONE'
-exec 'hi typescriptObjectLiteral '.green8_fg.' ctermbg=none cterm=none guibg=NONE gui=none'
+call <sid>hi('Boolean', s:rosybrown,'','')
+call <sid>hi('Changed', s:navy, s:white1, 'reverse')
+call <sid>hi('Character', s:white2,'', 'NONE')
+call <sid>hi('CocErrorVirtualText', s:red1, s:black4,'')
+call <sid>hi('CocFloatingDiagnostic', '',s:red2)
+call <sid>hi('CocFloatingDiagnosticBorder',s:yellow0,s:white1)
+call <sid>hi('CocListLine', '',s:red2,'NONE')
+call <sid>hi('CocVirtualText',s:gray4)
+call <sid>hi('Comment', s:gray5,s:black5)
+call <sid>hi('Constant', s:white2)
+call <sid>hi('Cursor', s:gold)
+call <sid>hi('CursorLine',s:NONE,s:NONE,'NONE')
+call <sid>hi('CursorLineFold', s:green3, s:black4,'bold')
+call <sid>hi('CursorLineNr', s:fg)
+call <sid>hi('CursorLineSign', s:deepskyblue,s:black4,'bold')
+call <sid>hi('Debug', s:red2,s:NONE,'NONE')
+call <sid>hi('DiffAdded', s:white1, s:green4,'NONE')
+call <sid>hi('DiffText', s:white1, s:orangered,'reverse')
+call <sid>hi('Error', s:red3, s:black3, 'NONE')
+call <sid>hi('ErrorMsg', s:white1,s:red3, 'NONE')
+call <sid>hi('Float', s:white2, s:NONE,'')
+call <sid>hi('FoldColumn', s:green3 ,s:black3, 'NONE')
+call <sid>hi('Folded', s:green3,s:black4,'NONE')
+call <sid>hi('HighlightedyankRegion', s:black1, s:gold,'')
+call <sid>hi('IncSearch', s:gold, s:black1, 'reverse')
+call <sid>hi('Keyword', s:gold, s:NONE,'bold')
+call <sid>hi('Macro', s:yellow1, s:NONE,'NONE')
+call <sid>hi('MatchParen',s:gray2, s:paleturquoise, 'bold')
+call <sid>hi('MessageWindow','',s:maroon,'NONE')
+call <sid>hi('Method', s:green5,s:NONE,'NONE')
+call <sid>hi('ModeMsg', s:white1, s:NONE, 'NONE')
+call <sid>hi('Normal',s:fg,s:bg,'NONE')
+call <sid>hi('Number', s:white2, s:NONE, 'NONE')
+call <sid>hi('Pmenu','', s:maroon,'NONE')
+call <sid>hi('PmenuSel', s:white1, s:paleturquoise,'NONE')
+call <sid>hi('PreCondit', s:yellow1,s:NONE, 'NONE')
+call <sid>hi('Question', s:darkorange,s:NONE, 'NONE')
+call <sid>hi('QuickfixActive', '',s:red1,'')
+call <sid>hi('QuickfixLine','',s:paleturquoise,'NONE')
+call <sid>hi('Removed',s:red2, s:fg,'reverse')
+call <sid>hi('RubyRoute', s:green5,'','')
+call <sid>hi('RubySymbol', s:green5,'','')
+call <sid>hi('Search',s:gray2, s:paleturquoise, 'NONE')
+call <sid>hi('SignColumn', s:rosybrown ,s:black3,'NONE')
+call <sid>hi('Special', s:gold, s:NONE, 'NONE')
+call <sid>hi('SpellBad',s:red1,s:NONE,'underline')
+call <sid>hi('SpellCap', s:gold, s:NONE,'underline')
+call <sid>hi('SpellLocal',s:yellow1,s:NONE,'underline')
+call <sid>hi('SpellRare', s:orchid,s:NONE,'underline')
+call <sid>hi('Statement', s:gold, s:NONE,'NONE')
+call <sid>hi('StatusLine', s:gray2, s:black1, 'reverse')
+call <sid>hi('StatusLineNC', s:black1, s:gray3,'reverse')
+call <sid>hi('String',s:green6,s:NONE, 'NONE')
+call <sid>hi('Subtle', s:gray1, s:NONE, 'NONE')
+call <sid>hi('TabLine',s:gray3,s:black1, 'NONE')
+call <sid>hi('TabLineFill',s:NONE,s:black1,'NONE')
+call <sid>hi('TabLineSel', s:gold,s:black3,'bold')
+call <sid>hi('Title', s:gold, s:black3,'bold')
+call <sid>hi('Todo',s:green1,s:gray3,'bold')
+call <sid>hi('Todo2', s:gold,s:gray3,'bold')
+call <sid>hi('Todo3',s:red1,s:gray3,'bold')
+call <sid>hi('Todo4', s:orangered,s:gray3,'bold')
+call <sid>hi('Type', s:paletpurple,s:NONE, 'NONE')
+call <sid>hi('Underlined',s:green9, s:NONE, 'underline')
+call <sid>hi('VertSplit',s:black3, s:black3, 'NONE')
+call <sid>hi('VimwikiBold', s:white1,  s:black1, 'bold')
+call <sid>hi('VimwikiHeader2', s:darkorange,s:NONE,'bold')
+call <sid>hi('VimwikiHeader5', s:paletpurple,s:NONE, 'bold')
+call <sid>hi('VimwikiSuperScript', s:gold,s:NONE, 'reverse,italic')
+call <sid>hi('Visual', s:fg,s:green7,'NONE')
+call <sid>hi('Visual','',s:paleturquoise,'') 
+call <sid>hi('cssClassName',s:green1)
+call <sid>hi('diffRemoved', s:white1,s:red2,'NONE')
+call <sid>hi('erubyExpression', s:green5)
+call <sid>hi('htmlStrike', s:black5)
+call <sid>hi('htmlTag', s:creme)
+call <sid>hi('javascriptBraces', s:green5)
+call <sid>hi('markdownCode',s:green1)
+call <sid>hi('markdownH2', s:darkorange,'','bold')
+call <sid>hi('markdownH5', s:paletpurple,'','bold')
+call <sid>hi('shRepeat',s:green1)
+call <sid>hi('tsxTagName',s:turquoise)
+call <sid>hi('typescriptBranch',s:red3)
+call <sid>hi('typescriptDocParamType',s:paletpurple,s:black5)
+call <sid>hi('typescriptDocTags',s:gold,s:black5)
+call <sid>hi('typescriptGlobal', s:gray2, s:NONE, 'NONE')
+call <sid>hi('typescriptObjectLiteral', s:green8,s:NONE, 'NONE')
 
 hi! link Class Keyword
 hi! link CocErrorFloat Exception
@@ -401,3 +334,17 @@ hi! link RubyClass Class
 hi! link VimwikiCode markdownCode
 hi! link VimWikiDelText htmlStrike
 hi! link shVariable funcName
+
+" TODO: define list
+" CursorColumn ... ', ctermfg=60 ctermbg=fg cterm=reverse '.blackred_fg.' guibg=fg gui=reverse'
+" link CursorColumn CursorLine
+"
+" hi typescriptVariableDeclaration ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
+" hi DiffChange ctermfg=fg ctermbg=bg cterm=NONE guibg=bg gui=NONE
+" hi Function ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
+" hi Ignore ctermfg=NONE ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
+" hi FuncName ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
+" hi Operator ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE 
+" hi EndOfBuffer ctermfg=bg ctermbg=NONE cterm=NONE guifg=bg guibg=NONE gui=NONE
+" hi ToolbarLine ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
+" cterm=underline guibg=NONE gui=undercurl' TODO make it uniform?
