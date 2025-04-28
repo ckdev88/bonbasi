@@ -82,7 +82,7 @@ call <sid>hi('Constant', s:white2)
 call <sid>hi('Cursor', s:gold)
 call <sid>hi('CursorLine',s:NONE,s:NONE,'NONE')
 call <sid>hi('CursorLineFold', s:green3, s:black4,'bold')
-call <sid>hi('CursorLineNr', s:fg)
+call <sid>hi('CursorLineNr', s:fg,s:NONE,'NONE')
 call <sid>hi('CursorLineSign', s:deepskyblue,s:black4,'bold')
 call <sid>hi('Debug', s:red2,s:NONE,'NONE')
 call <sid>hi('DiffAdded', s:white1, s:green4,'NONE')
@@ -101,6 +101,7 @@ call <sid>hi('MessageWindow','',s:maroon,'NONE')
 call <sid>hi('Method', s:green5,s:NONE,'NONE')
 call <sid>hi('ModeMsg', s:white1, s:NONE, 'NONE')
 call <sid>hi('Normal',s:fg,s:bg,'NONE')
+call <sid>hi('FuncName',s:fg)
 call <sid>hi('Number', s:white2, s:NONE, 'NONE')
 call <sid>hi('Pmenu','', s:maroon,'NONE')
 call <sid>hi('PmenuSel', s:white1, s:paleturquoise,'NONE')
@@ -142,6 +143,7 @@ call <sid>hi('Visual', s:fg,s:green7,'NONE')
 call <sid>hi('Visual','',s:paleturquoise,'') 
 call <sid>hi('cssClassName',s:green1)
 call <sid>hi('diffRemoved', s:white1,s:red2,'NONE')
+call <sid>hi('EndOfBuffer',s:bg)
 call <sid>hi('erubyExpression', s:green5)
 call <sid>hi('htmlStrike', s:black5)
 call <sid>hi('htmlTag', s:creme)
@@ -194,7 +196,7 @@ hi! link NonText EndOfBuffer
 hi! link PmenuExtra Pmenu
 hi! link PmenuThumb	CocListLine
 hi! link PopupNotification MessageWindow
-hi! link PreProc Function
+hi! link PreProc Normal
 hi! link Repeat Statement
 hi! link SpecialKey Pmenu
 hi! link StatusLineTerm StatusLine
@@ -221,7 +223,7 @@ hi! link javaScriptGlobal Normal
 hi! link javaScriptMember Normal
 hi! link javascriptFunction Keyword
 hi! link javascriptIdentifier Method
-hi! link javascriptOperator Function
+hi! link javascriptOperator Normal
 hi! link javascriptReserved Keyword
 hi! link javascriptStatement Keyword
 hi! link jsonQuote Subtle
@@ -237,7 +239,7 @@ hi! link phpIdentifier Normal
 hi! link phpInclude Keyword
 hi! link phpRegion FuncName
 hi! link phpStatement Keyword 
-hi! link phpVarSelector Function
+hi! link phpVarSelector Normal
 hi! link tsxAttrib Normal
 hi! link tsxCloseString htmlTag
 hi! link tsxEscJs Keyword
@@ -292,7 +294,7 @@ hi! link typescriptJSONStaticMethod Method
 hi! link typescriptMember htmlTag
 hi! link typescriptNull Boolean
 hi! link typescriptObjectLabel Constant
-hi! link typescriptOperator Function
+hi! link typescriptOperator Normal
 hi! link typescriptParens javascriptBraces
 hi! link typescriptPaymentShippingOptionProp Normal
 hi! link typescriptPromiseMethod Keyword
@@ -333,18 +335,12 @@ hi! link RubyPredefinedConstant typescriptObjectLiteral
 hi! link RubyClass Class
 hi! link VimwikiCode markdownCode
 hi! link VimWikiDelText htmlStrike
-hi! link shVariable funcName
+hi! link shVariable FuncName
 
 " TODO: define list
 " CursorColumn ... ', ctermfg=60 ctermbg=fg cterm=reverse '.blackred_fg.' guibg=fg gui=reverse'
 " link CursorColumn CursorLine
-"
 " hi typescriptVariableDeclaration ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
 " hi DiffChange ctermfg=fg ctermbg=bg cterm=NONE guibg=bg gui=NONE
-" hi Function ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
 " hi Ignore ctermfg=NONE ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
-" hi FuncName ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
-" hi Operator ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE 
-" hi EndOfBuffer ctermfg=bg ctermbg=NONE cterm=NONE guifg=bg guibg=NONE gui=NONE
-" hi ToolbarLine ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-" cterm=underline guibg=NONE gui=undercurl' TODO make it uniform?
+" hi Operator ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE" hi ToolbarLine ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
