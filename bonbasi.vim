@@ -75,9 +75,10 @@ call <sid>hi('Character', s:white2,'', 'NONE')
 call <sid>hi('CocErrorVirtualText', s:red1, s:black4,'')
 call <sid>hi('CocFloatingDiagnostic', '',s:red2)
 call <sid>hi('CocFloatingDiagnosticBorder',s:yellow0,s:white1)
-call <sid>hi('CocListLine', '',s:red2,'NONE')
+call <sid>hi('CocListLine', s:NONE,s:NONE,'NONE')
 call <sid>hi('CocVirtualText',s:gray4)
 call <sid>hi('Comment', s:gray5,s:black5)
+call <sid>hi('Conceal',s:fg,s:gray4,'underline')
 call <sid>hi('Constant', s:white2)
 call <sid>hi('Cursor', s:gold)
 call <sid>hi('CursorLine',s:NONE,s:NONE,'NONE')
@@ -87,11 +88,13 @@ call <sid>hi('CursorLineSign', s:deepskyblue,s:black4,'bold')
 call <sid>hi('Debug', s:red2,s:NONE,'NONE')
 call <sid>hi('DiffAdded', s:white1, s:green4,'NONE')
 call <sid>hi('DiffText', s:white1, s:orangered,'reverse')
+call <sid>hi('EndOfBuffer',s:bg)
 call <sid>hi('Error', s:red3, s:black3, 'NONE')
 call <sid>hi('ErrorMsg', s:white1,s:red3, 'NONE')
 call <sid>hi('Float', s:white2, s:NONE,'')
 call <sid>hi('FoldColumn', s:green3 ,s:black3, 'NONE')
 call <sid>hi('Folded', s:green3,s:black4,'NONE')
+call <sid>hi('FuncName',s:fg)
 call <sid>hi('HighlightedyankRegion', s:black1, s:gold,'')
 call <sid>hi('IncSearch', s:gold, s:black1, 'reverse')
 call <sid>hi('Keyword', s:gold, s:NONE,'bold')
@@ -101,20 +104,18 @@ call <sid>hi('MessageWindow','',s:maroon,'NONE')
 call <sid>hi('Method', s:green5,s:NONE,'NONE')
 call <sid>hi('ModeMsg', s:white1, s:NONE, 'NONE')
 call <sid>hi('Normal',s:fg,s:bg,'NONE')
-call <sid>hi('FuncName',s:fg)
 call <sid>hi('Number', s:white2, s:NONE, 'NONE')
 call <sid>hi('Pmenu','', s:maroon,'NONE')
 call <sid>hi('PmenuSel', s:white1, s:paleturquoise,'NONE')
 call <sid>hi('PreCondit', s:yellow1,s:NONE, 'NONE')
 call <sid>hi('Question', s:darkorange,s:NONE, 'NONE')
-call <sid>hi('QuickfixActive', '',s:red1,'')
+call <sid>hi('QuickfixActive', '',s:paleturquoise,'NONE')
 call <sid>hi('QuickfixLine','',s:paleturquoise,'NONE')
 call <sid>hi('Removed',s:red2, s:fg,'reverse')
 call <sid>hi('RubyRoute', s:green5,'','')
 call <sid>hi('RubySymbol', s:green5,'','')
-call <sid>hi('Search',s:gray2, s:paleturquoise, 'NONE')
+call <sid>hi('Search',s:fg, s:paleturquoise, 'NONE')
 call <sid>hi('SignColumn', s:rosybrown ,s:black3,'NONE')
-call <sid>hi('Special', s:gold, s:NONE, 'NONE')
 call <sid>hi('SpellBad',s:red1,s:NONE,'underline')
 call <sid>hi('SpellCap', s:gold, s:NONE,'underline')
 call <sid>hi('SpellLocal',s:yellow1,s:NONE,'underline')
@@ -139,11 +140,9 @@ call <sid>hi('VimwikiBold', s:white1,  s:black1, 'bold')
 call <sid>hi('VimwikiHeader2', s:darkorange,s:NONE,'bold')
 call <sid>hi('VimwikiHeader5', s:paletpurple,s:NONE, 'bold')
 call <sid>hi('VimwikiSuperScript', s:gold,s:NONE, 'reverse,italic')
-call <sid>hi('Visual', s:fg,s:green7,'NONE')
-call <sid>hi('Visual','',s:paleturquoise,'') 
+call <sid>hi('Visual',s:fg,s:paleturquoise,'') 
 call <sid>hi('cssClassName',s:green1)
 call <sid>hi('diffRemoved', s:white1,s:red2,'NONE')
-call <sid>hi('EndOfBuffer',s:bg)
 call <sid>hi('erubyExpression', s:green5)
 call <sid>hi('htmlStrike', s:black5)
 call <sid>hi('htmlTag', s:creme)
@@ -176,7 +175,6 @@ hi! link CocMenuSel PmenuSel
 hi! link CocNotificationProgress MessageWindow
 hi! link CocSearch MessageWindow
 hi! link CocWarningFloat Exception
-hi! link Conceal Comment
 hi! link ColorColumn CocListLine
 hi! link Conditional Keyword
 hi! link CurSearch Search
@@ -186,7 +184,6 @@ hi! link Delimiter Subtle
 hi! link DiffAdd DiffAdded
 hi! link DiffDelete Removed
 hi! link Directory Method
-hi! link Exception Keyword
 hi! link FgCocHintFloatBgCocFloating Exception
 hi! link Identifier Keyword
 hi! link Label Constant
@@ -198,6 +195,15 @@ hi! link PmenuThumb	CocListLine
 hi! link PopupNotification MessageWindow
 hi! link PreProc Normal
 hi! link Repeat Statement
+hi! link RubyClass Class
+hi! link RubyControl Keyword
+hi! link RubyDefine Keyword
+hi! link RubyInstanceVariable FuncName
+hi! link RubyMethodName FuncName
+hi! link RubyPredefinedConstant typescriptObjectLiteral
+hi! link RubyRepeat FuncName
+hi! link RubyViewHelper Keyword
+hi! link Special Type
 hi! link SpecialKey Pmenu
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
@@ -205,6 +211,8 @@ hi! link StorageClass Question
 hi! link Structure Type
 hi! link ToolbarButton TabLineSel
 hi! link Typedef Type 
+hi! link VimWikiDelText htmlStrike
+hi! link VimwikiCode markdownCode
 hi! link VimwikiHeader1 Title
 hi! link VisualNOS Visual
 hi! link WildMenu Pmenu
@@ -240,6 +248,9 @@ hi! link phpInclude Keyword
 hi! link phpRegion FuncName
 hi! link phpStatement Keyword 
 hi! link phpVarSelector Normal
+hi! link shOption FuncName
+hi! link shQuote String
+hi! link shVariable FuncName
 hi! link tsxAttrib Normal
 hi! link tsxCloseString htmlTag
 hi! link tsxEscJs Keyword
@@ -271,7 +282,6 @@ hi! link typescriptDateStaticMethod Method
 hi! link typescriptDefault Keyword
 hi! link typescriptDestructureComma Subtle
 hi! link typescriptDestructureVariable typescriptVariableDeclaration
-hi! link typescriptDocComment Comment
 hi! link typescriptDocNamedParamType typescriptDocParamType
 hi! link typescriptDocNotation typescriptDocTags
 hi! link typescriptDomDocMethod Method
@@ -325,17 +335,6 @@ hi! link vimTodo Todo
 hi! link vimUserFunc Method
 hi! link vimVar Normal
 hi! link yamlBlockMappingKey Keyword
-hi! link RubyMethodName FuncName
-hi! link RubyRepeat FuncName
-hi! link RubyInstanceVariable FuncName
-hi! link RubyControl Keyword
-hi! link RubyViewHelper Keyword
-hi! link RubyDefine Keyword
-hi! link RubyPredefinedConstant typescriptObjectLiteral
-hi! link RubyClass Class
-hi! link VimwikiCode markdownCode
-hi! link VimWikiDelText htmlStrike
-hi! link shVariable FuncName
 
 " TODO: define list
 " CursorColumn ... ', ctermfg=60 ctermbg=fg cterm=reverse '.blackred_fg.' guibg=fg gui=reverse'
@@ -344,3 +343,4 @@ hi! link shVariable FuncName
 " hi DiffChange ctermfg=fg ctermbg=bg cterm=NONE guibg=bg gui=NONE
 " hi Ignore ctermfg=NONE ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
 " hi Operator ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE" hi ToolbarLine ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
+" define Exception
