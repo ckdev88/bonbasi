@@ -101,7 +101,7 @@ call <sid>hi('Keyword', s:gold, s:NONE,'bold')
 call <sid>hi('Macro', s:yellow1, s:NONE,'NONE')
 call <sid>hi('MatchParen',s:gray2, s:paleturquoise, 'bold')
 call <sid>hi('MessageWindow','',s:maroon,'NONE')
-call <sid>hi('Method', s:green5,s:NONE,'NONE')
+call <sid>hi('Method', s:fg,s:NONE,'NONE')
 call <sid>hi('ModeMsg', s:white1, s:NONE, 'NONE')
 call <sid>hi('Normal',s:fg,s:bg,'NONE')
 call <sid>hi('Number', s:white2, s:NONE, 'NONE')
@@ -183,7 +183,7 @@ hi! link Define Subtle
 hi! link Delimiter Subtle
 hi! link DiffAdd DiffAdded
 hi! link DiffDelete Removed
-hi! link Directory Method
+hi! link Directory Normal
 hi! link FgCocHintFloatBgCocFloating Exception
 hi! link Identifier Keyword
 hi! link Label Constant
@@ -265,6 +265,7 @@ hi! link typescriptBOM Method
 hi! link typescriptBOMWindowProp Normal
 hi! link typescriptBlock Normal
 hi! link typescriptBomLocationMethod Method
+hi! link typescriptBOMWindowMethod Method
 hi! link typescriptBoolean Boolean
 hi! link typescriptBraces javascriptBraces
 hi! link typescriptCacheMethod Method
