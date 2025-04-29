@@ -297,8 +297,7 @@ hi! link typescriptFuncKeyword Keyword
 hi! link typescriptFuncName FuncName
 hi! link typescriptGlobalMethod Method
 hi! link typescriptHeadersMethod Method
-hi! link typescriptImport Define
-hi! link typescriptInterfaceKeyword Subtle
+hi! link typescriptImport Keyword
 hi! link typescriptInterfaceName Type
 hi! link typescriptJSONStaticMethod Method
 hi! link typescriptMember htmlTag
