@@ -74,6 +74,7 @@ function! <sid>hi(group, fg=[], bg=[], attr="")
   endif
 endfunction
 
+call <sid>hi('AliasKeyword', s:creme,'','BOLD')
 call <sid>hi('Boolean', s:rosybrown,'','')
 call <sid>hi('Changed', s:navy, s:white1, 'reverse')
 call <sid>hi('Character', s:white2,'', 'NONE')
@@ -85,6 +86,7 @@ call <sid>hi('CocVirtualText',s:gray4)
 call <sid>hi('Comment', s:gray5,s:black5)
 call <sid>hi('Conceal',s:fg,s:gray4,'underline')
 call <sid>hi('Constant', s:white2)
+call <sid>hi('Identifier', s:brown,'','bold')
 call <sid>hi('Cursor', s:gold)
 call <sid>hi('CursorLine',s:NONE,s:NONE,'NONE')
 call <sid>hi('CursorLineFold', s:green3, s:black4,'bold')
@@ -139,6 +141,7 @@ call <sid>hi('Todo2', s:gold,s:gray3,'bold')
 call <sid>hi('Todo3',s:red1,s:gray3,'bold')
 call <sid>hi('Todo4', s:orangered,s:gray3,'bold')
 call <sid>hi('Type', s:paletpurple,s:NONE, 'NONE')
+call <sid>hi('Type', s:wisteria,s:NONE, 'NONE')
 call <sid>hi('Underlined',s:green9, s:NONE, 'underline')
 call <sid>hi('VertSplit',s:black3, s:black3, 'NONE')
 call <sid>hi('VimwikiBold', s:white1,  s:black1, 'bold')
@@ -158,7 +161,7 @@ call <sid>hi('markdownH5', s:paletpurple,'','bold')
 call <sid>hi('shRepeat',s:green1)
 call <sid>hi('tsxTagName',s:turquoise)
 call <sid>hi('typescriptBranch',s:red3)
-call <sid>hi('typescriptDocParamType',s:paletpurple,s:black5)
+call <sid>hi('typescriptDocParamType',s:wisteria,s:black5)
 call <sid>hi('typescriptDocTags',s:gold,s:black5)
 call <sid>hi('typescriptGlobal', s:gray2, s:NONE, 'NONE')
 call <sid>hi('typescriptObjectLiteral', s:green8,s:NONE, 'NONE')
@@ -236,7 +239,7 @@ hi! link javaScript Normal
 hi! link javaScriptGlobal Normal
 hi! link javaScriptMember Normal
 hi! link javascriptFunction Keyword
-hi! link javascriptIdentifier Method
+hi! link javascriptIdentifier Identifier
 hi! link javascriptOperator Normal
 hi! link javascriptReserved Keyword
 hi! link javascriptStatement Keyword
@@ -249,7 +252,7 @@ hi! link netrwExe Normal
 hi! link netrwList Normal
 hi! link phpComparison Subtle
 hi! link phpDefine Keyword
-hi! link phpIdentifier Normal
+hi! link phpIdentifier Identifier
 hi! link phpInclude Keyword
 hi! link phpRegion FuncName
 hi! link phpStatement Keyword 
@@ -263,15 +266,16 @@ hi! link tsxEscJs Keyword
 hi! link tsxEscapeJs Normal
 hi! link tsxRegion Constant
 hi! link tsxTag htmlTag
-hi! link typescriptAliasKeyword Subtle
+hi! link typescriptAliasDeclaration Normal
+hi! link typescriptAliasKeyword AliasKeyword
 hi! link typescriptArrayMethod Method
-hi! link typescriptArrowFunc Subtle
+hi! link typescriptArrowFunc Normal
 hi! link typescriptAsyncFuncKeyword Subtle
 hi! link typescriptBOM Method
+hi! link typescriptBOMWindowMethod Method
 hi! link typescriptBOMWindowProp Normal
 hi! link typescriptBlock Normal
 hi! link typescriptBomLocationMethod Method
-hi! link typescriptBOMWindowMethod Method
 hi! link typescriptBoolean Boolean
 hi! link typescriptBraces javascriptBraces
 hi! link typescriptCacheMethod Method
@@ -302,12 +306,15 @@ hi! link typescriptFuncCallArg Normal
 hi! link typescriptFuncComma Subtle
 hi! link typescriptFuncKeyword Keyword
 hi! link typescriptFuncName FuncName
+hi! link typescriptFuncTypeArrow typescriptArrowFunc
+hi! link typescriptGlobal Type
 hi! link typescriptGlobalMethod Method
 hi! link typescriptHeadersMethod Method
 hi! link typescriptImport Keyword
-hi! link typescriptInterfaceName Type
+hi! link typescriptInterfaceKeyword AliasKeyword
+hi! link typescriptInterfaceName typescriptAliasDeclaration
 hi! link typescriptJSONStaticMethod Method
-hi! link typescriptMember htmlTag
+hi! link typescriptMember Normal
 hi! link typescriptNull Boolean
 hi! link typescriptObjectLabel Constant
 hi! link typescriptOperator Normal
@@ -324,6 +331,7 @@ hi! link typescriptTypeReference Type
 hi! link typescriptURLStaticMethod Method
 hi! link typescriptURLUtilsProp Normal
 hi! link typescriptVariable Keyword
+hi! link typescriptUnion TypescriptAssign
 hi! link vimCommand Keyword
 hi! link vimCommentTitle Normal
 hi! link vimFgBgAttrib Normal
