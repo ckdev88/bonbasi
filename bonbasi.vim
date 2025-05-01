@@ -1,10 +1,10 @@
 " Name: BonBasi
-" Description: Just another theme. Inspired by: Slate, Gruvbox & most of all: Gruber Darker
+" Description: I use this one at home. Inspired by: Slate, Gruvbox, mostly Gruber Darker
 " Author: CK
 " Maintainer: CK
 " Website: https://ckdev88.github.io
 " License: Vim License (see `:help license`)
-" Last Updated: 2025-04-27 17:14
+" Last Updated: 2025-05-01 18:35
 
 hi clear
 let g:colors_name = 'bonbasi'
@@ -15,10 +15,10 @@ let s:black2 = [233,'#121212'] " .07
 let s:black3 = [234,'#1c1c1c'] " .11
 let s:black4 = [235,'#262626'] " .15
 let s:black5 = [237,'#3a3a3a'] " .23
-let s:creme =  [229,'#f3f2cc']
+let s:creme = [229,'#f3f2cc']
 let s:darkorange = [208,'#ff8700']
-let s:deepskyblue =  [103,'#7979a0']
-let s:gold  = [220,'#ffd700']
+let s:deepskyblue = [103,'#7979a0']
+let s:gold = [220,'#ffd700']
 let s:gray1 = [242,'#6c6c6c']
 let s:gray2 = [254,'#e4e4e4']
 let s:gray3 = [238,'#444444']
@@ -35,26 +35,26 @@ let s:green8 = [71,'#8ba986'] " .59 light matte
 let s:green9 = [43,'#83a598'] " .58 light matte green blueish
 let s:maroon = [1,'#800000'] " .25
 let s:navy = [4,'#000080']
-let s:orange=[214,'#ffaf00']
-let s:orangered=[202,'#ff5f00']
+let s:orange = [214,'#ffaf00']
+let s:orangered = [202,'#ff5f00']
 let s:orchid = [213,'#ff87ff']
-let s:paletpurple =  [103,'#7979a0']
+let s:paletpurple = [103,'#7979a0']
 let s:paleturquoise =  [66,'#5f8787']
-let s:red1= [9,'#ff0000']
-let s:red2=[88,'#870000']
-let s:red3=[124,'#af0000']
-let s:rosybrown =  [138,'#af8787']
+let s:red1 = [9,'#ff0000']
+let s:red2 = [88,'#870000']
+let s:red3 = [124,'#af0000']
+let s:rosybrown = [138,'#af8787']
 let s:turquoise = [45,'#58c4dc']
 let s:white1 = [15,'#ffffff'] " 1
 let s:white2 = [253,'#dadada'] " .85
 let s:yellow0 = [11,'#ffff00']
 let s:yellow1 = [148,'#afd700']
-let s:niagara = [147,'#96a6c8']
+" let s:niagara=[147,'#96a6c8']
 let s:brown = [172,'#cc8c3c']
 let s:quartz = [108,'#95a99f']
 let s:wisteria = [108,'#9e95c7']
 
-let s:NONE=['NONE','NONE']
+let s:NONE = ['NONE','NONE']
 
 let s:fg = s:white1
 let s:bg = s:black2
@@ -74,101 +74,102 @@ function! <sid>hi(group, fg=[], bg=[], attr="")
   endif
 endfunction
 
-call <sid>hi('AliasKeyword', s:creme,'','BOLD')
-call <sid>hi('Boolean', s:rosybrown,'','')
-call <sid>hi('Changed', s:navy, s:white1, 'reverse')
-call <sid>hi('Character', s:white2,'', 'NONE')
-call <sid>hi('CocErrorVirtualText', s:red1, s:black4,'')
-call <sid>hi('CocFloatingDiagnostic', '',s:red2)
+call <sid>hi('AliasKeyword',s:creme,'','BOLD')
+call <sid>hi('Boolean',s:rosybrown,'','')
+call <sid>hi('Changed',s:navy,s:white1,'reverse')
+call <sid>hi('Character',s:white2,'','NONE')
+call <sid>hi('CocErrorVirtualText',s:red1,s:black4,'')
+call <sid>hi('CocFloatingDiagnostic','',s:red2)
 call <sid>hi('CocFloatingDiagnosticBorder',s:yellow0,s:white1)
-call <sid>hi('CocListLine', s:NONE,s:NONE,'NONE')
+call <sid>hi('CocListLine',s:NONE,s:NONE,'NONE')
 call <sid>hi('CocVirtualText',s:gray4)
-call <sid>hi('Comment', s:gray5,s:black5)
+call <sid>hi('Comment',s:gray5,s:black5)
 call <sid>hi('Conceal',s:fg,s:gray4,'underline')
-call <sid>hi('Constant', s:white2)
-call <sid>hi('Identifier', s:brown,'','bold')
-call <sid>hi('Cursor', s:gold)
+call <sid>hi('Constant',s:white2)
+call <sid>hi('Identifier',s:brown,'','bold')
+call <sid>hi('Cursor',s:gold)
 call <sid>hi('CursorLine',s:NONE,s:NONE,'NONE')
-call <sid>hi('CursorLineFold', s:green3, s:black4,'bold')
-call <sid>hi('CursorLineNr', s:fg,s:NONE,'NONE')
-call <sid>hi('CursorLineSign', s:deepskyblue,s:black4,'bold')
-call <sid>hi('Debug', s:red2,s:NONE,'NONE')
-call <sid>hi('DiffAdded', s:white1, s:green4,'NONE')
-call <sid>hi('DiffText', s:white1, s:orangered,'reverse')
+call <sid>hi('CursorLineFold',s:green3,s:black4,'bold')
+call <sid>hi('CursorLineNr',s:fg,s:NONE,'NONE')
+call <sid>hi('CursorLineSign',s:deepskyblue,s:black4,'bold')
+call <sid>hi('Debug',s:red2,s:NONE,'NONE')
+call <sid>hi('DiffAdded',s:white1,s:green4,'NONE')
+call <sid>hi('DiffText',s:white1,s:orangered,'reverse')
 call <sid>hi('EndOfBuffer',s:bg)
-call <sid>hi('Error', s:red3, s:black3, 'NONE')
-call <sid>hi('ErrorMsg', s:white1,s:red3, 'NONE')
-call <sid>hi('Float', s:white2, s:NONE,'')
-call <sid>hi('FoldColumn', s:green3 ,s:black3, 'NONE')
-call <sid>hi('Folded', s:green3,s:black4,'NONE')
+call <sid>hi('Error',s:red3,s:black3,'NONE')
+call <sid>hi('ErrorMsg',s:white1,s:red3,'NONE')
+call <sid>hi('Float',s:white2,s:NONE,'')
+call <sid>hi('FoldColumn',s:green3 ,s:black3,'NONE')
+call <sid>hi('Folded',s:green3,s:black4,'NONE')
 call <sid>hi('FuncName',s:fg)
-call <sid>hi('HighlightedyankRegion', s:black1, s:gold,'')
-call <sid>hi('IncSearch', s:gold, s:black1, 'reverse')
-call <sid>hi('Keyword', s:gold, s:NONE,'bold')
-call <sid>hi('Macro', s:yellow1, s:NONE,'NONE')
-call <sid>hi('MatchParen',s:gray2, s:paleturquoise, 'bold')
+call <sid>hi('HighlightedyankRegion',s:black1,s:gold,'')
+call <sid>hi('IncSearch',s:gold,s:black1,'reverse')
+call <sid>hi('Keyword',s:gold,s:NONE,'bold')
+call <sid>hi('Macro',s:yellow1,s:NONE,'NONE')
+call <sid>hi('MatchParen',s:gray2,s:paleturquoise,'bold')
 call <sid>hi('MessageWindow','',s:maroon,'NONE')
-call <sid>hi('Method', s:fg,s:NONE,'NONE')
-call <sid>hi('ModeMsg', s:white1, s:NONE, 'NONE')
+call <sid>hi('Method',s:fg,s:NONE,'NONE')
+call <sid>hi('ModeMsg',s:white1,s:NONE,'NONE')
 call <sid>hi('Normal',s:fg,s:bg,'NONE')
-call <sid>hi('Number', s:white2, s:NONE, 'NONE')
-call <sid>hi('Pmenu','', s:maroon,'NONE')
-call <sid>hi('PmenuSel', s:white1, s:paleturquoise,'NONE')
-call <sid>hi('PreCondit', s:yellow1,s:NONE, 'NONE')
-call <sid>hi('Question', s:darkorange,s:NONE, 'NONE')
-call <sid>hi('QuickfixActive', '',s:paleturquoise,'NONE')
+call <sid>hi('Number',s:white2,s:NONE,'NONE')
+call <sid>hi('Pmenu','',s:maroon,'NONE')
+call <sid>hi('PmenuSel',s:white1,s:paleturquoise,'NONE')
+call <sid>hi('PreCondit',s:yellow1,s:NONE,'NONE')
+call <sid>hi('Question',s:darkorange,s:NONE,'NONE')
+call <sid>hi('QuickfixActive','',s:paleturquoise,'NONE')
 call <sid>hi('QuickfixLine','',s:paleturquoise,'NONE')
-call <sid>hi('Removed',s:red2, s:fg,'reverse')
-call <sid>hi('RubyRoute', s:green5,'','')
-call <sid>hi('RubySymbol', s:green5,'','')
-call <sid>hi('Search',s:fg, s:paleturquoise, 'NONE')
-call <sid>hi('SignColumn', s:rosybrown ,s:black3,'NONE')
+call <sid>hi('Removed',s:red2,s:fg,'reverse')
+call <sid>hi('RubyRoute',s:green5,'','')
+call <sid>hi('RubySymbol',s:green5,'','')
+call <sid>hi('Search',s:fg,s:paleturquoise,'NONE')
+call <sid>hi('SignColumn',s:rosybrown ,s:black3,'NONE')
 call <sid>hi('SpellBad',s:red1,s:NONE,'underline')
-call <sid>hi('SpellCap', s:gold, s:NONE,'underline')
+call <sid>hi('SpellCap',s:gold,s:NONE,'underline')
 call <sid>hi('SpellLocal',s:yellow1,s:NONE,'underline')
-call <sid>hi('SpellRare', s:orchid,s:NONE,'underline')
-" call <sid>hi('Statement', s:gold, s:NONE,'NONE')
-call <sid>hi('StatusLine', s:gray2, s:black1, 'reverse')
-call <sid>hi('StatusLineNC', s:black1, s:gray3,'reverse')
-call <sid>hi('String',s:green6,s:NONE, 'NONE')
-call <sid>hi('Subtle', s:gray1, s:NONE, 'NONE')
-call <sid>hi('TabLine',s:gray3,s:black1, 'NONE')
+call <sid>hi('SpellRare',s:orchid,s:NONE,'underline')
+call <sid>hi('Statement',s:gold,s:NONE,'NONE')
+call <sid>hi('StatusLine',s:gray2,s:black1,'reverse')
+call <sid>hi('StatusLineNC',s:black1,s:gray3,'reverse')
+call <sid>hi('String',s:green6,s:NONE,'NONE')
+call <sid>hi('Subtle',s:gray1,s:NONE,'NONE')
+call <sid>hi('TabLine',s:gray3,s:black1,'NONE')
 call <sid>hi('TabLineFill',s:NONE,s:black1,'NONE')
-call <sid>hi('TabLineSel', s:gold,s:black3,'bold')
-call <sid>hi('Title', s:gold, s:black3,'bold')
+call <sid>hi('TabLineSel',s:gold,s:black3,'bold')
+call <sid>hi('Title',s:gold,s:black3,'bold')
 call <sid>hi('Todo',s:green1,s:gray3,'bold')
-call <sid>hi('Todo2', s:gold,s:gray3,'bold')
+call <sid>hi('Todo2',s:gold,s:gray3,'bold')
 call <sid>hi('Todo3',s:red1,s:gray3,'bold')
-call <sid>hi('Todo4', s:orangered,s:gray3,'bold')
-call <sid>hi('Type', s:wisteria,s:NONE, 'NONE')
-call <sid>hi('Underlined',s:green9, s:NONE, 'underline')
-call <sid>hi('VertSplit',s:black3, s:black3, 'NONE')
-call <sid>hi('VimwikiBold', s:white1,  s:black1, 'bold')
-call <sid>hi('VimwikiHeader2', s:darkorange,s:NONE,'bold')
-call <sid>hi('VimwikiHeader5', s:paletpurple,s:NONE, 'bold')
-call <sid>hi('VimwikiSuperScript', s:gold,s:NONE, 'reverse,italic')
+call <sid>hi('Todo4',s:orangered,s:gray3,'bold')
+call <sid>hi('Type',s:wisteria,s:NONE,'NONE')
+call <sid>hi('Underlined',s:green9,s:NONE,'underline')
+call <sid>hi('VertSplit',s:black3,s:black3,'NONE')
+call <sid>hi('VimwikiBold',s:white1,  s:black1,'bold')
+call <sid>hi('VimwikiHeader2',s:darkorange,s:NONE,'bold')
+call <sid>hi('VimwikiHeader5',s:paletpurple,s:NONE,'bold')
+call <sid>hi('VimwikiSuperScript',s:gold,s:NONE,'reverse,italic')
 call <sid>hi('Visual',s:fg,s:paleturquoise,'') 
 call <sid>hi('cssIdentifier',s:green1)
-call <sid>hi('diffRemoved', s:white1,s:red2,'NONE')
-call <sid>hi('erubyExpression', s:green5)
-call <sid>hi('htmlStrike', s:black5)
-call <sid>hi('htmlTag', s:creme)
-call <sid>hi('javascriptBraces', s:green5)
+call <sid>hi('diffRemoved',s:white1,s:red2,'NONE')
+call <sid>hi('erubyExpression',s:green5)
+call <sid>hi('htmlStrike',s:black5)
+call <sid>hi('htmlTag',s:creme)
+call <sid>hi('javascriptBraces',s:green5)
 call <sid>hi('markdownCode',s:green1)
-call <sid>hi('markdownH2', s:darkorange,'','bold')
-call <sid>hi('markdownH5', s:paletpurple,'','bold')
+call <sid>hi('markdownH2',s:darkorange,'','bold')
+call <sid>hi('markdownH5',s:paletpurple,'','bold')
 call <sid>hi('shRepeat',s:green1)
 call <sid>hi('tsxTagName',s:turquoise)
 call <sid>hi('typescriptBranch',s:red3)
 call <sid>hi('typescriptDocParamType',s:wisteria,s:black5)
 call <sid>hi('typescriptDocTags',s:gold,s:black5)
-call <sid>hi('typescriptGlobal', s:gray2, s:NONE, 'NONE')
-call <sid>hi('typescriptObjectLiteral', s:green8,s:NONE, 'NONE')
+call <sid>hi('typescriptGlobal',s:gray2,s:NONE,'NONE')
+call <sid>hi('typescriptObjectLiteral',s:green8,s:NONE,'NONE')
 
 
 " hi! link Repeat Statement
 " hi! link RubyRepeat FuncName
 " hi! link typescriptDomNodeMethod Method
+hi! link fugitiveSymbolicRef Keyword
 hi! link Class Keyword
 hi! link CocErrorFloat Exception
 hi! link CocFloatActive MessageWindow
