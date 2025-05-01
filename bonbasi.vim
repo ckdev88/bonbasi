@@ -127,7 +127,7 @@ call <sid>hi('SpellBad',s:red1,s:NONE,'underline')
 call <sid>hi('SpellCap', s:gold, s:NONE,'underline')
 call <sid>hi('SpellLocal',s:yellow1,s:NONE,'underline')
 call <sid>hi('SpellRare', s:orchid,s:NONE,'underline')
-call <sid>hi('Statement', s:gold, s:NONE,'NONE')
+" call <sid>hi('Statement', s:gold, s:NONE,'NONE')
 call <sid>hi('StatusLine', s:gray2, s:black1, 'reverse')
 call <sid>hi('StatusLineNC', s:black1, s:gray3,'reverse')
 call <sid>hi('String',s:green6,s:NONE, 'NONE')
@@ -140,7 +140,6 @@ call <sid>hi('Todo',s:green1,s:gray3,'bold')
 call <sid>hi('Todo2', s:gold,s:gray3,'bold')
 call <sid>hi('Todo3',s:red1,s:gray3,'bold')
 call <sid>hi('Todo4', s:orangered,s:gray3,'bold')
-call <sid>hi('Type', s:paletpurple,s:NONE, 'NONE')
 call <sid>hi('Type', s:wisteria,s:NONE, 'NONE')
 call <sid>hi('Underlined',s:green9, s:NONE, 'underline')
 call <sid>hi('VertSplit',s:black3, s:black3, 'NONE')
@@ -149,7 +148,7 @@ call <sid>hi('VimwikiHeader2', s:darkorange,s:NONE,'bold')
 call <sid>hi('VimwikiHeader5', s:paletpurple,s:NONE, 'bold')
 call <sid>hi('VimwikiSuperScript', s:gold,s:NONE, 'reverse,italic')
 call <sid>hi('Visual',s:fg,s:paleturquoise,'') 
-call <sid>hi('cssClassName',s:green1)
+call <sid>hi('cssIdentifier',s:green1)
 call <sid>hi('diffRemoved', s:white1,s:red2,'NONE')
 call <sid>hi('erubyExpression', s:green5)
 call <sid>hi('htmlStrike', s:black5)
@@ -166,6 +165,10 @@ call <sid>hi('typescriptDocTags',s:gold,s:black5)
 call <sid>hi('typescriptGlobal', s:gray2, s:NONE, 'NONE')
 call <sid>hi('typescriptObjectLiteral', s:green8,s:NONE, 'NONE')
 
+
+" hi! link Repeat Statement
+" hi! link RubyRepeat FuncName
+" hi! link typescriptDomNodeMethod Method
 hi! link Class Keyword
 hi! link CocErrorFloat Exception
 hi! link CocFloatActive MessageWindow
@@ -193,7 +196,6 @@ hi! link DiffAdd DiffAdded
 hi! link DiffDelete Removed
 hi! link Directory Normal
 hi! link FgCocHintFloatBgCocFloating Exception
-hi! link Identifier Keyword
 hi! link Label Constant
 hi! link LineNr Subtle
 hi! link MoreMsg MessageWindow
@@ -202,14 +204,12 @@ hi! link PmenuExtra Pmenu
 hi! link PmenuThumb	CocListLine
 hi! link PopupNotification MessageWindow
 hi! link PreProc Normal
-hi! link Repeat Statement
 hi! link RubyClass Class
 hi! link RubyControl Keyword
 hi! link RubyDefine Keyword
 hi! link RubyInstanceVariable FuncName
 hi! link RubyMethodName FuncName
 hi! link RubyPredefinedConstant typescriptObjectLiteral
-hi! link RubyRepeat FuncName
 hi! link RubyViewHelper Keyword
 hi! link Special Type
 hi! link SpecialKey Pmenu
@@ -297,7 +297,6 @@ hi! link typescriptDocNamedParamType typescriptDocParamType
 hi! link typescriptDocNotation typescriptDocTags
 hi! link typescriptDomDocMethod Method
 hi! link typescriptDomEventTargetMethod Method
-hi! link typescriptDomNodeMethod Method
 hi! link typescriptDotNotation Subtle
 hi! link typescriptEndColons Subtle
 hi! link typescriptExceptions Exception
@@ -322,6 +321,7 @@ hi! link typescriptParens javascriptBraces
 hi! link typescriptPaymentShippingOptionProp Normal
 hi! link typescriptPromiseMethod Keyword
 hi! link typescriptProperty Subtle
+hi! link typescriptRepeat Keyword
 hi! link typescriptStatementKeyword Keyword
 hi! link typescriptStringMethod Method
 hi! link typescriptTernaryOp Subtle
@@ -330,8 +330,8 @@ hi! link typescriptTypeAnnotation Subtle
 hi! link typescriptTypeReference Type
 hi! link typescriptURLStaticMethod Method
 hi! link typescriptURLUtilsProp Normal
-hi! link typescriptVariable Keyword
 hi! link typescriptUnion TypescriptAssign
+hi! link typescriptVariable Identifier
 hi! link vimCommand Keyword
 hi! link vimCommentTitle Normal
 hi! link vimFgBgAttrib Normal
@@ -349,7 +349,6 @@ hi! link vimTodo Todo
 hi! link vimUserFunc Method
 hi! link vimVar Normal
 hi! link yamlBlockMappingKey Keyword
-
 " TODO: define list
 " CursorColumn ... ', ctermfg=60 ctermbg=fg cterm=reverse '.blackred_fg.' guibg=fg gui=reverse'
 " link CursorColumn CursorLine
