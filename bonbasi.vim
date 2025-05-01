@@ -47,8 +47,13 @@ let s:rosybrown =  [138,'#af8787']
 let s:turquoise = [45,'#58c4dc']
 let s:white1 = [15,'#ffffff'] " 1
 let s:white2 = [253,'#dadada'] " .85
-let s:yellow0=[11,'#ffff00']
-let s:yellow1=[148,'#afd700']
+let s:yellow0 = [11,'#ffff00']
+let s:yellow1 = [148,'#afd700']
+let s:niagara = [147,'#96a6c8']
+let s:brown = [172,'#cc8c3c']
+let s:quartz = [108,'#95a99f']
+let s:wisteria = [108,'#9e95c7']
+
 let s:NONE=['NONE','NONE']
 
 let s:fg = s:white1
