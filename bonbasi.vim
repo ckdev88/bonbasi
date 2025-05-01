@@ -216,10 +216,11 @@ hi! link VimwikiCode markdownCode
 hi! link VimwikiHeader1 Title
 hi! link VisualNOS Visual
 hi! link WildMenu Pmenu
+hi! link cssAtKeyword Keyword
 hi! link cssBraces Subtle
-hi! link cssClassNameDot Constant
+hi! link cssClassName cssIdentifier
+hi! link cssClassNameDot cssIdentifier
 hi! link cssFunctionName FuncName
-hi! link cssIdentifier Constant
 hi! link cssPseudoClassId Constant
 hi! link cssTagName Type
 hi! link htmlEndTag htmlTag
