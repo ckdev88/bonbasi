@@ -4,7 +4,7 @@
 " Maintainer: CK
 " Website: https://ckdev88.github.io
 " License: Vim License (see `:help license`)
-" Last Updated: 2025-05-01 18:35
+" Last Updated: 2025-05-17 15:10
 
 hi clear
 let g:colors_name = 'bonbasi'
@@ -143,9 +143,6 @@ call <sid>hi('Todo4',s:orangered,s:gray3,'bold')
 call <sid>hi('Type',s:wisteria,s:NONE,'NONE')
 call <sid>hi('Underlined',s:green9,s:NONE,'underline')
 call <sid>hi('VertSplit',s:black3,s:black3,'NONE')
-call <sid>hi('VimwikiBold',s:white1,  s:black1,'bold')
-call <sid>hi('VimwikiHeader2',s:darkorange,s:NONE,'bold')
-call <sid>hi('VimwikiHeader5',s:paletpurple,s:NONE,'bold')
 call <sid>hi('VimwikiSuperScript',s:gold,s:NONE,'reverse,italic')
 call <sid>hi('Visual',s:fg,s:paleturquoise,'') 
 call <sid>hi('cssIdentifier',s:green1)
@@ -154,9 +151,12 @@ call <sid>hi('erubyExpression',s:green5)
 call <sid>hi('htmlStrike',s:black5)
 call <sid>hi('htmlTag',s:creme)
 call <sid>hi('javascriptBraces',s:green5)
+call <sid>hi('markdownBold',s:green11,s:black1,'bold')
 call <sid>hi('markdownCode',s:green1)
 call <sid>hi('markdownH2',s:darkorange,'','bold')
-call <sid>hi('markdownH5',s:paletpurple,'','bold')
+call <sid>hi('markdownH3',s:turquoise,'','bold')
+call <sid>hi('markdownH4',s:green6,'','bold')
+call <sid>hi('markdownH5',s:orchid,'','bold')
 call <sid>hi('shRepeat',s:green1)
 call <sid>hi('tsxTagName',s:turquoise)
 call <sid>hi('typescriptBranch',s:red3)
@@ -221,8 +221,12 @@ hi! link Structure Type
 hi! link ToolbarButton TabLineSel
 hi! link Typedef Type 
 hi! link VimWikiDelText htmlStrike
+hi! link VimwikiBold markdownBold
 hi! link VimwikiCode markdownCode
-hi! link VimwikiHeader1 Title
+hi! link VimwikiHeader2 markdownH2
+hi! link VimwikiHeader3 markdownH3
+hi! link VimwikiHeader4 markdownH4
+hi! link VimwikiHeader5 markdownH5
 hi! link VisualNOS Visual
 hi! link WildMenu Pmenu
 hi! link cssAtKeyword Keyword
