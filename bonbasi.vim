@@ -1,283 +1,283 @@
-" Name: BonBasi
-" Description: I use this one at home. Inspired by: Slate, Gruvbox, mostly Gruber Darker
-" Author: CK
-" Maintainer: CK
-" Website: https://ckdev88.github.io
-" License: Vim License (see `:help license`)
-" Last Updated: 2025-10-13 20:44
+vim9script
+
+# Name: BonBasi
+# Description: I use this one at home. Inspired by: Slate, Gruvbox, mostly Gruber Darker
+# Works only with vim9+ and terminals supporting hex color codes
+# Author: CK
+# Maintainer: CK
+# Website: https_//ckdev88.github.io
+# License: Vim License (see `:help license`)
+# Last Updated: 2025-10-13 21:01
 
 hi clear
-let g:colors_name = 'bonbasi'
+g:colors_name = 'bonbasi'
 
-" variable colors
+# Base Colors_ Bright
+var s_gold = [220, "#ffd700"]
+var s_blue = [0, "#0028ff"] # gold complimentary
+var s_springbud = [0, "#a8ff00"] # gold analogous - green yellow
+var s_harlequin = [0, "#29ff00"] # springbud analogous - bright green
+var s_internationalorange = [0, "#ff5700"] # gold analogous
+var s_torchred = [208, "#ff0029"] # internationalorange analogous - TODO: 208 good?
+var s_venetianred = [208, "#bf001e"] # torchred analogous - TODO: 208 good?
+var s_darkpastelgreen = [10, "#00bf1e"] # venetianred GRB - TODO: 10 good?
+var s_deepskyblue = [0, "#00d7ff"] # gold BGR = TODO: mod 0
 
-" Base Colors: Bright
-let s:gold=[220,"#ffd700"]
-let s:blue=[0,"#0028ff"] " gold complimentary
-let s:springbud=[0,"#a8ff00"] " gold analogous - green yellow
-let s:harlequin =[0,"#29ff00"] " springbud analogous - bright green
-let s:internationalorange =[0,"#ff5700"] " gold analogous
-let s:torchred =[208,"#ff0029"] " internationalorange analogous - TODO: 208 good?
-let s:venetianred = [208,"#bf001e"] " torchred analogous - TODO: 208 good?
-let s:darkpastelgreen = [10,"#00bf1e"] " venetianred GRB - TODO: 10 good?
-let s:deepskyblue =[0,"#00d7ff"] " gold BGR = TODO: mod 0
+# Base Colors Brightness_ tints
+var s_birdflower = [220, "#ccac00"] # gold tint, 1 darker - TODO mod 220
+var s_goldenrod = [220, "#A38A00"] # gold shade+2 - TODO zie 220
+var s_carmine = [208, "#990018"] # venetianred shade+1 - TODO: 208 good?
+var s_green = [10, "#007a13"] # darkpastelgreen shade+2 - TODO: 10 good?
 
-" Base Colors Brightness: tints
-let s:birdflower=[220,"#ccac00"] " gold tint, 1 darker - TODO mod 220
-let s:goldenrod=[220, "#A38A00"] " gold shade+2 - TODO zie 220
-let s:carmine = [208,"#990018"] " venetianred shade+1 - TODO: 208 good?
-let s:green = [10,"#007a13"] " darkpastelgreen shade+2 - TODO: 10 good?
+# Base Colors_ Matte
+var s_towergrey = [0, "#95a99f"] # quartz
+var s_zorba = [0, "#a99f95"] # towergrey triadic
+var s_eagle = [0, "#a9a58f"]
+var s_botticelli = [0, "#97a8ae"]
+var s_acapulco = [0, "#83a194"]
+var s_bouquet = [0, "#A18394"] # acapulco GRB
+var s_balihai = [0, "#8e969b"]
+var s_shadylady = [0, "#a9a6a7"]
+var s_lily = [108, "#baaab2"] # shadylady tint 1 - TODO mod 108
+var s_conch = [0, "#93b2b1"] 
 
-" Base Colors: Matte
-let s:towergrey =[0,"#95a99f"] " quartz
-let s:zorba =[0,"#a99f95"] " towergrey triadic
-let s:eagle =[0,"#a9a58f"]
-let s:botticelli =[0,"#97a8ae"]
-let s:acapulco =[0,"#83a194"]
-let s:bouquet =[0,"#A18394"] " acapulco GRB
-let s:balihai =[0,"#8e969b"]
-let s:shadylady =[0,"#a9a6a7"]
-let s:lily = [108,'#baaab2'] " shadylady tint 1 - TODO mod 108
-let s:conch =[0,"#93b2b1"] 
+# Gold: Monochromatic
+var s_goldmono = [0, "#bfa100"] # gold mono 4
+var s_goldmonoshade1 = [0, "#998100"]
+var s_goldmonoshade2 = [0, "#7A6700"]
+var s_goldmonoshade3 = [0, "#625200"]
+var s_mairemono3 = [0, "#6A6960"]
+var s_mairemono3tint5 = [0, "#cecdca"]
+var s_mairemono3shade2 = [0, "#44433E"]
+var s_harp = [0, "#baaab2"] # gold mono 0 > analogous > monochromatic 0 > shade 1
 
-" Gold: Monochromatic
-let s:goldmono=[0,"#bfa100"] " gold mono 4
-let s:goldmonoshade1=[0,"#998100"]
-let s:goldmonoshade2=[0,"#7A6700"]
-let s:goldmonoshade3=[0,"#625200"]
-let s:mairemono3=[0,"#6A6960"]
-let s:mairemono3tint5=[0,"#cecdca"]
-let s:mairemono3shade2=[0,"#44433E"]
-let s:harp=[0,"#baaab2"] " gold mono 0 > analogous > monochromatic 0 > shade 1
+# Deepskyblue: Monochromatic
+var s_deepskybluemono = [0, "#00A1BF"]
+var s_deepskybluemonoshade1 = [0, "#008199"] # gold BGR = TODO: mod 0
 
-" Deepskyblue: Monochromatic
-let s:deepskybluemono=[0,"#00A1BF"]
-let s:deepskybluemonoshade1 =[0,"#008199"] " gold BGR = TODO: mod 0
+# Base Colors Matte: tints
+# var s_maire = [0, "#161200"] # gold shade-11 - TODO: 0 good?
+var s_swamp = [0, "#141616"] # towergrey shade-9 - TODO: 0 good?
+var s_maire = [0, "#1b1700"] # gold shade 10 - TODO: mod 0
+var s_mairelight = [0, "#2A2400"] # gold shade 9 - TODO: mod 0
+var s_mairedark = [0, "#161200"] # gold shade 11 - TODO: mod 0
+var s_woodsmoke = [0, "#313735"] # towergrey shade-5 - TODO: 0 good?
+var s_swansdown = [0, "#ffffff"] # towergrey shade+5 - TODO: 0 good?
+var s_taupegrey = [0, "#878586"] # shadylady shade-1 - TODO: 0 good?
+var s_scorpion = [0, "#6C6A6B"] # shadylady shade-2 - TODO: 0 good?
+var s_norway = [0, "#9FA995"] # towergrey BGR - TODO: 0 good?
+var s_greychateau = [0, "#959FA9"] # towergrey RBG - TODO: 0 good?
 
-" Base Colors Matte: tints
-" let s:maire = [0,"#161200"] " gold shade-11 - TODO: 0 good?
-let s:swamp = [0,"#141616"] " towergrey shade-9 - TODO: 0 good?
-let s:maire = [0,"#1b1700"] " gold shade 10 - TODO: mod 0
-let s:mairelight = [0,"#2A2400"] " gold shade 9 - TODO: mod 0
-let s:mairedark = [0,"#161200"] " gold shade 11 - TODO: mod 0
-let s:woodsmoke = [0,'#313735'] " towergrey shade-5 - TODO: 0 good?
-let s:swansdown = [0,'#ffffff'] " towergrey shade+5 - TODO: 0 good?
-let s:taupegrey = [0,'#878586'] " shadylady shade-1 - TODO: 0 good?
-let s:scorpion = [0,'#6C6A6B'] " shadylady shade-2 - TODO: 0 good?
-let s:norway = [0,'#9FA995'] " towergrey BGR - TODO: 0 good?
-let s:greychateau = [0,'#959FA9'] " towergrey RBG - TODO: 0 good?
+# Misc Colors_
+var s_lime = [10, '#00ff00']
+var s_grubergreen = [10, '#73c936'] 
 
-" Misc Colors:
-let s:lime = [10,'#00ff00']
-let s:grubergreen = [10,'#73c936'] 
+var s_black = [232, '#000000'] # .03
+var s_black1 = [232, '#080808'] # .03
+var s_black2 = [233, '#121212'] # .07
+var s_black3 = [234, '#1c1c1c'] # .11
+var s_black4 = [235, '#262626'] # .15
+var s_creme = [229, '#f3f2cc']
+var s_orangedark = [208, '#ff8700']
+# var s_deepskyblue = [103, '#7979a0']
 
-let s:black = [232,'#000000'] " .03
-let s:black1 = [232,'#080808'] " .03
-let s:black2 = [233,'#121212'] " .07
-let s:black3 = [234,'#1c1c1c'] " .11
-let s:black4 = [235,'#262626'] " .15
-let s:creme = [229,'#f3f2cc']
-let s:orangedark = [208,'#ff8700']
-" let s:deepskyblue = [103,'#7979a0']
+var s_gray1 = [242, '#6c6c6c']
+var s_gray2 = [254, '#e4e4e4']
+var s_gray3 = [238, '#444444']
+var s_gray4 = [240, '#585858']
+var s_gray5 = [246, '#949494']
 
-let s:gray1 = [242,'#6c6c6c']
-let s:gray2 = [254,'#e4e4e4']
-let s:gray3 = [238,'#444444']
-let s:gray4 = [240,'#585858']
-let s:gray5 = [246,'#949494']
+var s_green3 = [40, '#00d700'] # .42 
+var s_green5 = [108, '#95a99f'] # .62 very matte (towergrey)
+var s_green11 = [43, '#44ff44'] # .71 light matte green
+var s_maroon = [1, '#800000'] # .25
+var s_sealbrown = [1, '#520000'] # .25 TODO mod 1 -- maroon tint+2
+var s_navy = [4, '#000080']
+var s_orange = [214, '#ffaf00']
+var s_orangered = [202, '#ff5f00']
+var s_orchid = [213, '#ff87ff']
+var s_paletpurple = [103, '#7979a0']
+var s_paleturquoise =  [66, '#5f8787']
+var s_red1 = [9, '#ff0000']
+var s_red2 = [88, '#ff0029']
+var s_red3 = [124, '#af0000']
+var s_red4 = [9, '#b3001d'] # gold > analogous > analogous
+var s_rosybrown = [138, '#af8787']
+# var s_rosybrown = [138, '#ff0000']  # towergreyc
+var s_turquoise = [45, '#58c4dc']
+var s_lightblue = [45, '#00a8ff'] # TODO: mod 45 Deep Sky Blue
+var s_glacier = [45, '#71a4bf'] # TODO: mod 45
+var s_white1 = [15, '#ffffff'] # 1
+var s_white2 = [253, '#dadada'] # .85
+var s_yellow0 = [11, '#ffff00']
+var s_yellow1 = [148, '#afd700']
+var s_brown = [172, '#cc8c3c']
+var s_quartz01 = [108, '#aabab2'] # TODO: mod 108
+var s_niagara = [147, '#96a6c8']
+var s_niagara1 = [147, '#7884a0'] # TODO: mod 147
+var s_niagara2 = [147, "#565f73"] # TODO: mod 147
+var s_niagara3 = [147, "#303540"] # TODO: mod 147
+var s_niagara8 = [147, "#1e2128"] # TODO: mod 147
+var s_niagara9 = [147, "#0f1014"] # TODO: mod 147
+var s_greengb = [10, "#73c936"] # TODO: mod 10
 
-let s:green3 = [40,'#00d700'] " .42 
-let s:green5 = [108,'#95a99f'] " .62 very matte (towergrey)
-let s:green11 = [43,'#44ff44'] " .71 light matte green
-let s:maroon = [1,'#800000'] " .25
-let s:sealbrown = [1,'#520000'] " .25 TODO mod 1 -- maroon tint+2
-let s:navy = [4,'#000080']
-let s:orange = [214,'#ffaf00']
-let s:orangered = [202,'#ff5f00']
-let s:orchid = [213,'#ff87ff']
-let s:paletpurple = [103,'#7979a0']
-let s:paleturquoise =  [66,'#5f8787']
-let s:red1 = [9,'#ff0000']
-let s:red2 = [88,'#ff0029']
-let s:red3 = [124,'#af0000']
-let s:red4  = [9,'#b3001d'] " gold > analogous > analogous
-let s:rosybrown = [138,'#af8787']
-" let s:rosybrown = [138,'#ff0000']  " towergreyc
-let s:turquoise = [45,'#58c4dc']
-let s:lightblue = [45,'#00a8ff'] " TODO: mod 45 Deep Sky Blue
-let s:glacier = [45,'#71a4bf'] " TODO: mod 45
-let s:white1 = [15,'#ffffff'] " 1
-let s:white2 = [253,'#dadada'] " .85
-let s:yellow0 = [11,'#ffff00']
-let s:yellow1 = [148,'#afd700']
-let s:brown = [172,'#cc8c3c']
-let s:quartz01 = [108,'#aabab2'] " TODO: mod 108
-let s:niagara=[147,'#96a6c8']
-let s:niagara1=[147,'#7884a0'] " TODO: mod 147
-let s:niagara2=[147,"#565f73"] " TODO: mod 147
-let s:niagara3=[147,"#303540"] " TODO: mod 147
-let s:niagara8=[147,"#1e2128"] " TODO: mod 147
-let s:niagara9=[147,"#0f1014"] " TODO: mod 147
-let s:greengb=[10,"#73c936"] " TODO: mod 10
+var s_wisteria = [108, '#9e95c7']
+var s_wisteria8 = [108, '#1f1d27'] # TODO: mod 108
+var s_wisteria9 = [108, '#0f0e13'] # TODO: mod 108
 
-let s:wisteria = [108,'#9e95c7']
-let s:wisteria8 = [108,'#1f1d27'] " TODO: mod 108
-let s:wisteria9 = [108,'#0f0e13'] " TODO: mod 108
+# var s_bluegh01 = [108, '#00ffd7'] # TODO: mod 108
+var s_bluegh01 = [108, '#ff5700'] # TODO: mod 108
+var s_bluegh = [108, '#4493f8'] # TODO: mod 108
 
-" let s:bluegh01 = [108,'#00ffd7'] " TODO: mod 108
-let s:bluegh01 = [108,'#ff5700'] " TODO: mod 108
-let s:bluegh = [108,'#4493f8'] " TODO: mod 108
+var s_NONE = ['NONE', 'NONE']
 
-let s:NONE = ['NONE','NONE']
+# analogous of #ffd700
+var s_greena = ['10', '#a8ff00'] # TODO: mod 10
+var s_orangea = ['10', '#ff5700'] # TODO: mod 10
 
-" analogous of #ffd700
-let s:greena=['10','#a8ff00'] " TODO: mod 10
-let s:orangea=['10','#ff5700'] " TODO: mod 10
+# triadous of #ffd700
+var s_cyant = ['10', '#00ffd7'] # TODO: mod 10
 
-" triadous of #ffd700
-let s:cyant=['10','#00ffd7'] " TODO: mod 10
+var s_fg = s_white1
+var s_bg = s_maire
 
-let s:fg = s:white1
-let s:bg = s:maire
-
-function! <sid>hi(group, fg=[], bg=[], attr="")
-  if !empty(a:fg)
-    exec "hi " . a:group . " ctermfg=" . a:fg[0]
-    exec "hi " . a:group . " guifg=" .  a:fg[1]
+def Hi(group: string, fg: list<any> = [], bg: list<any> = [], attr: string = "")
+  var cmd = "hi " .. group
+  if !empty(fg)
+    cmd ..= " ctermfg=" .. fg[0] .. " guifg=" .. fg[1]
   endif
-  if !empty(a:bg)
-    exec "hi " . a:group . " ctermbg=" . a:bg[0]
-    exec "hi " . a:group . " guibg=" .  a:bg[1]
+  if !empty(bg)
+    cmd ..= " ctermbg=" .. bg[0] .. " guibg=" .. bg[1]
   endif
-  if a:attr != ""
-    exec "hi " . a:group . " gui=" .   a:attr
-    exec "hi " . a:group . " cterm=" . a:attr
+  if attr != ""
+    cmd ..= " gui=" .. attr .. " cterm=" .. attr
   endif
-endfunction
+  execute cmd
+enddef
 
-" call <sid>hi('Constant',s:swansdown)
-" call <sid>hi('cssIdentifier',s:towergrey)
-" call <sid>hi('typescriptBOMWindowMethod',s:lily)
-" call <sid>hi('typescriptConditional',s:quartz01,s:NONE,'bold')
-call <sid>hi('AliasKeyword',s:internationalorange,'','BOLD')
-call <sid>hi('Boolean',s:bouquet)
-call <sid>hi('Changed',s:navy,s:white1,'reverse')
-call <sid>hi('Character',s:white2,'','NONE')
-call <sid>hi('CocErrorVirtualText',s:red1,s:black4,'')
-call <sid>hi('CocFloatingDiagnostic','',s:red2)
-call <sid>hi('CocFloatingDiagnosticBorder',s:yellow0,s:white1)
-call <sid>hi('CocInlayHintParameter',s:white1,s:red1)
-call <sid>hi('CocListLine',s:NONE,s:NONE,'NONE')
-call <sid>hi('CocVirtualText',s:gray4)
-call <sid>hi('Comment',s:gray5,s:woodsmoke)
-call <sid>hi('Conceal',s:fg,s:gray4,'underline')
-call <sid>hi('Constant',s:fg,s:NONE,'NONE')
-call <sid>hi('Cursor',s:gold)
-call <sid>hi('CursorLine',s:NONE,s:NONE,'NONE')
-call <sid>hi('CursorLineFold',s:green3,s:black4,'bold')
-call <sid>hi('CursorLineNr',s:fg,s:NONE,'bold')
-call <sid>hi('CursorLineSign',s:red2,s:NONE,'bold')
-call <sid>hi('Debug',s:red2,s:NONE,'NONE')
-call <sid>hi('DiffAdded',s:white1,s:green,'NONE')
-call <sid>hi('DiffChange',s:NONE,s:gray3,'NONE')
-call <sid>hi('DiffText',s:white1,s:internationalorange,'NONE')
-call <sid>hi('EndOfBuffer',s:bg)
-call <sid>hi('ErrorMsg',s:white1,s:red3,'NONE')
-call <sid>hi('Exception',s:torchred,'','bold')
-call <sid>hi('Float',s:white2,s:NONE,'')
-call <sid>hi('FoldColumn',s:green3 ,s:black3,'NONE')
-call <sid>hi('Folded',s:green3,s:black4,'NONE')
-call <sid>hi('FuncName',s:fg,'','bold')
-call <sid>hi('HighlightedyankRegion',s:bg,s:gold)
-call <sid>hi('Identifier',s:quartz01,'','NONE')
-call <sid>hi('IncSearch',s:gold,s:bg,'reverse')
-call <sid>hi('Keyword',s:gold,s:NONE,'bold')
-call <sid>hi('Macro',s:yellow1,s:NONE,'NONE')
-call <sid>hi('MatchParen',s:fg,s:bluegh,'bold')
-call <sid>hi('MessageWindow','',s:sealbrown,'NONE')
-call <sid>hi('ModeMsg',s:white1,s:NONE,'NONE')
-call <sid>hi('Normal',s:fg,s:bg,'NONE')
-call <sid>hi('Number',s:white2,s:NONE,'NONE')
-call <sid>hi('Pmenu','',s:sealbrown,'NONE')
-call <sid>hi('PmenuSel',s:white1,s:paleturquoise,'NONE')
-call <sid>hi('PreCondit',s:yellow1,s:NONE,'NONE')
-call <sid>hi('Question',s:orangedark,s:NONE,'bold')
-call <sid>hi('QuickfixActive','',s:paleturquoise,'NONE')
-call <sid>hi('QuickfixLine','',s:niagara2,'NONE')
-call <sid>hi('Removed',s:carmine,s:fg,'reverse')
-call <sid>hi('Search',s:fg,s:paleturquoise,'NONE')
-call <sid>hi('SignColumn',s:rosybrown ,s:bg,'NONE')
-call <sid>hi('SpellBad',s:white1,s:red1,'underline')
-call <sid>hi('SpellCap',s:gold,s:NONE,'underline')
-call <sid>hi('SpellLocal',s:yellow1,s:NONE,'underline')
-call <sid>hi('SpellRare',s:orchid,s:NONE,'underline')
-call <sid>hi('Statement',s:gold,'','bold') " TODO: EXPERIMENTAL
-call <sid>hi('StatusLine',s:maroon,s:fg,'reverse')
-call <sid>hi('StatusLineNC',s:sealbrown,s:rosybrown,'reverse')
-call <sid>hi('String',s:grubergreen,s:NONE,'NONE')
-call <sid>hi('Subtle',s:gray1,s:NONE,'NONE')
-call <sid>hi('TabLine',s:gray3,s:black1,'NONE')
-call <sid>hi('TabLineFill',s:NONE,s:black1,'NONE')
-call <sid>hi('TabLineSel',s:gold,s:black3,'bold')
-call <sid>hi('TexSuperscript',s:gold,s:NONE,'reverse,italic')
-call <sid>hi('Title',s:goldmono,s:bg,'bold')
-call <sid>hi('Todo',s:internationalorange,s:woodsmoke,'bold')
-call <sid>hi('Todo2',s:greengb,s:woodsmoke,'bold')
-call <sid>hi('Todo3',s:red1,s:woodsmoke,'bold')
-call <sid>hi('Todo4',s:orangered,s:gray3,'bold')
-call <sid>hi('Type',s:wisteria,s:NONE,'NONE')
-call <sid>hi('Underlined',s:turquoise,s:NONE,'underline')
-call <sid>hi('VertSplit',s:woodsmoke,s:bg,'NONE')
-call <sid>hi('Visual',s:fg,s:paleturquoise,'') 
-call <sid>hi('cssPseudoClassId',s:gold)
-call <sid>hi('defineVariable',s:orangea,s:NONE,'bold')
-call <sid>hi('diffRemoved',s:white1,s:venetianred,'NONE')
-call <sid>hi('htmlBold',s:yellow1,'','bold')
-call <sid>hi('htmlItalic',s:acapulco,s:NONE,'italic')
-call <sid>hi('htmlLink',s:glacier,s:NONE,'underline')
-" strike only possible with mapping <leader>strike
-call <sid>hi('htmlStrike',s:maire,s:maroon)
-call <sid>hi('jsBooleanTrue',s:darkpastelgreen)
-call <sid>hi('jsReturn',s:deepskyblue,s:NONE,'bold')
-call <sid>hi('jsThis',s:towergrey)
-call <sid>hi('jsxComponentName',s:acapulco)
-call <sid>hi('mkdHeading',s:goldmono,s:goldmono)
-call <sid>hi('mkdBlockquote',s:fg,s:niagara2)
-call <sid>hi('phpStaticClasses',s:quartz01)
-call <sid>hi('qfLineNr',s:white2,s:NONE)
-call <sid>hi('shRepeat',s:lime)
-call <sid>hi('tsxTagName',s:turquoise)
-call <sid>hi('typescriptCall',s:towergrey)
-call <sid>hi('typescriptConditionalParen',s:towergrey)
-call <sid>hi('typescriptDocParamType',s:wisteria,s:woodsmoke)
-call <sid>hi('typescriptDomNodeProp',s:mairemono3tint5)
-call <sid>hi('typescriptDocTags',s:gold,s:woodsmoke)
-call <sid>hi('typescriptMember',s:swansdown,s:NONE,'NONE')
-call <sid>hi('typescriptNumberStaticMethod',s:balihai)
-call <sid>hi('typescriptObjectLabel',s:swansdown,s:NONE,'NONE')
-call <sid>hi('typescriptObjectLiteral',s:towergrey,s:NONE,'NONE')
-call <sid>hi('typescriptStatementKeyword',s:greena,s:NONE,'bold')
-call <sid>hi('vimVarScope',s:botticelli)
-call <sid>hi('vimCommentTitle',s:swansdown,s:woodsmoke,'bold')
-call <sid>hi('vue_typescript',s:towergrey)
+# Hi('Constant', s_swansdown)
+# Hi('cssIdentifier', s_towergrey)
+# Hi('typescriptBOMWindowMethod', s_lily)
+# Hi('typescriptConditional', s_quartz01, s_NONE, 'bold')
+Hi('AliasKeyword', s_internationalorange, [], 'BOLD')
+Hi('Boolean', s_bouquet)
+Hi('Changed', s_navy, s_white1, 'reverse')
+Hi('Character', s_white2, [], 'NONE')
+Hi('CocErrorVirtualText', s_red1, s_black4, '')
+Hi('CocFloatingDiagnostic', [], s_red2)
+Hi('CocFloatingDiagnosticBorder', s_yellow0, s_white1)
+Hi('CocInlayHintParameter', s_white1, s_red1)
+Hi('CocListLine', s_NONE, s_NONE, 'NONE')
+Hi('CocVirtualText', s_gray4)
+Hi('Comment', s_gray5, s_woodsmoke)
+Hi('Conceal', s_fg, s_gray4, 'underline')
+Hi('Constant', s_fg, s_NONE, 'NONE')
+Hi('Cursor', s_gold)
+Hi('CursorLine', s_NONE, s_NONE, 'NONE')
+Hi('CursorLineFold', s_green3, s_black4, 'bold')
+Hi('CursorLineNr', s_fg, s_NONE, 'bold')
+Hi('CursorLineSign', s_red2, s_NONE, 'bold')
+Hi('Debug', s_red2, s_NONE, 'NONE')
+Hi('DiffAdded', s_white1, s_green, 'NONE')
+Hi('DiffChange', s_NONE, s_gray3, 'NONE')
+Hi('DiffText', s_white1, s_internationalorange, 'NONE')
+Hi('EndOfBuffer', s_bg)
+Hi('ErrorMsg', s_white1, s_red3, 'NONE')
+Hi('Exception', s_torchred, [], 'bold')
+Hi('Float', s_white2, s_NONE, '')
+Hi('FoldColumn', s_green3, s_black3, 'NONE')
+Hi('Folded', s_green3, s_black4, 'NONE')
+Hi('FuncName', s_fg, [], 'bold')
+Hi('HighlightedyankRegion', s_bg, s_gold)
+Hi('Identifier', s_quartz01, [], 'NONE')
+Hi('IncSearch', s_gold, s_bg, 'reverse')
+Hi('Keyword', s_gold, s_NONE, 'bold')
+Hi('Macro', s_yellow1, s_NONE, 'NONE')
+Hi('MatchParen', s_fg, s_bluegh, 'bold')
+Hi('MessageWindow', [], s_sealbrown, 'NONE')
+Hi('ModeMsg', s_white1, s_NONE, 'NONE')
+Hi('Normal', s_fg, s_bg, 'NONE')
+Hi('Number', s_white2, s_NONE, 'NONE')
+Hi('Pmenu', [], s_sealbrown, 'NONE')
+Hi('PmenuSel', s_white1, s_paleturquoise, 'NONE')
+Hi('PreCondit', s_yellow1, s_NONE, 'NONE')
+Hi('Question', s_orangedark, s_NONE, 'bold')
+Hi('QuickfixActive', [], s_paleturquoise, 'NONE')
+Hi('QuickfixLine', [], s_niagara2, 'NONE')
+Hi('Removed', s_carmine, s_fg, 'reverse')
+Hi('Search', s_fg, s_paleturquoise, 'NONE')
+Hi('SignColumn', s_rosybrown, s_bg, 'NONE')
+Hi('SpellBad', s_white1, s_red1, 'underline')
+Hi('SpellCap', s_gold, s_NONE, 'underline')
+Hi('SpellLocal', s_yellow1, s_NONE, 'underline')
+Hi('SpellRare', s_orchid, s_NONE, 'underline')
+Hi('Statement', s_gold, [], 'bold') # TODO: EXPERIMENTAL
+Hi('StatusLine', s_maroon, s_fg, 'reverse')
+Hi('StatusLineNC', s_sealbrown, s_rosybrown, 'reverse')
+Hi('String', s_grubergreen, s_NONE, 'NONE')
+Hi('Subtle', s_gray1, s_NONE, 'NONE')
+Hi('TabLine', s_gray3, s_black1, 'NONE')
+Hi('TabLineFill', s_NONE, s_black1, 'NONE')
+Hi('TabLineSel', s_gold, s_black3, 'bold')
+Hi('TexSuperscript', s_gold, s_NONE, 'reverse') #  'reverse, italic'
+Hi('Title', s_goldmono, s_bg, 'bold')
+Hi('Todo', s_internationalorange, s_woodsmoke, 'bold')
+Hi('Todo2', s_greengb, s_woodsmoke, 'bold')
+Hi('Todo3', s_red1, s_woodsmoke, 'bold')
+Hi('Todo4', s_orangered, s_gray3, 'bold')
+Hi('Type', s_wisteria, s_NONE, 'NONE')
+Hi('Underlined', s_turquoise, s_NONE, 'underline')
+Hi('VertSplit', s_woodsmoke, s_bg, 'NONE')
+Hi('Visual', s_fg, s_paleturquoise, '') 
+Hi('cssPseudoClassId', s_gold)
+Hi('defineVariable', s_orangea, s_NONE, 'bold')
+Hi('diffRemoved', s_white1, s_venetianred, 'NONE')
+Hi('htmlBold', s_yellow1, [], 'bold')
+Hi('htmlItalic', s_acapulco, s_NONE, 'italic')
+Hi('htmlLink', s_glacier, s_NONE, 'underline')
+# strike only possible with mapping <leader>strike
+Hi('htmlStrike', s_maire, s_maroon)
+Hi('jsBooleanTrue', s_darkpastelgreen)
+Hi('jsReturn', s_deepskyblue, s_NONE, 'bold')
+Hi('jsThis', s_towergrey)
+Hi('jsxComponentName', s_acapulco)
+Hi('mkdHeading', s_goldmono, s_goldmono)
+Hi('mkdBlockquote', s_fg, s_niagara2)
+Hi('phpStaticClasses', s_quartz01)
+Hi('qfLineNr', s_white2, s_NONE)
+Hi('shRepeat', s_lime)
+Hi('tsxTagName', s_turquoise)
+Hi('typescriptCall', s_towergrey)
+Hi('typescriptConditionalParen', s_towergrey)
+Hi('typescriptDocParamType', s_wisteria, s_woodsmoke)
+Hi('typescriptDomNodeProp', s_mairemono3tint5)
+Hi('typescriptDocTags', s_gold, s_woodsmoke)
+Hi('typescriptMember', s_swansdown, s_NONE, 'NONE')
+Hi('typescriptNumberStaticMethod', s_balihai)
+Hi('typescriptObjectLabel', s_swansdown, s_NONE, 'NONE')
+Hi('typescriptObjectLiteral', s_towergrey, s_NONE, 'NONE')
+Hi('typescriptStatementKeyword', s_greena, s_NONE, 'bold')
+Hi('vimVarScope', s_botticelli)
+Hi('vimCommentTitle', s_swansdown, s_woodsmoke, 'bold')
+Hi('vue_typescript', s_towergrey)
 
-" Ruby: keep or toss?
-call <sid>hi('RubyRoute',s:green5)
-call <sid>hi('RubySymbol',s:green5)
-call <sid>hi('erubyExpression',s:green5)
+# Ruby: keep or toss?
+Hi('RubyRoute', s_green5)
+Hi('RubySymbol', s_green5)
+Hi('erubyExpression', s_green5)
 
-" let s:towergrey =[0,"#95a99f"] " quartz
-" let s:zorba =[0,"#a99f95"] " towergrey triadic
-" let s:eagle =[0,"#a9a58f"]
-" let s:botticelli =[0,"#97a8ae"]
-" let s:acapulco =[0,"#83a194"]
-" let s:bouquet =[0,"#A18394"] " acapulco GRB
-" let s:balihai =[0,"#8e969b"]
-" let s:shadylady =[0,"#a9a6a7"]
+# var s_towergrey = [0, "#95a99f"] # quartz
+# var s_zorba = [0, "#a99f95"] # towergrey triadic
+# var s_eagle = [0, "#a9a58f"]
+# var s_botticelli = [0, "#97a8ae"]
+# var s_acapulco = [0, "#83a194"]
+# var s_bouquet = [0, "#A18394"] # acapulco GRB
+# var s_balihai = [0, "#8e969b"]
+# var s_shadylady = [0, "#a9a6a7"]
 
-" Markdown
-call <sid>hi('markdownBold',s:green11,s:black1,'bold')
-call <sid>hi('markdownCode',s:lime)
+# Markdown
+Hi('markdownBold', s_green11, s_black1, 'bold')
+Hi('markdownCode', s_lime)
 hi! link markdownH1 heading1
 hi! link markdownH2 heading2
 hi! link markdownH3 heading3
@@ -285,52 +285,52 @@ hi! link markdownH4 heading3
 hi! link markdownH5 heading3
 hi! link markdownH6 heading3
 
-" custom
-" call <sid>hi('cssProp',s:greena,s:red)
-call <sid>hi('cssProp',s:botticelli,s:bg,'NONE')
-call <sid>hi('cssValue',s:fg,s:bg,'NONE')
-call <sid>hi('BPO',s:shadylady)
-call <sid>hi('BPODark',s:scorpion)
-call <sid>hi('bbNullFalseUndefined',s:torchred)
-call <sid>hi('import',s:zorba,'','')
-call <sid>hi('heading1',s:gold,'','bold')
-call <sid>hi('heading2',s:internationalorange,'','bold')
-call <sid>hi('heading3','','','bold')
+# custom
+# Hi('cssProp', s_greena, s_red)
+Hi('cssProp', s_botticelli, s_bg, 'NONE')
+Hi('cssValue', s_fg, s_bg, 'NONE')
+Hi('BPO', s_shadylady)
+Hi('BPODark', s_scorpion)
+Hi('bbNullFalseUndefined', s_torchred)
+Hi('import', s_zorba, [], '')
+Hi('heading1', s_gold, [], 'bold')
+Hi('heading2', s_internationalorange, [], 'bold')
+Hi('heading3', [], [], 'bold')
 
-" hi! link Repeat Statement
-" hi! link RubyRepeat FuncName
+# hi! link Repeat Statement
+# hi! link RubyRepeat FuncName
 
-" hi! link CocErrorFloat MessageWindow
-" hi! link Constant Normal
-" hi! link PHPMethod Pmenu
-" hi! link htmlString String
-" hi! link htmlTag htmlArg
-" hi! link htmlTagName htmlArg
-" hi! link phpMethodsVar Keyword
-" hi! link phpStaticClasses FuncName
-" hi! link typescriptCall Constant
-" hi! link typescriptFuncCallArg Constant
-" hi! link typescriptImport Keyword
-" hi! link typescriptMember Normal
-" hi! link typescriptObjectLabel Constant
-" hi! link typescriptStatementKeyword Keyword
-" hi! link typescriptVariable Identifier
+# hi! link CocErrorFloat MessageWindow
+# hi! link Constant Normal
+# hi! link PHPMethod Pmenu
+# hi! link htmlString String
+# hi! link htmlTag htmlArg
+# hi! link htmlTagName htmlArg
+# hi! link phpMethodsVar Keyword
+# hi! link phpStaticClasses FuncName
+# hi! link typescriptCall Constant
+# hi! link typescriptFuncCallArg Constant
+# hi! link typescriptImport Keyword
+# hi! link typescriptMember Normal
+# hi! link typescriptObjectLabel Constant
+# hi! link typescriptStatementKeyword Keyword
+# hi! link typescriptVariable Identifier
 hi! link BladeDelimiter Delimiter
 hi! link BladeKeyword Keyword
 hi! link Class Keyword
 hi! link CocErrorFloat CocInlayHintParameter
 hi! link CocFloatActive MessageWindow
 hi! link CocFloating MessageWindow
-" Exception ?
+# Exception ?
 hi! link CocHintFloat CocInlayHintParameter
-" Exception ?
+# Exception ?
 hi! link CocHintSign CocInlayHintParameter
-" Exception ?
+# Exception ?
 hi! link CocHintVirtualText CocInlayHintParameter
-" Exception ?
+# Exception ?
 hi! link CocInlayHint CocInlayHintParameter
-" hi! link CocInlayHintParameter 
-" below: py error coc
+# hi! link CocInlayHintParameter 
+# below: py error coc
 hi! link CocInlayHintType CocInlayHintParameter
 hi! link CocListBgBlue Statement
 hi! link CocListFgBlue MessageWindow
@@ -406,9 +406,9 @@ hi! link cssIdentifier Keyword
 hi! link cssMediaProp cssProp
 hi! link cssPageProp Identifier
 hi! link cssPositioningProp cssProp
-" hi! link cssPseudoClassId Constant
-" hi! link cssPseudoClassId Keyword
-" hi! link cssPseudoClassId cssProp
+# hi! link cssPseudoClassId Constant
+# hi! link cssPseudoClassId Keyword
+# hi! link cssPseudoClassId cssProp
 hi! link cssTagName Type
 hi! link cssTextProp cssProp
 hi! link cssTransformProp cssProp
@@ -426,7 +426,7 @@ hi! link diffLine Subtle
 hi! link diffNewFile Subtle
 hi! link diffOldFile Subtle
 hi! link fugitiveSymbolicRef Keyword
-" hi! link htmlArg htmlTag
+# hi! link htmlArg htmlTag
 hi! link htmlEndTag htmlTag
 hi! link htmlEventDQ String
 hi! link htmlScriptTag htmlTag
@@ -508,7 +508,7 @@ hi! link typescriptBomLocationMethod Method
 hi! link typescriptBoolean Boolean
 hi! link typescriptBraces BPODark
 hi! link typescriptCacheMethod Method
-" hi! link typescriptCase Keyword
+# hi! link typescriptCase Keyword
 hi! link typescriptCastKeyword Subtle
 hi! link typescriptConditional Keyword
 hi! link typescriptConsoleMethod Method
@@ -520,7 +520,7 @@ hi! link typescriptDOMFormProp Normal
 hi! link typescriptDOMStorageMethod Method
 hi! link typescriptDateMethod Method
 hi! link typescriptDateStaticMethod Method
-" hi! link typescriptDefault typescriptCase
+# hi! link typescriptDefault typescriptCase
 hi! link typescriptDestructureComma Subtle
 hi! link typescriptDestructureVariable typescriptVariableDeclaration
 hi! link typescriptDocNamedParamType typescriptDocParamType
@@ -581,7 +581,7 @@ hi! link vimVar Normal
 hi! link vueSurroundingTag htmlTag
 hi! link yamlBlockMappingKey Keyword
 
-" links to custom definition
+# links to custom definition
 hi! link typescriptVariable Keyword
 hi! link jsStorageClass Keyword
 hi! link phpNullValue bbNullFalseUndefined
@@ -598,26 +598,26 @@ hi! link typescriptCase heading2
 hi! link htmlH3 heading3
 hi! link htmlH4 heading4
 hi! link htmlH5 heading5
-" hi! link BPO " BPO = braces, parens, operators
+# hi! link BPO # BPO = braces, parens, operators
 
-" VimWiki
-" hi! link VimWikiDelText htmlStrike
-" hi! link VimwikiBold markdownBold
-" hi! link VimwikiItalic htmlItalic
-" hi! link VimwikiCode markdownCode
-" hi! link VimwikiHeader2 markdownH2
-" hi! link VimwikiHeader3 markdownH3
-" hi! link VimwikiHeader4 markdownH4
-" hi! link VimwikiHeader5 markdownH5
-" hi! link VimwikiHeader6 markdownH6
-" hi! link VimwikiPre Comment
-" call <sid>hi('VimwikiSuperScript',s:gold,s:NONE,'reverse,italic')
+# VimWiki
+# hi! link VimWikiDelText htmlStrike
+# hi! link VimwikiBold markdownBold
+# hi! link VimwikiItalic htmlItalic
+# hi! link VimwikiCode markdownCode
+# hi! link VimwikiHeader2 markdownH2
+# hi! link VimwikiHeader3 markdownH3
+# hi! link VimwikiHeader4 markdownH4
+# hi! link VimwikiHeader5 markdownH5
+# hi! link VimwikiHeader6 markdownH6
+# hi! link VimwikiPre Comment
+# Hi('VimwikiSuperScript', s_gold, s_NONE, 'reverse, italic')
 
-" TODO: define list
-" CursorColumn ... ', ctermfg=60 ctermbg=fg cterm=reverse '.blackred_fg.' guibg=fg gui=reverse'
-" link CursorColumn CursorLine
-" hi typescriptVariableDeclaration ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
-" hi DiffChange ctermfg=fg ctermbg=bg cterm=NONE guibg=bg gui=NONE
-" hi Ignore ctermfg=NONE ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
-" hi Operator ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE" hi ToolbarLine ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-" define Exception
+# TODO: define list
+# CursorColumn ... ', ctermfg=60 ctermbg=fg cterm=reverse '.blackred_fg.' guibg=fg gui=reverse'
+# link CursorColumn CursorLine
+# hi typescriptVariableDeclaration ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
+# hi DiffChange ctermfg=fg ctermbg=bg cterm=NONE guibg=bg gui=NONE
+# hi Ignore ctermfg=NONE ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE
+# hi Operator ctermfg=fg ctermbg=NONE cterm=NONE guifg=fg guibg=NONE gui=NONE# hi ToolbarLine ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
+# define Exception
