@@ -7,7 +7,7 @@ vim9script
 # Maintainer: CK
 # Website: https_//ckdev88.github.io
 # License: Vim License (see `:help license`)
-# Last Updated: 2025-10-13 21:24
+# Last Updated: 2025-10-13 23:31
 
 hi clear
 g:colors_name = 'bonbasi'
@@ -18,16 +18,16 @@ var s_blue = '#0028ff' # gold complimentary
 var s_springbud = '#a8ff00' # gold analogous - green yellow
 var s_harlequin = '#29ff00' # springbud analogous - bright green
 var s_internationalorange: string = '#ff5700' # gold analogous
-var s_torchred = '#ff0029' # internationalorange analogous - TODO: 208 good?
-var s_venetianred = '#bf001e' # torchred analogous - TODO: 208 good?
-var s_darkpastelgreen = '#00bf1e' # venetianred GRB - TODO: 10 good?
-var s_deepskyblue = '#00d7ff' # gold BGR = TODO: mod 0
+var s_torchred = '#ff0029' # internationalorange analogous
+var s_venetianred = '#bf001e' # torchred analogous
+var s_darkpastelgreen = '#00bf1e' # venetianred GRB
+var s_deepskyblue = '#00d7ff' # gold BGR
 
 # Base Colors Brightness_ tints
-var s_birdflower = '#ccac00' # gold tint, 1 darker - TODO mod 220
-var s_goldenrod = '#A38A00' # gold shade+2 - TODO zie 220
-var s_carmine = '#990018' # venetianred shade+1 - TODO: 208 good?
-var s_green = '#007a13' # darkpastelgreen shade+2 - TODO: 10 good?
+var s_birdflower = '#ccac00' # gold tint, 1 darker
+var s_goldenrod = '#A38A00' # gold shade+2
+var s_carmine = '#990018' # venetianred shade+1
+var s_green = '#007a13' # darkpastelgreen shade+2
 
 # Base Colors_ Matte
 var s_towergrey = '#95a99f' # quartz
@@ -38,7 +38,7 @@ var s_acapulco = '#83a194'
 var s_bouquet = '#A18394' # acapulco GRB
 var s_balihai = '#8e969b'
 var s_shadylady = '#a9a6a7'
-var s_lily = '#baaab2' # shadylady tint 1 - TODO mod 108
+var s_lily = '#baaab2' # shadylady tint 1
 var s_conch = '#93b2b1' 
 
 # Gold: Monochromatic
@@ -53,33 +53,32 @@ var s_harp = '#baaab2' # gold mono 0 > analogous > monochromatic 0 > shade 1
 
 # Deepskyblue: Monochromatic
 var s_deepskybluemono = '#00A1BF'
-var s_deepskybluemonoshade1 = '#008199' # gold BGR = TODO: mod 0
+var s_deepskybluemonoshade1 = '#008199' # gold BGR
 
 # Base Colors Matte: tints
-# var s_maire = '#161200' # gold shade-11 - TODO: 0 good?
-var s_swamp = '#141616' # towergrey shade-9 - TODO: 0 good?
-var s_maire = '#1b1700' # gold shade 10 - TODO: mod 0
-var s_mairelight = '#2A2400' # gold shade 9 - TODO: mod 0
-var s_mairedark = '#161200' # gold shade 11 - TODO: mod 0
-var s_woodsmoke = '#313735' # towergrey shade-5 - TODO: 0 good?
-var s_swansdown = '#ffffff' # towergrey shade+5 - TODO: 0 good?
-var s_taupegrey = '#878586' # shadylady shade-1 - TODO: 0 good?
-var s_scorpion = '#6C6A6B' # shadylady shade-2 - TODO: 0 good?
-var s_norway = '#9FA995' # towergrey BGR - TODO: 0 good?
-var s_greychateau = '#959FA9' # towergrey RBG - TODO: 0 good?
+# var s_maire = '#161200' # gold shade-11
+var s_swamp = '#141616' # towergrey shade-9
+var s_maire = '#1b1700' # gold shade 10
+var s_mairelight = '#2A2400' # gold shade 9
+var s_mairedark = '#161200' # gold shade 11
+var s_woodsmoke = '#313735' # towergrey shade-5
+var s_swansdown = '#ffffff' # towergrey shade+5
+var s_taupegrey = '#878586' # shadylady shade-1
+var s_scorpion = '#6C6A6B' # shadylady shade-2
+var s_norway = '#9FA995' # towergrey BGR
+var s_greychateau = '#959FA9' # towergrey RBG
 
 # Misc Colors_
 var s_lime = '#00ff00'
 var s_grubergreen = '#73c936' 
 
-var s_black = '#000000' # .03
-var s_black1 = '#080808' # .03
-var s_black2 = '#121212' # .07
-var s_black3 = '#1c1c1c' # .11
-var s_black4 = '#262626' # .15
+var s_black = '#000000'
+var s_black1 = '#080808'
+var s_black2 = '#121212'
+var s_black3 = '#1c1c1c'
+var s_black4 = '#262626'
 var s_creme = '#f3f2cc'
 var s_orangedark = '#ff8700'
-# var s_deepskyblue = '#7979a0'
 
 var s_gray1 = '#6c6c6c'
 var s_gray2 = '#e4e4e4'
@@ -91,7 +90,7 @@ var s_green3 = '#00d700' # .42
 var s_green5 = '#95a99f' # .62 very matte (towergrey)
 var s_green11 = '#44ff44' # .71 light matte green
 var s_maroon = '#800000' # .25
-var s_sealbrown = '#520000' # .25 TODO mod 1 -- maroon tint+2
+var s_sealbrown = '#520000' # .25 maroon tint+2
 var s_navy = '#000080'
 var s_orange = '#ffaf00'
 var s_orangered = '#ff5f00'
@@ -105,38 +104,37 @@ var s_red4 = '#b3001d' # gold > analogous > analogous
 var s_rosybrown = '#af8787'
 # var s_rosybrown = '#ff0000'  # towergreyc
 var s_turquoise = '#58c4dc'
-var s_lightblue = '#00a8ff' # TODO: mod 45 Deep Sky Blue
-var s_glacier = '#71a4bf' # TODO: mod 45
+var s_lightblue = '#00a8ff' #Deep Sky Blue
+var s_glacier = '#71a4bf' 
 var s_white1 = '#ffffff' # 1
 var s_white2 = '#dadada' # .85
 var s_yellow0 = '#ffff00'
 var s_yellow1 = '#afd700'
 var s_brown = '#cc8c3c'
-var s_quartz01 = '#aabab2' # TODO: mod 108
+var s_quartz01 = '#aabab2'
 var s_niagara = '#96a6c8'
-var s_niagara1 = '#7884a0' # TODO: mod 147
-var s_niagara2 = '#565f73' # TODO: mod 147
-var s_niagara3 = '#303540' # TODO: mod 147
-var s_niagara8 = '#1e2128' # TODO: mod 147
-var s_niagara9 = '#0f1014' # TODO: mod 147
-var s_greengb = '#73c936' # TODO: mod 10
+var s_niagara1 = '#7884a0'
+var s_niagara2 = '#565f73'
+var s_niagara3 = '#303540'
+var s_niagara8 = '#1e2128'
+var s_niagara9 = '#0f1014'
+var s_greengb = '#73c936' 
 
 var s_wisteria = '#9e95c7'
-var s_wisteria8 = '#1f1d27' # TODO: mod 108
-var s_wisteria9 = '#0f0e13' # TODO: mod 108
+var s_wisteria8 = '#1f1d27'
+var s_wisteria9 = '#0f0e13'
 
-# var s_bluegh01 = '#00ffd7' # TODO: mod 108
-var s_bluegh01 = '#ff5700' # TODO: mod 108
-var s_bluegh = '#4493f8' # TODO: mod 108
+var s_bluegh01 = '#ff5700'
+var s_bluegh = '#4493f8'
 
 var s_NONE = 'NONE'
 
 # analogous of #ffd700
-var s_greena =  '#a8ff00' # TODO: mod 10
-var s_orangea =  '#ff5700' # TODO: mod 10
+var s_greena =  '#a8ff00'
+var s_orangea =  '#ff5700' 
 
 # triadous of #ffd700
-var s_cyant = '#00ffd7' # TODO: mod 10
+var s_cyant = '#00ffd7' 
 
 var s_fg = s_white1
 var s_bg = s_maire
@@ -149,8 +147,8 @@ def Hi(group: string, fg: string = '', bg: string = '', attr: string = '')
   if !empty(bg)
     cmd ..= ' guibg=' .. bg
   endif
-  if attr != ''
-    cmd ..= ' gui=' .. attr 
+  if !empty(attr) 
+    cmd ..= ' gui=' .. attr  .. ' cterm=' .. attr
   endif
   execute cmd
 enddef
@@ -175,7 +173,7 @@ Hi('Constant', s_fg, s_NONE, 'NONE')
 Hi('Cursor', s_gold)
 Hi('CursorLine', s_NONE, s_NONE, 'NONE')
 Hi('CursorLineFold', s_green3, s_black4, 'bold')
-Hi('CursorLineNr', s_fg, s_NONE, 'bold')
+Hi('CursorLineNr', s_fg, s_NONE, 'none')
 Hi('CursorLineSign', s_red2, s_NONE, 'bold')
 Hi('Debug', s_red2, s_NONE, 'NONE')
 Hi('DiffAdded', s_white1, s_green, 'NONE')
@@ -275,10 +273,10 @@ Hi('erubyExpression', s_green5)
 # var s_balihai = '#8e969b'
 # var s_shadylady = '#a9a6a7'
 
-# Markdown
-Hi('markdownBold', s_green11, s_black1, 'bold')
+# Markdown: and stuff
+Hi('markdownBold', s_green11, s_black1, 'BOLD')
 Hi('markdownCode', s_lime)
-hi link markdownH1 heading1
+highlight link markdownH1 heading1
 hi link markdownH2 heading2
 hi link markdownH3 heading3
 hi link markdownH4 heading3
@@ -293,9 +291,11 @@ Hi('BPO', s_shadylady)
 Hi('BPODark', s_scorpion)
 Hi('bbNullFalseUndefined', s_torchred)
 Hi('import', s_zorba, '', '')
-Hi('heading1', s_gold, '', 'bold')
+Hi('heading1', s_gold, '', 'BOLD')
+# highlight heading1 guifg=s_gold
 Hi('heading2', s_internationalorange, '', 'bold')
 Hi('heading3', '', '', 'bold')
+
 
 # hi link Repeat Statement
 # hi link RubyRepeat FuncName
@@ -341,7 +341,7 @@ hi link CocSearch MessageWindow
 hi link CocWarningFloat MessageWindow
 hi link ColorColumn CocListLine
 hi link Conditional Keyword
-hi link CssAttrRegion cssPseudoClassId
+hi link CssAttrRegion cssProp
 hi link CurSearch Search
 hi link CursorIM Cursor
 hi link Define Subtle
@@ -385,6 +385,7 @@ hi link VisualNOS Visual
 hi link WildMenu Pmenu
 hi link awkPatterns Statement
 hi link cssAnimationProp cssProp
+hi link cssAtRule Keyword
 hi link cssAtKeyword Keyword
 hi link cssAttributeSelector Constant
 hi link cssBackgroundProp cssProp
@@ -443,6 +444,7 @@ hi link javascriptBraces BPO
 hi link javascriptFunction Keyword
 hi link javascriptIdentifier Identifier
 hi link javascriptOperator BPO
+hi link cssSelectorOp Subtle
 hi link javascriptReserved Keyword
 hi link javascriptStatement Keyword
 hi link jsDot BPO
@@ -592,6 +594,8 @@ hi link jsUndefined bbNullFalseUndefined
 hi link typescriptBranch bbNullFalseUndefined
 hi link Error bbNullFalseUndefined
 hi link Title heading1
+hi link fugitiveHeading heading1
+hi link fugitiveStagedHeading heading1
 hi link htmlH1 heading1
 hi link htmlH2 heading2
 hi link typescriptCase heading2
@@ -599,6 +603,10 @@ hi link htmlH3 heading3
 hi link htmlH4 heading4
 hi link htmlH5 heading5
 # hi link BPO # BPO = braces, parens, operators
+
+# Vim9: new rules and links
+hi link vim9CommentTitle heading1
+hi! link LineNr BPODark
 
 # VimWiki
 # hi link VimWikiDelText htmlStrike
