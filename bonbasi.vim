@@ -7,150 +7,150 @@ vim9script
 # Maintainer: CK
 # Website: https_//ckdev88.github.io
 # License: Vim License (see `:help license`)
-# Last Updated: 2025-10-13 21:01
+# Last Updated: 2025-10-13 21:24
 
 hi clear
 g:colors_name = 'bonbasi'
 
 # Base Colors_ Bright
-var s_gold = [220, "#ffd700"]
-var s_blue = [0, "#0028ff"] # gold complimentary
-var s_springbud = [0, "#a8ff00"] # gold analogous - green yellow
-var s_harlequin = [0, "#29ff00"] # springbud analogous - bright green
-var s_internationalorange = [0, "#ff5700"] # gold analogous
-var s_torchred = [208, "#ff0029"] # internationalorange analogous - TODO: 208 good?
-var s_venetianred = [208, "#bf001e"] # torchred analogous - TODO: 208 good?
-var s_darkpastelgreen = [10, "#00bf1e"] # venetianred GRB - TODO: 10 good?
-var s_deepskyblue = [0, "#00d7ff"] # gold BGR = TODO: mod 0
+var s_gold = '#ffd700'
+var s_blue = '#0028ff' # gold complimentary
+var s_springbud = '#a8ff00' # gold analogous - green yellow
+var s_harlequin = '#29ff00' # springbud analogous - bright green
+var s_internationalorange: string = '#ff5700' # gold analogous
+var s_torchred = '#ff0029' # internationalorange analogous - TODO: 208 good?
+var s_venetianred = '#bf001e' # torchred analogous - TODO: 208 good?
+var s_darkpastelgreen = '#00bf1e' # venetianred GRB - TODO: 10 good?
+var s_deepskyblue = '#00d7ff' # gold BGR = TODO: mod 0
 
 # Base Colors Brightness_ tints
-var s_birdflower = [220, "#ccac00"] # gold tint, 1 darker - TODO mod 220
-var s_goldenrod = [220, "#A38A00"] # gold shade+2 - TODO zie 220
-var s_carmine = [208, "#990018"] # venetianred shade+1 - TODO: 208 good?
-var s_green = [10, "#007a13"] # darkpastelgreen shade+2 - TODO: 10 good?
+var s_birdflower = '#ccac00' # gold tint, 1 darker - TODO mod 220
+var s_goldenrod = '#A38A00' # gold shade+2 - TODO zie 220
+var s_carmine = '#990018' # venetianred shade+1 - TODO: 208 good?
+var s_green = '#007a13' # darkpastelgreen shade+2 - TODO: 10 good?
 
 # Base Colors_ Matte
-var s_towergrey = [0, "#95a99f"] # quartz
-var s_zorba = [0, "#a99f95"] # towergrey triadic
-var s_eagle = [0, "#a9a58f"]
-var s_botticelli = [0, "#97a8ae"]
-var s_acapulco = [0, "#83a194"]
-var s_bouquet = [0, "#A18394"] # acapulco GRB
-var s_balihai = [0, "#8e969b"]
-var s_shadylady = [0, "#a9a6a7"]
-var s_lily = [108, "#baaab2"] # shadylady tint 1 - TODO mod 108
-var s_conch = [0, "#93b2b1"] 
+var s_towergrey = '#95a99f' # quartz
+var s_zorba = '#a99f95' # towergrey triadic
+var s_eagle = '#a9a58f'
+var s_botticelli = '#97a8ae'
+var s_acapulco = '#83a194'
+var s_bouquet = '#A18394' # acapulco GRB
+var s_balihai = '#8e969b'
+var s_shadylady = '#a9a6a7'
+var s_lily = '#baaab2' # shadylady tint 1 - TODO mod 108
+var s_conch = '#93b2b1' 
 
 # Gold: Monochromatic
-var s_goldmono = [0, "#bfa100"] # gold mono 4
-var s_goldmonoshade1 = [0, "#998100"]
-var s_goldmonoshade2 = [0, "#7A6700"]
-var s_goldmonoshade3 = [0, "#625200"]
-var s_mairemono3 = [0, "#6A6960"]
-var s_mairemono3tint5 = [0, "#cecdca"]
-var s_mairemono3shade2 = [0, "#44433E"]
-var s_harp = [0, "#baaab2"] # gold mono 0 > analogous > monochromatic 0 > shade 1
+var s_goldmono = '#bfa100' # gold mono 4
+var s_goldmonoshade1 = '#998100'
+var s_goldmonoshade2 = '#7A6700'
+var s_goldmonoshade3 = '#625200'
+var s_mairemono3 = '#6A6960'
+var s_mairemono3tint5 = '#cecdca'
+var s_mairemono3shade2 = '#44433E'
+var s_harp = '#baaab2' # gold mono 0 > analogous > monochromatic 0 > shade 1
 
 # Deepskyblue: Monochromatic
-var s_deepskybluemono = [0, "#00A1BF"]
-var s_deepskybluemonoshade1 = [0, "#008199"] # gold BGR = TODO: mod 0
+var s_deepskybluemono = '#00A1BF'
+var s_deepskybluemonoshade1 = '#008199' # gold BGR = TODO: mod 0
 
 # Base Colors Matte: tints
-# var s_maire = [0, "#161200"] # gold shade-11 - TODO: 0 good?
-var s_swamp = [0, "#141616"] # towergrey shade-9 - TODO: 0 good?
-var s_maire = [0, "#1b1700"] # gold shade 10 - TODO: mod 0
-var s_mairelight = [0, "#2A2400"] # gold shade 9 - TODO: mod 0
-var s_mairedark = [0, "#161200"] # gold shade 11 - TODO: mod 0
-var s_woodsmoke = [0, "#313735"] # towergrey shade-5 - TODO: 0 good?
-var s_swansdown = [0, "#ffffff"] # towergrey shade+5 - TODO: 0 good?
-var s_taupegrey = [0, "#878586"] # shadylady shade-1 - TODO: 0 good?
-var s_scorpion = [0, "#6C6A6B"] # shadylady shade-2 - TODO: 0 good?
-var s_norway = [0, "#9FA995"] # towergrey BGR - TODO: 0 good?
-var s_greychateau = [0, "#959FA9"] # towergrey RBG - TODO: 0 good?
+# var s_maire = '#161200' # gold shade-11 - TODO: 0 good?
+var s_swamp = '#141616' # towergrey shade-9 - TODO: 0 good?
+var s_maire = '#1b1700' # gold shade 10 - TODO: mod 0
+var s_mairelight = '#2A2400' # gold shade 9 - TODO: mod 0
+var s_mairedark = '#161200' # gold shade 11 - TODO: mod 0
+var s_woodsmoke = '#313735' # towergrey shade-5 - TODO: 0 good?
+var s_swansdown = '#ffffff' # towergrey shade+5 - TODO: 0 good?
+var s_taupegrey = '#878586' # shadylady shade-1 - TODO: 0 good?
+var s_scorpion = '#6C6A6B' # shadylady shade-2 - TODO: 0 good?
+var s_norway = '#9FA995' # towergrey BGR - TODO: 0 good?
+var s_greychateau = '#959FA9' # towergrey RBG - TODO: 0 good?
 
 # Misc Colors_
-var s_lime = [10, '#00ff00']
-var s_grubergreen = [10, '#73c936'] 
+var s_lime = '#00ff00'
+var s_grubergreen = '#73c936' 
 
-var s_black = [232, '#000000'] # .03
-var s_black1 = [232, '#080808'] # .03
-var s_black2 = [233, '#121212'] # .07
-var s_black3 = [234, '#1c1c1c'] # .11
-var s_black4 = [235, '#262626'] # .15
-var s_creme = [229, '#f3f2cc']
-var s_orangedark = [208, '#ff8700']
-# var s_deepskyblue = [103, '#7979a0']
+var s_black = '#000000' # .03
+var s_black1 = '#080808' # .03
+var s_black2 = '#121212' # .07
+var s_black3 = '#1c1c1c' # .11
+var s_black4 = '#262626' # .15
+var s_creme = '#f3f2cc'
+var s_orangedark = '#ff8700'
+# var s_deepskyblue = '#7979a0'
 
-var s_gray1 = [242, '#6c6c6c']
-var s_gray2 = [254, '#e4e4e4']
-var s_gray3 = [238, '#444444']
-var s_gray4 = [240, '#585858']
-var s_gray5 = [246, '#949494']
+var s_gray1 = '#6c6c6c'
+var s_gray2 = '#e4e4e4'
+var s_gray3 = '#444444'
+var s_gray4 = '#585858'
+var s_gray5 = '#949494'
 
-var s_green3 = [40, '#00d700'] # .42 
-var s_green5 = [108, '#95a99f'] # .62 very matte (towergrey)
-var s_green11 = [43, '#44ff44'] # .71 light matte green
-var s_maroon = [1, '#800000'] # .25
-var s_sealbrown = [1, '#520000'] # .25 TODO mod 1 -- maroon tint+2
-var s_navy = [4, '#000080']
-var s_orange = [214, '#ffaf00']
-var s_orangered = [202, '#ff5f00']
-var s_orchid = [213, '#ff87ff']
-var s_paletpurple = [103, '#7979a0']
-var s_paleturquoise =  [66, '#5f8787']
-var s_red1 = [9, '#ff0000']
-var s_red2 = [88, '#ff0029']
-var s_red3 = [124, '#af0000']
-var s_red4 = [9, '#b3001d'] # gold > analogous > analogous
-var s_rosybrown = [138, '#af8787']
-# var s_rosybrown = [138, '#ff0000']  # towergreyc
-var s_turquoise = [45, '#58c4dc']
-var s_lightblue = [45, '#00a8ff'] # TODO: mod 45 Deep Sky Blue
-var s_glacier = [45, '#71a4bf'] # TODO: mod 45
-var s_white1 = [15, '#ffffff'] # 1
-var s_white2 = [253, '#dadada'] # .85
-var s_yellow0 = [11, '#ffff00']
-var s_yellow1 = [148, '#afd700']
-var s_brown = [172, '#cc8c3c']
-var s_quartz01 = [108, '#aabab2'] # TODO: mod 108
-var s_niagara = [147, '#96a6c8']
-var s_niagara1 = [147, '#7884a0'] # TODO: mod 147
-var s_niagara2 = [147, "#565f73"] # TODO: mod 147
-var s_niagara3 = [147, "#303540"] # TODO: mod 147
-var s_niagara8 = [147, "#1e2128"] # TODO: mod 147
-var s_niagara9 = [147, "#0f1014"] # TODO: mod 147
-var s_greengb = [10, "#73c936"] # TODO: mod 10
+var s_green3 = '#00d700' # .42 
+var s_green5 = '#95a99f' # .62 very matte (towergrey)
+var s_green11 = '#44ff44' # .71 light matte green
+var s_maroon = '#800000' # .25
+var s_sealbrown = '#520000' # .25 TODO mod 1 -- maroon tint+2
+var s_navy = '#000080'
+var s_orange = '#ffaf00'
+var s_orangered = '#ff5f00'
+var s_orchid = '#ff87ff'
+var s_paletpurple = '#7979a0'
+var s_paleturquoise =  '#5f8787'
+var s_red1 = '#ff0000'
+var s_red2 = '#ff0029'
+var s_red3 = '#af0000'
+var s_red4 = '#b3001d' # gold > analogous > analogous
+var s_rosybrown = '#af8787'
+# var s_rosybrown = '#ff0000'  # towergreyc
+var s_turquoise = '#58c4dc'
+var s_lightblue = '#00a8ff' # TODO: mod 45 Deep Sky Blue
+var s_glacier = '#71a4bf' # TODO: mod 45
+var s_white1 = '#ffffff' # 1
+var s_white2 = '#dadada' # .85
+var s_yellow0 = '#ffff00'
+var s_yellow1 = '#afd700'
+var s_brown = '#cc8c3c'
+var s_quartz01 = '#aabab2' # TODO: mod 108
+var s_niagara = '#96a6c8'
+var s_niagara1 = '#7884a0' # TODO: mod 147
+var s_niagara2 = '#565f73' # TODO: mod 147
+var s_niagara3 = '#303540' # TODO: mod 147
+var s_niagara8 = '#1e2128' # TODO: mod 147
+var s_niagara9 = '#0f1014' # TODO: mod 147
+var s_greengb = '#73c936' # TODO: mod 10
 
-var s_wisteria = [108, '#9e95c7']
-var s_wisteria8 = [108, '#1f1d27'] # TODO: mod 108
-var s_wisteria9 = [108, '#0f0e13'] # TODO: mod 108
+var s_wisteria = '#9e95c7'
+var s_wisteria8 = '#1f1d27' # TODO: mod 108
+var s_wisteria9 = '#0f0e13' # TODO: mod 108
 
-# var s_bluegh01 = [108, '#00ffd7'] # TODO: mod 108
-var s_bluegh01 = [108, '#ff5700'] # TODO: mod 108
-var s_bluegh = [108, '#4493f8'] # TODO: mod 108
+# var s_bluegh01 = '#00ffd7' # TODO: mod 108
+var s_bluegh01 = '#ff5700' # TODO: mod 108
+var s_bluegh = '#4493f8' # TODO: mod 108
 
-var s_NONE = ['NONE', 'NONE']
+var s_NONE = 'NONE'
 
 # analogous of #ffd700
-var s_greena = ['10', '#a8ff00'] # TODO: mod 10
-var s_orangea = ['10', '#ff5700'] # TODO: mod 10
+var s_greena =  '#a8ff00' # TODO: mod 10
+var s_orangea =  '#ff5700' # TODO: mod 10
 
 # triadous of #ffd700
-var s_cyant = ['10', '#00ffd7'] # TODO: mod 10
+var s_cyant = '#00ffd7' # TODO: mod 10
 
 var s_fg = s_white1
 var s_bg = s_maire
 
-def Hi(group: string, fg: list<any> = [], bg: list<any> = [], attr: string = "")
-  var cmd = "hi " .. group
+def Hi(group: string, fg: string = '', bg: string = '', attr: string = '')
+  var cmd = 'hi ' .. group
   if !empty(fg)
-    cmd ..= " ctermfg=" .. fg[0] .. " guifg=" .. fg[1]
+    cmd ..= ' guifg=' .. fg
   endif
   if !empty(bg)
-    cmd ..= " ctermbg=" .. bg[0] .. " guibg=" .. bg[1]
+    cmd ..= ' guibg=' .. bg
   endif
-  if attr != ""
-    cmd ..= " gui=" .. attr .. " cterm=" .. attr
+  if attr != ''
+    cmd ..= ' gui=' .. attr 
   endif
   execute cmd
 enddef
@@ -159,12 +159,12 @@ enddef
 # Hi('cssIdentifier', s_towergrey)
 # Hi('typescriptBOMWindowMethod', s_lily)
 # Hi('typescriptConditional', s_quartz01, s_NONE, 'bold')
-Hi('AliasKeyword', s_internationalorange, [], 'BOLD')
+Hi('AliasKeyword', s_internationalorange, '', 'BOLD')
 Hi('Boolean', s_bouquet)
 Hi('Changed', s_navy, s_white1, 'reverse')
-Hi('Character', s_white2, [], 'NONE')
+Hi('Character', s_white2, '', 'NONE')
 Hi('CocErrorVirtualText', s_red1, s_black4, '')
-Hi('CocFloatingDiagnostic', [], s_red2)
+Hi('CocFloatingDiagnostic', '', s_red2)
 Hi('CocFloatingDiagnosticBorder', s_yellow0, s_white1)
 Hi('CocInlayHintParameter', s_white1, s_red1)
 Hi('CocListLine', s_NONE, s_NONE, 'NONE')
@@ -183,27 +183,27 @@ Hi('DiffChange', s_NONE, s_gray3, 'NONE')
 Hi('DiffText', s_white1, s_internationalorange, 'NONE')
 Hi('EndOfBuffer', s_bg)
 Hi('ErrorMsg', s_white1, s_red3, 'NONE')
-Hi('Exception', s_torchred, [], 'bold')
+Hi('Exception', s_torchred, '', 'bold')
 Hi('Float', s_white2, s_NONE, '')
 Hi('FoldColumn', s_green3, s_black3, 'NONE')
 Hi('Folded', s_green3, s_black4, 'NONE')
-Hi('FuncName', s_fg, [], 'bold')
+Hi('FuncName', s_fg, '', 'bold')
 Hi('HighlightedyankRegion', s_bg, s_gold)
-Hi('Identifier', s_quartz01, [], 'NONE')
+Hi('Identifier', s_quartz01, '', 'NONE')
 Hi('IncSearch', s_gold, s_bg, 'reverse')
 Hi('Keyword', s_gold, s_NONE, 'bold')
 Hi('Macro', s_yellow1, s_NONE, 'NONE')
 Hi('MatchParen', s_fg, s_bluegh, 'bold')
-Hi('MessageWindow', [], s_sealbrown, 'NONE')
+Hi('MessageWindow', '', s_sealbrown, 'NONE')
 Hi('ModeMsg', s_white1, s_NONE, 'NONE')
 Hi('Normal', s_fg, s_bg, 'NONE')
 Hi('Number', s_white2, s_NONE, 'NONE')
-Hi('Pmenu', [], s_sealbrown, 'NONE')
+Hi('Pmenu', '', s_sealbrown, 'NONE')
 Hi('PmenuSel', s_white1, s_paleturquoise, 'NONE')
 Hi('PreCondit', s_yellow1, s_NONE, 'NONE')
 Hi('Question', s_orangedark, s_NONE, 'bold')
-Hi('QuickfixActive', [], s_paleturquoise, 'NONE')
-Hi('QuickfixLine', [], s_niagara2, 'NONE')
+Hi('QuickfixActive', '', s_paleturquoise, 'NONE')
+Hi('QuickfixLine', '', s_niagara2, 'NONE')
 Hi('Removed', s_carmine, s_fg, 'reverse')
 Hi('Search', s_fg, s_paleturquoise, 'NONE')
 Hi('SignColumn', s_rosybrown, s_bg, 'NONE')
@@ -211,7 +211,7 @@ Hi('SpellBad', s_white1, s_red1, 'underline')
 Hi('SpellCap', s_gold, s_NONE, 'underline')
 Hi('SpellLocal', s_yellow1, s_NONE, 'underline')
 Hi('SpellRare', s_orchid, s_NONE, 'underline')
-Hi('Statement', s_gold, [], 'bold') # TODO: EXPERIMENTAL
+Hi('Statement', s_gold, '', 'bold') # TODO: EXPERIMENTAL
 Hi('StatusLine', s_maroon, s_fg, 'reverse')
 Hi('StatusLineNC', s_sealbrown, s_rosybrown, 'reverse')
 Hi('String', s_grubergreen, s_NONE, 'NONE')
@@ -232,7 +232,7 @@ Hi('Visual', s_fg, s_paleturquoise, '')
 Hi('cssPseudoClassId', s_gold)
 Hi('defineVariable', s_orangea, s_NONE, 'bold')
 Hi('diffRemoved', s_white1, s_venetianred, 'NONE')
-Hi('htmlBold', s_yellow1, [], 'bold')
+Hi('htmlBold', s_yellow1, '', 'bold')
 Hi('htmlItalic', s_acapulco, s_NONE, 'italic')
 Hi('htmlLink', s_glacier, s_NONE, 'underline')
 # strike only possible with mapping <leader>strike
@@ -266,24 +266,24 @@ Hi('RubyRoute', s_green5)
 Hi('RubySymbol', s_green5)
 Hi('erubyExpression', s_green5)
 
-# var s_towergrey = [0, "#95a99f"] # quartz
-# var s_zorba = [0, "#a99f95"] # towergrey triadic
-# var s_eagle = [0, "#a9a58f"]
-# var s_botticelli = [0, "#97a8ae"]
-# var s_acapulco = [0, "#83a194"]
-# var s_bouquet = [0, "#A18394"] # acapulco GRB
-# var s_balihai = [0, "#8e969b"]
-# var s_shadylady = [0, "#a9a6a7"]
+# var s_towergrey = '#95a99f' # quartz
+# var s_zorba = '#a99f95' # towergrey triadic
+# var s_eagle = '#a9a58f'
+# var s_botticelli = '#97a8ae'
+# var s_acapulco = '#83a194'
+# var s_bouquet = '#A18394' # acapulco GRB
+# var s_balihai = '#8e969b'
+# var s_shadylady = '#a9a6a7'
 
 # Markdown
 Hi('markdownBold', s_green11, s_black1, 'bold')
 Hi('markdownCode', s_lime)
-hi! link markdownH1 heading1
-hi! link markdownH2 heading2
-hi! link markdownH3 heading3
-hi! link markdownH4 heading3
-hi! link markdownH5 heading3
-hi! link markdownH6 heading3
+hi link markdownH1 heading1
+hi link markdownH2 heading2
+hi link markdownH3 heading3
+hi link markdownH4 heading3
+hi link markdownH5 heading3
+hi link markdownH6 heading3
 
 # custom
 # Hi('cssProp', s_greena, s_red)
@@ -292,325 +292,325 @@ Hi('cssValue', s_fg, s_bg, 'NONE')
 Hi('BPO', s_shadylady)
 Hi('BPODark', s_scorpion)
 Hi('bbNullFalseUndefined', s_torchred)
-Hi('import', s_zorba, [], '')
-Hi('heading1', s_gold, [], 'bold')
-Hi('heading2', s_internationalorange, [], 'bold')
-Hi('heading3', [], [], 'bold')
+Hi('import', s_zorba, '', '')
+Hi('heading1', s_gold, '', 'bold')
+Hi('heading2', s_internationalorange, '', 'bold')
+Hi('heading3', '', '', 'bold')
 
-# hi! link Repeat Statement
-# hi! link RubyRepeat FuncName
+# hi link Repeat Statement
+# hi link RubyRepeat FuncName
 
-# hi! link CocErrorFloat MessageWindow
-# hi! link Constant Normal
-# hi! link PHPMethod Pmenu
-# hi! link htmlString String
-# hi! link htmlTag htmlArg
-# hi! link htmlTagName htmlArg
-# hi! link phpMethodsVar Keyword
-# hi! link phpStaticClasses FuncName
-# hi! link typescriptCall Constant
-# hi! link typescriptFuncCallArg Constant
-# hi! link typescriptImport Keyword
-# hi! link typescriptMember Normal
-# hi! link typescriptObjectLabel Constant
-# hi! link typescriptStatementKeyword Keyword
-# hi! link typescriptVariable Identifier
-hi! link BladeDelimiter Delimiter
-hi! link BladeKeyword Keyword
-hi! link Class Keyword
-hi! link CocErrorFloat CocInlayHintParameter
-hi! link CocFloatActive MessageWindow
-hi! link CocFloating MessageWindow
+# hi link CocErrorFloat MessageWindow
+# hi link Constant Normal
+# hi link PHPMethod Pmenu
+# hi link htmlString String
+# hi link htmlTag htmlArg
+# hi link htmlTagName htmlArg
+# hi link phpMethodsVar Keyword
+# hi link phpStaticClasses FuncName
+# hi link typescriptCall Constant
+# hi link typescriptFuncCallArg Constant
+# hi link typescriptImport Keyword
+# hi link typescriptMember Normal
+# hi link typescriptObjectLabel Constant
+# hi link typescriptStatementKeyword Keyword
+# hi link typescriptVariable Identifier
+hi link BladeDelimiter Delimiter
+hi link BladeKeyword Keyword
+hi link Class Keyword
+hi link CocErrorFloat CocInlayHintParameter
+hi link CocFloatActive MessageWindow
+hi link CocFloating MessageWindow
 # Exception ?
-hi! link CocHintFloat CocInlayHintParameter
+hi link CocHintFloat CocInlayHintParameter
 # Exception ?
-hi! link CocHintSign CocInlayHintParameter
+hi link CocHintSign CocInlayHintParameter
 # Exception ?
-hi! link CocHintVirtualText CocInlayHintParameter
+hi link CocHintVirtualText CocInlayHintParameter
 # Exception ?
-hi! link CocInlayHint CocInlayHintParameter
-# hi! link CocInlayHintParameter 
+hi link CocInlayHint CocInlayHintParameter
+# hi link CocInlayHintParameter 
 # below: py error coc
-hi! link CocInlayHintType CocInlayHintParameter
-hi! link CocListBgBlue Statement
-hi! link CocListFgBlue MessageWindow
-hi! link CocMarkdownLink MessageWindow
-hi! link CocMenuSel PmenuSel
-hi! link CocNotificationProgress MessageWindow
-hi! link CocSearch MessageWindow
-hi! link CocWarningFloat MessageWindow
-hi! link ColorColumn CocListLine
-hi! link Conditional Keyword
-hi! link CssAttrRegion cssPseudoClassId
-hi! link CurSearch Search
-hi! link CursorIM Cursor
-hi! link Define Subtle
-hi! link Delimiter BPO
-hi! link DiffAdd DiffAdded
-hi! link DiffDelete Removed
-hi! link Directory Normal
-hi! link FgCocHintFloatBgCocFloating Exception
-hi! link FgCocWarningFloatBgCocFloating CocInfoFloat
-hi! link Label Constant
-hi! link LineNr Subtle
-hi! link Method Normal
-hi! link MoreMsg MessageWindow
-hi! link Noise BPO
-hi! link NonText EndOfBuffer
-hi! link PmenuExtra Pmenu
-hi! link PmenuThumb	CocListLine
-hi! link PopupNotification MessageWindow
-hi! link PreProc Normal
-hi! link RubyClass Class
-hi! link RubyControl Keyword
-hi! link RubyDefine Keyword
-hi! link RubyInstanceVariable FuncName
-hi! link RubyMethodName FuncName
-hi! link RubyPredefinedConstant typescriptObjectLiteral
-hi! link RubyViewHelper Keyword
-hi! link Special Type
-hi! link SpecialKey Pmenu
-hi! link StatusLineTerm StatusLine
-hi! link StatusLineTermNC StatusLineNC
-hi! link StorageClass Question
-hi! link Structure Type
-hi! link ToolbarButton TabLineSel
-hi! link Typedef Type 
-hi! link typescriptDocParam typescriptDocParamType 
-hi! link typescriptDomNodeMethod Method
-hi! link TypescriptAssign BPO
-hi! link vimCommentTitleLeader vimComment
+hi link CocInlayHintType CocInlayHintParameter
+hi link CocListBgBlue Statement
+hi link CocListFgBlue MessageWindow
+hi link CocMarkdownLink MessageWindow
+hi link CocMenuSel PmenuSel
+hi link CocNotificationProgress MessageWindow
+hi link CocSearch MessageWindow
+hi link CocWarningFloat MessageWindow
+hi link ColorColumn CocListLine
+hi link Conditional Keyword
+hi link CssAttrRegion cssPseudoClassId
+hi link CurSearch Search
+hi link CursorIM Cursor
+hi link Define Subtle
+hi link Delimiter BPO
+hi link DiffAdd DiffAdded
+hi link DiffDelete Removed
+hi link Directory Normal
+hi link FgCocHintFloatBgCocFloating Exception
+hi link FgCocWarningFloatBgCocFloating CocInfoFloat
+hi link Label Constant
+hi link LineNr Subtle
+hi link Method Normal
+hi link MoreMsg MessageWindow
+hi link Noise BPO
+hi link NonText EndOfBuffer
+hi link PmenuExtra Pmenu
+hi link PmenuThumb	CocListLine
+hi link PopupNotification MessageWindow
+hi link PreProc Normal
+hi link RubyClass Class
+hi link RubyControl Keyword
+hi link RubyDefine Keyword
+hi link RubyInstanceVariable FuncName
+hi link RubyMethodName FuncName
+hi link RubyPredefinedConstant typescriptObjectLiteral
+hi link RubyViewHelper Keyword
+hi link Special Type
+hi link SpecialKey Pmenu
+hi link StatusLineTerm StatusLine
+hi link StatusLineTermNC StatusLineNC
+hi link StorageClass Question
+hi link Structure Type
+hi link ToolbarButton TabLineSel
+hi link Typedef Type 
+hi link typescriptDocParam typescriptDocParamType 
+hi link typescriptDomNodeMethod Method
+hi link TypescriptAssign BPO
+hi link vimCommentTitleLeader vimComment
 
-hi! link VisualNOS Visual
-hi! link WildMenu Pmenu
-hi! link awkPatterns Statement
-hi! link cssAnimationProp cssProp
-hi! link cssAtKeyword Keyword
-hi! link cssAttributeSelector Constant
-hi! link cssBackgroundProp cssProp
-hi! link cssBorderProp cscssProp
-hi! link cssBorderProp cssProp
-hi! link cssBoxAttr cssValue
-hi! link cssBoxProp cssProp
-hi! link cssBraces Subtle
-hi! link cssClassName Keyword
-hi! link cssClassNameDot Keyword
-hi! link cssListAttr Keyword
-hi! link cssColor cssValue
-hi! link cssColorProp cssProp
-hi! link cssCustomProp Constant
-hi! link cssFlexibleBoxProp cssProp
-hi! link cssFontProp cssProp
-hi! link cssFunctionName FuncName
-hi! link cssIdentifier Keyword
-hi! link cssMediaProp cssProp
-hi! link cssPageProp Identifier
-hi! link cssPositioningProp cssProp
-# hi! link cssPseudoClassId Constant
-# hi! link cssPseudoClassId Keyword
-# hi! link cssPseudoClassId cssProp
-hi! link cssTagName Type
-hi! link cssTextProp cssProp
-hi! link cssTransformProp cssProp
-hi! link cssTransitionAttr cssValue
-hi! link cssTransitionProp cssProp
-hi! link cssUIAttr cssValue
-hi! link cssUIProp cssProp
-hi! link cssUnitDecorators Normal
-hi! link cssValueLength cssValue
-hi! link cssValueNumber cssValue
-hi! link cssValueTime cssValue
-hi! link diffFile Keyword
-hi! link diffIndexLine Subtle
-hi! link diffLine Subtle
-hi! link diffNewFile Subtle
-hi! link diffOldFile Subtle
-hi! link fugitiveSymbolicRef Keyword
-# hi! link htmlArg htmlTag
-hi! link htmlEndTag htmlTag
-hi! link htmlEventDQ String
-hi! link htmlScriptTag htmlTag
-hi! link htmlSpecialChar Normal
-hi! link htmlSpecialTagName htmlTag
-hi! link typescriptIdentifier Identifier
-hi! link htmlTag Identifier
-hi! link htmlTagN tsxTagName
-hi! link htmlTagName htmlTag 
-hi! link javaScript Normal
-hi! link javaScriptGlobal Normal
-hi! link javaScriptMember Normal
-hi! link javascriptBraces BPO 
-hi! link javascriptFunction Keyword
-hi! link javascriptIdentifier Identifier
-hi! link javascriptOperator BPO
-hi! link javascriptReserved Keyword
-hi! link javascriptStatement Keyword
-hi! link jsDot BPO
-hi! link jsFuncArgOperator BPO
-hi! link jsFuncBraces BPO
-hi! link jsFuncParens typescriptParens
-hi! link jsFunction Keyword
-hi! link jsIfElseBraces BPO
-hi! link jsOperator BPO
-hi! link jsParens typescriptParens
-hi! link jsonQuote Subtle
-hi! link jsoncBraces BPO
-hi! link jsxBraces Constant
-hi! link jsxCloseString jsxTagName
-hi! link jsxDot BPO
-hi! link jsxEqual BPO
-hi! link jsxExpressionBlock Constant
-hi! link jsxOpenPunct jsxTagName
-hi! link jsxTag Constant
-hi! link lCursor Cursor
-hi! link netrwClassify Method
-hi! link netrwComma Subtle
-hi! link netrwDir Keyword
-hi! link netrwExe Normal
-hi! link netrwList Normal
-hi! link phpClasses Keyword
-hi! link phpComparison Subtle
-hi! link phpDefine Keyword
-hi! link phpFunction Normal
-hi! link phpFunctions Normal
-hi! link phpIdentifier Identifier
-hi! link phpInclude Keyword
-hi! link phpMemberSelector BPO
-hi! link phpMethod Method
-hi! link phpMethodsVar FuncName
-hi! link phpOperator BPO
-hi! link phpParent typescriptParens
-hi! link phpRegion FuncName
-hi! link phpStatement Keyword 
-hi! link phpVarSelector Identifier
-hi! link pythonImport import
-hi! link shOperator BPO
-hi! link shOption FuncName
-hi! link shQuote String
-hi! link shVariable FuncName
-hi! link tsxAttrib Normal
-hi! link tsxCloseString htmlTag
-hi! link tsxEscJs Keyword
-hi! link tsxEscapeJs Normal
-hi! link tsxRegion Constant
-hi! link tsxTag htmlTag
-hi! link typescriptAliasDeclaration Normal
-hi! link typescriptAliasKeyword AliasKeyword
-hi! link typescriptArrayMethod Method
-hi! link typescriptArrowFunc Normal
-hi! link typescriptAsyncFuncKeyword Subtle
-hi! link typescriptBOM Method
-hi! link typescriptBOMWindowMethod Method
-hi! link typescriptBOMWindowProp Normal
-hi! link typescriptBinaryOp Keyword
-hi! link typescriptBlock Normal
-hi! link typescriptBomLocationMethod Method
-hi! link typescriptBoolean Boolean
-hi! link typescriptBraces BPODark
-hi! link typescriptCacheMethod Method
-# hi! link typescriptCase Keyword
-hi! link typescriptCastKeyword Subtle
-hi! link typescriptConditional Keyword
-hi! link typescriptConsoleMethod Method
-hi! link typescriptConsoleMethod typescriptGlobal
-hi! link typescriptDOMDocProp Normal
-hi! link typescriptDOMEventMethod Method
-hi! link typescriptDOMEventProp htmlTag
-hi! link typescriptDOMFormProp Normal
-hi! link typescriptDOMStorageMethod Method
-hi! link typescriptDateMethod Method
-hi! link typescriptDateStaticMethod Method
-# hi! link typescriptDefault typescriptCase
-hi! link typescriptDestructureComma Subtle
-hi! link typescriptDestructureVariable typescriptVariableDeclaration
-hi! link typescriptDocNamedParamType typescriptDocParamType
-hi! link typescriptDocNotation typescriptDocTags
-hi! link typescriptDomDocMethod Method
-hi! link typescriptDomEventTargetMethod Method
-hi! link typescriptDotNotation BPO
-hi! link typescriptEndColons Subtle
-hi! link typescriptExceptions Exception
-hi! link typescriptExport typescriptStatementKeyword
-hi! link typescriptFuncCallArg typescriptCall
-hi! link typescriptFuncComma Subtle
-hi! link typescriptFuncKeyword Keyword
-hi! link typescriptFuncName FuncName
-hi! link typescriptFuncTypeArrow typescriptArrowFunc
-hi! link typescriptGlobal Type
-hi! link typescriptGlobalConsoleDot typescriptDotNotation 
-hi! link typescriptGlobalMethod Method
-hi! link typescriptHeadersMethod Method
-hi! link typescriptImport import
-hi! link typescriptInterfaceKeyword AliasKeyword
-hi! link typescriptInterfaceName typescriptAliasDeclaration
-hi! link typescriptJSONStaticMethod Method
-hi! link typescriptObjectColon BPO
-hi! link typescriptOperator BPO
-hi! link typescriptParens BPO
-hi! link typescriptPaymentShippingOptionProp Normal
-hi! link typescriptPromiseMethod Keyword
-hi! link typescriptProperty Subtle
-hi! link typescriptRepeat Keyword
-hi! link typescriptStringMethod Method
-hi! link typescriptTemplateSB BPODark
-hi! link typescriptTernaryOp Keyword
-hi! link typescriptTry Keyword
-hi! link typescriptTypeAnnotation Subtle
-hi! link typescriptTypeReference Type
-hi! link typescriptURLStaticMethod Method
-hi! link typescriptURLUtilsProp Normal
-hi! link typescriptUnion TypescriptAssign
-hi! link typescriptUnaryOp bbNullFalseUndefined
-hi! link typescriptVariableDeclaration Constant
-hi! link vimCommand Keyword
-hi! link vimFgBgAttrib Normal
-hi! link vimFuncBang Subtle
-hi! link vimFuncBody Subtle
-hi! link vimFuncKey Keyword
-hi! link vimFuncName FuncName
-hi! link vimFuncParam Constant
-hi! link vimGroup Normal
-hi! link vimHiAttrib Normal
-hi! link vimHiBang Subtle
-hi! link vimHiGroup Normal
-hi! link vimOper BPO
-hi! link vimOption Normal
-hi! link vimTodo Todo
-hi! link vimUserFunc Method
-hi! link vimVar Normal
-hi! link vueSurroundingTag htmlTag
-hi! link yamlBlockMappingKey Keyword
+hi link VisualNOS Visual
+hi link WildMenu Pmenu
+hi link awkPatterns Statement
+hi link cssAnimationProp cssProp
+hi link cssAtKeyword Keyword
+hi link cssAttributeSelector Constant
+hi link cssBackgroundProp cssProp
+hi link cssBorderProp cscssProp
+hi link cssBorderProp cssProp
+hi link cssBoxAttr cssValue
+hi link cssBoxProp cssProp
+hi link cssBraces Subtle
+hi link cssClassName Keyword
+hi link cssClassNameDot Keyword
+hi link cssListAttr Keyword
+hi link cssColor cssValue
+hi link cssColorProp cssProp
+hi link cssCustomProp Constant
+hi link cssFlexibleBoxProp cssProp
+hi link cssFontProp cssProp
+hi link cssFunctionName FuncName
+hi link cssIdentifier Keyword
+hi link cssMediaProp cssProp
+hi link cssPageProp Identifier
+hi link cssPositioningProp cssProp
+# hi link cssPseudoClassId Constant
+# hi link cssPseudoClassId Keyword
+# hi link cssPseudoClassId cssProp
+hi link cssTagName Type
+hi link cssTextProp cssProp
+hi link cssTransformProp cssProp
+hi link cssTransitionAttr cssValue
+hi link cssTransitionProp cssProp
+hi link cssUIAttr cssValue
+hi link cssUIProp cssProp
+hi link cssUnitDecorators Normal
+hi link cssValueLength cssValue
+hi link cssValueNumber cssValue
+hi link cssValueTime cssValue
+hi link diffFile Keyword
+hi link diffIndexLine Subtle
+hi link diffLine Subtle
+hi link diffNewFile Subtle
+hi link diffOldFile Subtle
+hi link fugitiveSymbolicRef Keyword
+# hi link htmlArg htmlTag
+hi link htmlEndTag htmlTag
+hi link htmlEventDQ String
+hi link htmlScriptTag htmlTag
+hi link htmlSpecialChar Normal
+hi link htmlSpecialTagName htmlTag
+hi link typescriptIdentifier Identifier
+hi link htmlTag Identifier
+hi link htmlTagN tsxTagName
+hi link htmlTagName htmlTag 
+hi link javaScript Normal
+hi link javaScriptGlobal Normal
+hi link javaScriptMember Normal
+hi link javascriptBraces BPO 
+hi link javascriptFunction Keyword
+hi link javascriptIdentifier Identifier
+hi link javascriptOperator BPO
+hi link javascriptReserved Keyword
+hi link javascriptStatement Keyword
+hi link jsDot BPO
+hi link jsFuncArgOperator BPO
+hi link jsFuncBraces BPO
+hi link jsFuncParens typescriptParens
+hi link jsFunction Keyword
+hi link jsIfElseBraces BPO
+hi link jsOperator BPO
+hi link jsParens typescriptParens
+hi link jsonQuote Subtle
+hi link jsoncBraces BPO
+hi link jsxBraces Constant
+hi link jsxCloseString jsxTagName
+hi link jsxDot BPO
+hi link jsxEqual BPO
+hi link jsxExpressionBlock Constant
+hi link jsxOpenPunct jsxTagName
+hi link jsxTag Constant
+hi link lCursor Cursor
+hi link netrwClassify Method
+hi link netrwComma Subtle
+hi link netrwDir Keyword
+hi link netrwExe Normal
+hi link netrwList Normal
+hi link phpClasses Keyword
+hi link phpComparison Subtle
+hi link phpDefine Keyword
+hi link phpFunction Normal
+hi link phpFunctions Normal
+hi link phpIdentifier Identifier
+hi link phpInclude Keyword
+hi link phpMemberSelector BPO
+hi link phpMethod Method
+hi link phpMethodsVar FuncName
+hi link phpOperator BPO
+hi link phpParent typescriptParens
+hi link phpRegion FuncName
+hi link phpStatement Keyword 
+hi link phpVarSelector Identifier
+hi link pythonImport import
+hi link shOperator BPO
+hi link shOption FuncName
+hi link shQuote String
+hi link shVariable FuncName
+hi link tsxAttrib Normal
+hi link tsxCloseString htmlTag
+hi link tsxEscJs Keyword
+hi link tsxEscapeJs Normal
+hi link tsxRegion Constant
+hi link tsxTag htmlTag
+hi link typescriptAliasDeclaration Normal
+hi link typescriptAliasKeyword AliasKeyword
+hi link typescriptArrayMethod Method
+hi link typescriptArrowFunc Normal
+hi link typescriptAsyncFuncKeyword Subtle
+hi link typescriptBOM Method
+hi link typescriptBOMWindowMethod Method
+hi link typescriptBOMWindowProp Normal
+hi link typescriptBinaryOp Keyword
+hi link typescriptBlock Normal
+hi link typescriptBomLocationMethod Method
+hi link typescriptBoolean Boolean
+hi link typescriptBraces BPODark
+hi link typescriptCacheMethod Method
+# hi link typescriptCase Keyword
+hi link typescriptCastKeyword Subtle
+hi link typescriptConditional Keyword
+hi link typescriptConsoleMethod Method
+hi link typescriptConsoleMethod typescriptGlobal
+hi link typescriptDOMDocProp Normal
+hi link typescriptDOMEventMethod Method
+hi link typescriptDOMEventProp htmlTag
+hi link typescriptDOMFormProp Normal
+hi link typescriptDOMStorageMethod Method
+hi link typescriptDateMethod Method
+hi link typescriptDateStaticMethod Method
+# hi link typescriptDefault typescriptCase
+hi link typescriptDestructureComma Subtle
+hi link typescriptDestructureVariable typescriptVariableDeclaration
+hi link typescriptDocNamedParamType typescriptDocParamType
+hi link typescriptDocNotation typescriptDocTags
+hi link typescriptDomDocMethod Method
+hi link typescriptDomEventTargetMethod Method
+hi link typescriptDotNotation BPO
+hi link typescriptEndColons Subtle
+hi link typescriptExceptions Exception
+hi link typescriptExport typescriptStatementKeyword
+hi link typescriptFuncCallArg typescriptCall
+hi link typescriptFuncComma Subtle
+hi link typescriptFuncKeyword Keyword
+hi link typescriptFuncName FuncName
+hi link typescriptFuncTypeArrow typescriptArrowFunc
+hi link typescriptGlobal Type
+hi link typescriptGlobalConsoleDot typescriptDotNotation 
+hi link typescriptGlobalMethod Method
+hi link typescriptHeadersMethod Method
+hi link typescriptImport import
+hi link typescriptInterfaceKeyword AliasKeyword
+hi link typescriptInterfaceName typescriptAliasDeclaration
+hi link typescriptJSONStaticMethod Method
+hi link typescriptObjectColon BPO
+hi link typescriptOperator BPO
+hi link typescriptParens BPO
+hi link typescriptPaymentShippingOptionProp Normal
+hi link typescriptPromiseMethod Keyword
+hi link typescriptProperty Subtle
+hi link typescriptRepeat Keyword
+hi link typescriptStringMethod Method
+hi link typescriptTemplateSB BPODark
+hi link typescriptTernaryOp Keyword
+hi link typescriptTry Keyword
+hi link typescriptTypeAnnotation Subtle
+hi link typescriptTypeReference Type
+hi link typescriptURLStaticMethod Method
+hi link typescriptURLUtilsProp Normal
+hi link typescriptUnion TypescriptAssign
+hi link typescriptUnaryOp bbNullFalseUndefined
+hi link typescriptVariableDeclaration Constant
+hi link vimCommand Keyword
+hi link vimFgBgAttrib Normal
+hi link vimFuncBang Subtle
+hi link vimFuncBody Subtle
+hi link vimFuncKey Keyword
+hi link vimFuncName FuncName
+hi link vimFuncParam Constant
+hi link vimGroup Normal
+hi link vimHiAttrib Normal
+hi link vimHiBang Subtle
+hi link vimHiGroup Normal
+hi link vimOper BPO
+hi link vimOption Normal
+hi link vimTodo Todo
+hi link vimUserFunc Method
+hi link vimVar Normal
+hi link vueSurroundingTag htmlTag
+hi link yamlBlockMappingKey Keyword
 
 # links to custom definition
-hi! link typescriptVariable Keyword
-hi! link jsStorageClass Keyword
-hi! link phpNullValue bbNullFalseUndefined
-hi! link jsNull bbNullFalseUndefined
-hi! link typescriptNull bbNullFalseUndefined
-hi! link jsBooleanFalse bbNullFalseUndefined
-hi! link jsUndefined bbNullFalseUndefined
-hi! link typescriptBranch bbNullFalseUndefined
-hi! link Error bbNullFalseUndefined
-hi! link Title heading1
-hi! link htmlH1 heading1
-hi! link htmlH2 heading2
-hi! link typescriptCase heading2
-hi! link htmlH3 heading3
-hi! link htmlH4 heading4
-hi! link htmlH5 heading5
-# hi! link BPO # BPO = braces, parens, operators
+hi link typescriptVariable Keyword
+hi link jsStorageClass Keyword
+hi link phpNullValue bbNullFalseUndefined
+hi link jsNull bbNullFalseUndefined
+hi link typescriptNull bbNullFalseUndefined
+hi link jsBooleanFalse bbNullFalseUndefined
+hi link jsUndefined bbNullFalseUndefined
+hi link typescriptBranch bbNullFalseUndefined
+hi link Error bbNullFalseUndefined
+hi link Title heading1
+hi link htmlH1 heading1
+hi link htmlH2 heading2
+hi link typescriptCase heading2
+hi link htmlH3 heading3
+hi link htmlH4 heading4
+hi link htmlH5 heading5
+# hi link BPO # BPO = braces, parens, operators
 
 # VimWiki
-# hi! link VimWikiDelText htmlStrike
-# hi! link VimwikiBold markdownBold
-# hi! link VimwikiItalic htmlItalic
-# hi! link VimwikiCode markdownCode
-# hi! link VimwikiHeader2 markdownH2
-# hi! link VimwikiHeader3 markdownH3
-# hi! link VimwikiHeader4 markdownH4
-# hi! link VimwikiHeader5 markdownH5
-# hi! link VimwikiHeader6 markdownH6
-# hi! link VimwikiPre Comment
+# hi link VimWikiDelText htmlStrike
+# hi link VimwikiBold markdownBold
+# hi link VimwikiItalic htmlItalic
+# hi link VimwikiCode markdownCode
+# hi link VimwikiHeader2 markdownH2
+# hi link VimwikiHeader3 markdownH3
+# hi link VimwikiHeader4 markdownH4
+# hi link VimwikiHeader5 markdownH5
+# hi link VimwikiHeader6 markdownH6
+# hi link VimwikiPre Comment
 # Hi('VimwikiSuperScript', s_gold, s_NONE, 'reverse, italic')
 
 # TODO: define list
