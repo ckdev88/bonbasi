@@ -1,16 +1,5 @@
 # BonBasi Vim theme
-BonBasi is just another vim theme, this one is tailored to me, do with it what you want.
-This theme is inspired by [Gruber darker](https://github.com/rexim/gruber-darker-theme), retrobox and slate.
+Just another vim theme, written in vim9script, tailored to me.
+This theme is inspired by Gruber darker, Retrobox and Slate.
 
-- works best with [Polyglot](https://github.com/sheerun/vim-polyglot)
-    
-## best supported languages:
-- typescript
-- javascript
-- jsx/tsx
-- php
-- laravel
-- markdown
-- vimwiki
-- html
-- css
+Needs vim9script and a terminal that can see more than 256 colors to run.
