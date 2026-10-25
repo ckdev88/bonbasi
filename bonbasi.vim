@@ -7,7 +7,7 @@ vim9script
 # Maintainer: CK
 # Website: https_//ckdev88.github.io
 # License: Vim License (see `:help license`)
-# Last Updated: 2026-10-25 13:36
+# Last Updated: 2026-10-25 17:00
 
 hi clear
 if exists('syntax_on')
@@ -17,67 +17,66 @@ endif
 g:colors_name = 'bonbasi'
 
 # Base Colors_ Bright
-var s_gold: string = '#ffd700'
-var s_seagull: string = '#99C1D6'
-var s_orangeb: string = '#ff5700'
-var s_venetianred: string = '#bf001e'
-var s_darkpastelgreen: string = '#00bf1e'
-var s_deepskyblue: string = '#00d7ff'
-var s_carmine: string = '#990018'
-var s_green: string = '#007a13'
-var s_zorba: string = '#a99f95'
-var s_botticelli: string = '#97a8ae'
+var s_NONE: string = 'NONE'
 var s_acapulco: string = '#83a194'
 var s_balihai: string = '#8e969b'
-var s_shadylady: string = '#a9a6a7'
-var s_goldmono: string = '#bfa100'
-var s_mairemono3tint5: string = '#cecdca'
-var s_mairedark: string = '#161200'
-var s_woodsmoke: string = '#313735'
-var s_scorpion: string = '#6C6A6B'
-var s_scorpion_darker: string = '#3a3738'
-var s_lime: string = '#00ff00'
+var s_bb_bg: string = '#1F1A1B'
+var s_bb_fg: string = '#E5D9DB'
 var s_black1: string = '#080808'
 var s_black2: string = '#1c1c1c'
 var s_black3: string = '#262626'
-var s_orangedark: string = '#ff8700'
+var s_botticelli: string = '#97a8ae'
+var s_broq: string = '#ffc744'
+var s_brown: string = '#c37a20'
+var s_carmine: string = '#990018'
+var s_darkpastelgreen: string = '#00bf1e'
+var s_deepskyblue: string = '#00d7ff'
+var s_glacier: string = '#71a4bf'
+var s_gold: string = '#ffd700'
+var s_goldmono: string = '#bfa100'
 var s_gray1: string = '#e4e4ef'
 var s_gray2: string = '#444444'
 var s_gray3: string = '#585858'
-var s_bb_bg: string = '#1F1A1B'
-var s_bb_fg: string = '#E5D9DB'
 var s_green3: string = '#00d700'
 var s_green5: string = '#95a99f'
+var s_green: string = '#007a13'
+var s_greena: string = '#a8ff00'
+var s_greengb: string = '#73c936'
+var s_lime: string = '#00ff00'
+var s_mairedark: string = '#161200'
+var s_mairemono3tint5: string = '#cecdca'
 var s_maroon: string = '#800000'
-var s_sealbrown: string = '#520000'
 var s_navy: string = '#012345'
 var s_navylight: string = '#234566'
+var s_niagara2: string = '#565f73'
+var s_orangea: string = '#ff5700'
+var s_orangeb: string = '#ff5700'
+var s_orangedark: string = '#ff8700'
 var s_orangered: string = '#ff5f00'
 var s_orchid: string = '#ff87ff'
-var s_purple: string = '#c033c0'
 var s_paleturquoise: string = '#5f8787'
+var s_purple: string = '#c033c0'
+var s_quartz01: string = '#aabab2'
 var s_red1: string = '#ff0000'
 var s_red2: string = '#ff0029'
 var s_red3: string = '#af0000'
 var s_rosybrown: string = '#af8787'
+var s_scorpion: string = '#6C6A6B'
+var s_scorpion_darker: string = '#3a3738'
+var s_seagull: string = '#99C1D6'
+var s_sealbrown: string = '#520000'
+var s_shadylady: string = '#a9a6a7'
 var s_turquoise: string = '#58c4dc'
-var s_glacier: string = '#71a4bf'
+var s_venetianred: string = '#bf001e'
 var s_white0: string = '#ffffff'
 var s_white1: string = '#f5f5f5'
 var s_white2: string = '#f4f4ff'
+var s_wisteria01: string = '#7E779F'
+var s_wisteria: string = '#9e95c7'
+var s_woodsmoke: string = '#313735'
 var s_yellow0: string = '#ffff00'
 var s_yellow1: string = '#afd700'
-var s_brown: string = '#c37a20'
-var s_quartz01: string = '#aabab2'
-var s_niagara2: string = '#565f73'
-var s_greengb: string = '#73c936'
-var s_wisteria: string = '#9e95c7'
-var s_wisteria01: string = '#7E779F'
-var s_bluegh: string = '#4493f8'
-var s_NONE: string = 'NONE'
-var s_greena: string = '#a8ff00'
-var s_orangea: string = '#ff5700'
-var s_briq: string = '#ffc744'
+var s_zorba: string = '#a99f95'
 
 var s_fg: string = s_white2
 var s_bg: string = s_bb_bg
@@ -159,7 +158,7 @@ Hi('StatusLineTermNC', s_sealbrown, s_rosybrown, 'reverse')
 Hi('String', s_greengb, s_NONE, 'NONE')
 Hi('TabLine', s_gray2, s_black1, 'NONE')
 Hi('TabLineFill', s_NONE, s_black1, 'NONE')
-Hi('TabLineSel', s_bg, s_briq, 'NONE')
+Hi('TabLineSel', s_bg, s_broq, 'NONE')
 Hi('TexSuperscript', s_gold, s_NONE, 'reverse')
 Hi('Title', s_gold, '', 'BOLD')
 Hi('Todo', s_brown, s_NONE, 'bold')
@@ -177,7 +176,7 @@ Hi('cssPseudoClassId', s_gold)
 Hi('defineVariable', s_orangea, s_NONE, 'bold')
 Hi('diffRemoved', s_white1, s_venetianred, 'NONE')
 Hi('erubyExpression', s_green5)
-Hi('heading1', s_bluegh, '', 'BOLD')
+Hi('heading1', s_orangedark, '', 'bold')
 Hi('heading2', s_orangeb, '', 'bold')
 Hi('heading3', s_white1, '', 'bold')
 Hi('htmlArg', s_zorba)
@@ -213,7 +212,6 @@ Hi('typescriptRegExpMethod', s_lime)
 Hi('typescriptStatementKeyword', s_greena, s_NONE, 'bold')
 Hi('typescriptTry', s_orangea, s_NONE, 'bold')
 Hi('typescriptVariable', s_goldmono, s_NONE, 'bold')
-Hi('vimCommentTitle', s_white0, s_woodsmoke, 'bold')
 Hi('vimVarScope', s_botticelli)
 
 hi link AliasKeyword Type
@@ -240,7 +238,6 @@ hi link Noise BPO
 hi link NonText EndOfBuffer
 hi link PmenuExtra Pmenu
 hi link PopupNotification MessageWindow
-hi link PreProc Normal
 hi link RubyClass Class
 hi link RubyControl Keyword
 hi link RubyDefine Keyword
@@ -387,6 +384,9 @@ hi link phpRegion FuncName
 hi link phpStatement Keyword
 hi link phpVarSelector Identifier
 hi link pythonImport import
+hi link qfFileName BPO
+hi link qfSeparator1 BPODarker
+hi link qfSeparator2 BPODark
 hi link shOperator BPO
 hi link shOption FuncName
 hi link shQuote String
@@ -473,6 +473,7 @@ hi link typescriptVariableDeclaration Constant
 hi link vim9CommentTitle heading1
 hi link vimCommand Keyword
 hi link vimCommentString Comment
+hi link vimCommentTitle vim9CommentTitle
 hi link vimCommentTitleLeader Comment
 hi link vimFgBgAttrib Normal
 hi link vimFuncBang BPO
@@ -494,16 +495,20 @@ hi link vimVar Normal
 hi link vueSurroundingTag htmlTag
 hi link vue_typescript htmlArg
 hi link yamlBlockMappingKey Keyword
+
 hi! link CursorLineNr BPO
 hi! link LineNr BPODarker
+hi! link PreProc Normal
 
 # CoC: specific to Conquer of Completion plugin
+
 Hi('CocErrorVirtualText', s_red1, s_black3, '')
 Hi('CocFloatingDiagnostic', '', s_red2)
 Hi('CocFloatingDiagnosticBorder', s_yellow0, s_white1)
 Hi('CocInlayHintParameter', s_orangedark, s_woodsmoke)
 Hi('CocListLine', s_NONE, s_navylight)
 Hi('CocVirtualText', s_gray3)
+
 hi link CocErrorFloat CocInlayHintParameter
 hi link CocFloatActive MessageWindow
 hi link CocFloating MessageWindow
