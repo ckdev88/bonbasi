@@ -7,11 +7,9 @@ vim9script
 # Maintainer: CK
 # Website: https_//ckdev88.github.io
 # License: Vim License (see `:help license`)
-# Last Updated: 2026-08-30 09:14
+# Last Updated: 2026-10-25 13:36
 
 hi clear
-
-# reset syntax for TodoLine, not sure if interferes with anything else
 if exists('syntax_on')
   syntax reset
 endif
@@ -19,136 +17,112 @@ endif
 g:colors_name = 'bonbasi'
 
 # Base Colors_ Bright
-var s_gold            = '#ffd700'
-var s_seagull         = '#99C1D6'
-var s_orangeb         = '#ff5700'
-var s_torchred        = '#ff0029'
-var s_venetianred     = '#bf001e'
-var s_darkpastelgreen = '#00bf1e'
-var s_deepskyblue     = '#00d7ff'
-var s_carmine         = '#990018'
-var s_green           = '#007a13'
-var s_towergrey       = '#95a99f'
-var s_zorba           = '#a99f95'
-var s_botticelli      = '#97a8ae'
-var s_acapulco        = '#83a194'
-var s_balihai         = '#8e969b'
-var s_shadylady       = '#a9a6a7'
-var s_goldmono        = '#bfa100'
-var s_mairemono3tint5 = '#cecdca'
-var s_maire       = '#1b1700'
-var s_mairedark   = '#161200'
-var s_mairedarker = '#0e0b00'
-var s_woodsmoke   = '#313735'
-var s_swansdown   = '#ffffff'
-var s_scorpion    = '#6C6A6B'
-var s_scorpion_darker  = '#3a3738'
-var s_lime        = '#00ff00'
-var s_grubergreen = '#73c936' 
-var s_black       = '#000000'
-var s_black1      = '#080808'
-var s_black2      = '#1c1c1c'
-var s_black3      = '#262626'
-var s_orangedark  = '#ff8700'
-var s_gray1 = '#e4e4ef' 
-var s_gray2 = '#444444'
-var s_gray3 = '#585858'
-var s_gray4 = '#949494'
-var s_bb_bg   = '#1F1A1B'
-var s_bb_fg   = '#E5D9DB'
-var s_green3  = '#00d700'
-var s_green5  = '#95a99f'
-var s_maroon          = '#800000'
-var s_sealbrown       = '#520000'
-var s_navy            = '#012345'
-var s_navylight       = '#234566'
-var s_orangered       = '#ff5f00'
-var s_orchid          = '#ff87ff'
-var s_purple          = '#c033c0'
-var s_paleturquoise   = '#5f8787'
-var s_red1    = '#ff0000'
-var s_red2    = '#ff0029'
-var s_red3    = '#af0000'
-var s_rosybrown       = '#af8787'
-var s_turquoise       = '#58c4dc'
-var s_glacier         = '#71a4bf' 
-var s_white0  = '#ffffff'
-var s_white1  = '#f5f5f5' 
-var s_white2  = '#f4f4ff' 
-var s_yellow0 = '#ffff00'
-var s_yellow1 = '#afd700'
-var s_brown           = '#c37a20'              
-var s_quartz01 = '#aabab2'
-var s_niagara2   = '#565f73'          
-var s_greengb         = '#73c936' 
-var s_wisteria        = '#9e95c7'          
-var s_wisteria01 = '#7E779F'
-var s_bluegh          = '#4493f8'
-var s_NONE            = 'NONE'
-var s_greena          = '#a8ff00'
-var s_orangea         = '#ff5700' 
-var s_briq            = '#ffc744'
-var s_faffie          = '#babccf' # not used anywhere (yet)
+var s_gold: string = '#ffd700'
+var s_seagull: string = '#99C1D6'
+var s_orangeb: string = '#ff5700'
+var s_venetianred: string = '#bf001e'
+var s_darkpastelgreen: string = '#00bf1e'
+var s_deepskyblue: string = '#00d7ff'
+var s_carmine: string = '#990018'
+var s_green: string = '#007a13'
+var s_zorba: string = '#a99f95'
+var s_botticelli: string = '#97a8ae'
+var s_acapulco: string = '#83a194'
+var s_balihai: string = '#8e969b'
+var s_shadylady: string = '#a9a6a7'
+var s_goldmono: string = '#bfa100'
+var s_mairemono3tint5: string = '#cecdca'
+var s_mairedark: string = '#161200'
+var s_woodsmoke: string = '#313735'
+var s_scorpion: string = '#6C6A6B'
+var s_scorpion_darker: string = '#3a3738'
+var s_lime: string = '#00ff00'
+var s_black1: string = '#080808'
+var s_black2: string = '#1c1c1c'
+var s_black3: string = '#262626'
+var s_orangedark: string = '#ff8700'
+var s_gray1: string = '#e4e4ef'
+var s_gray2: string = '#444444'
+var s_gray3: string = '#585858'
+var s_bb_bg: string = '#1F1A1B'
+var s_bb_fg: string = '#E5D9DB'
+var s_green3: string = '#00d700'
+var s_green5: string = '#95a99f'
+var s_maroon: string = '#800000'
+var s_sealbrown: string = '#520000'
+var s_navy: string = '#012345'
+var s_navylight: string = '#234566'
+var s_orangered: string = '#ff5f00'
+var s_orchid: string = '#ff87ff'
+var s_purple: string = '#c033c0'
+var s_paleturquoise: string = '#5f8787'
+var s_red1: string = '#ff0000'
+var s_red2: string = '#ff0029'
+var s_red3: string = '#af0000'
+var s_rosybrown: string = '#af8787'
+var s_turquoise: string = '#58c4dc'
+var s_glacier: string = '#71a4bf'
+var s_white0: string = '#ffffff'
+var s_white1: string = '#f5f5f5'
+var s_white2: string = '#f4f4ff'
+var s_yellow0: string = '#ffff00'
+var s_yellow1: string = '#afd700'
+var s_brown: string = '#c37a20'
+var s_quartz01: string = '#aabab2'
+var s_niagara2: string = '#565f73'
+var s_greengb: string = '#73c936'
+var s_wisteria: string = '#9e95c7'
+var s_wisteria01: string = '#7E779F'
+var s_bluegh: string = '#4493f8'
+var s_NONE: string = 'NONE'
+var s_greena: string = '#a8ff00'
+var s_orangea: string = '#ff5700'
+var s_briq: string = '#ffc744'
 
-var s_fg              = s_white2
-var s_bg              = s_bb_bg
+var s_fg: string = s_white2
+var s_bg: string = s_bb_bg
 
 def Hi(group: string, fg: string = '', bg: string = '', attr: string = '')
-  var cmd = 'hi ' .. group
+  var cmd: string = 'hi ' .. group
   if !empty(fg)
     cmd ..= ' guifg=' .. fg
   endif
   if !empty(bg)
     cmd ..= ' guibg=' .. bg
   endif
-  if !empty(attr) 
+  if !empty(attr)
     cmd ..= ' gui=' .. attr  .. ' cterm=' .. attr
   endif
   execute cmd
 enddef
 
-# Custom: with syntax
-# TodoLine needs the following in .vimrc:
-#     augroup TodoHighlight
-#         autocmd!
-#         autocmd BufRead,BufNewFile * match TodoLine /.*TODO.*/
-#     augroup END
-
 Hi('BPO', s_shadylady) # subtle color for i.e. braces, parens, operators, commas
-Hi('BPODark', s_scorpion) # like BPO, but darker
-Hi('BPODarker', s_scorpion_darker) # like BPODark, but darker
+Hi('BPODark', s_scorpion)
+Hi('BPODarker', s_scorpion_darker)
 Hi('Boolean', s_purple)
 Hi('Changed', s_navy, s_white1, 'reverse')
 Hi('Character', s_white2, '', 'NONE')
-Hi('CocErrorVirtualText', s_red1, s_black3, '')
-Hi('CocFloatingDiagnostic', '', s_red2)
-Hi('CocFloatingDiagnosticBorder', s_yellow0, s_white1)
-Hi('CocInlayHintParameter', s_orangedark, s_woodsmoke)
-Hi('CocVirtualText', s_gray3)
 Hi('ColorColumn', s_NONE, s_mairedark, 'NONE')
 Hi('Comment', s_brown, s_NONE, 'italic')
 Hi('Conceal', s_fg, s_gray3, 'underline')
 Hi('Constant', s_fg, s_NONE, 'NONE')
-Hi('Cursor', s_gold)
+Hi('Cursor', s_bg, s_gold, 'NONE')
 Hi('CursorLineFold', s_green3, s_gold, 'bold')
 Hi('CursorLineSign', s_red2, s_NONE, 'bold')
 Hi('Debug', s_red2, s_NONE, 'NONE')
-Hi('DiffAdd', s_fg, s_orangea, 'NONE')
 Hi('DiffAdded', s_white1, s_green, 'NONE')
 Hi('DiffChange', s_NONE, s_gray2, 'NONE')
-Hi('DiffDelete', s_orangea, 'NONE', 'reverse')
 Hi('DiffSubName', s_orangea)
 Hi('DiffText', s_white1, s_orangeb, 'NONE')
-Hi('Directory', s_mairemono3tint5)
 Hi('EndOfBuffer', s_bg)
 Hi('ErrorMsg', s_white1, s_red3, 'NONE')
-Hi('Exception', s_torchred, '', 'bold')
+Hi('Exception', s_red2, '', 'bold')
 Hi('Float', s_white2, s_NONE, '')
 Hi('FoldColumn', s_green3, s_black2, 'NONE')
 Hi('Folded', s_green3, s_black3, 'NONE')
 Hi('FuncName', s_fg, '', 'bold')
 Hi('HighlightedyankRegion', s_bg, s_gold)
-Hi('Identifier', s_towergrey, '', 'NONE')
+Hi('Identifier', s_green5, '', 'NONE')
 Hi('IncSearch', s_gold, s_bg, 'reverse')
 Hi('Include', s_acapulco)
 Hi('Keyword', s_gold, s_NONE, 'bold')
@@ -156,13 +130,11 @@ Hi('Macro', s_yellow1, s_NONE, 'NONE')
 Hi('MatchParen', s_orangea, s_NONE, 'bold')
 Hi('MessageWindow', '', s_sealbrown, 'NONE')
 Hi('ModeMsg', s_white1, s_NONE, 'NONE')
-Hi('NonText', s_mairemono3tint5)
 Hi('Normal', s_fg, s_bg, 'NONE')
 Hi('Number', s_white2, s_NONE, 'NONE')
 Hi('Pmenu', '', s_sealbrown, 'NONE')
 Hi('PmenuSel', s_white1, s_paleturquoise, 'NONE')
 Hi('PreCondit', s_yellow1, s_NONE, 'NONE')
-Hi('PreProc', s_orangeb, '', 'NONE')
 Hi('Question', s_orangedark, s_NONE, 'bold')
 Hi('QuickfixActive', '', s_paleturquoise, 'NONE')
 Hi('QuickfixLine', '', s_niagara2, 'NONE')
@@ -179,12 +151,12 @@ Hi('SpellBad', s_white1, s_red1, 'underline')
 Hi('SpellCap', s_gold, s_NONE, 'underline')
 Hi('SpellLocal', s_yellow1, s_NONE, 'underline')
 Hi('SpellRare', s_orchid, s_NONE, 'underline')
-Hi('Statement', s_gold, '', 'bold') # TODO: EXPERIMENTAL
+Hi('Statement', s_gold, '', 'bold')
 Hi('StatusLine', s_maroon, s_fg, 'reverse')
 Hi('StatusLineNC', s_sealbrown, s_rosybrown, 'reverse')
 Hi('StatusLineTerm', s_maroon, s_fg, 'reverse')
 Hi('StatusLineTermNC', s_sealbrown, s_rosybrown, 'reverse')
-Hi('String', s_grubergreen, s_NONE, 'NONE')
+Hi('String', s_greengb, s_NONE, 'NONE')
 Hi('TabLine', s_gray2, s_black1, 'NONE')
 Hi('TabLineFill', s_NONE, s_black1, 'NONE')
 Hi('TabLineSel', s_bg, s_briq, 'NONE')
@@ -194,12 +166,12 @@ Hi('Todo', s_brown, s_NONE, 'bold')
 Hi('Todo2', s_greengb, s_woodsmoke, 'bold')
 Hi('Todo3', s_red1, s_woodsmoke, 'bold')
 Hi('Todo4', s_orangered, s_gray2, 'bold')
-Hi('TodoLine', s_torchred, s_NONE, 'bold')
+Hi('TodoLine', s_red2, s_NONE, 'bold')
 Hi('Type', s_wisteria01)
 Hi('Underlined', s_turquoise, s_NONE, 'underline')
 Hi('VertSplit', s_maroon, s_bg, 'NONE')
-Hi('Visual', s_fg, s_paleturquoise, '') 
-Hi('bbNullFalseUndefined', s_torchred) # red group for falsey
+Hi('Visual', s_fg, s_paleturquoise, '')
+Hi('bbNullFalseUndefined', s_red2)
 Hi('csRepeat', s_greena, s_NONE, 'bold')
 Hi('cssPseudoClassId', s_gold)
 Hi('defineVariable', s_orangea, s_NONE, 'bold')
@@ -213,7 +185,7 @@ Hi('htmlBold', s_yellow1, '', 'bold')
 Hi('htmlItalic', s_brown, s_NONE, 'italic')
 Hi('htmlLink', s_glacier, s_NONE, 'underline')
 Hi('htmlString', s_gray1, '', '')
-Hi('htmlTag', s_towergrey, '', '')
+Hi('htmlTag', s_green5, '', '')
 Hi('import', s_zorba, '', '')
 Hi('jsBooleanTrue', s_darkpastelgreen)
 Hi('jsReturn', s_deepskyblue, s_NONE, 'bold')
@@ -234,35 +206,21 @@ Hi('typescriptBlock', s_bb_fg, '', 'none')
 Hi('typescriptDocParamType', s_wisteria, s_woodsmoke)
 Hi('typescriptDocTags', s_gold, s_woodsmoke)
 Hi('typescriptDomNodeProp', s_mairemono3tint5)
-Hi('typescriptMember', s_swansdown, s_NONE, 'NONE')
+Hi('typescriptMember', s_white0, s_NONE, 'NONE')
 Hi('typescriptNumberStaticMethod', s_balihai)
 Hi('typescriptObjectLabel', s_white0, s_NONE, 'NONE')
 Hi('typescriptRegExpMethod', s_lime)
 Hi('typescriptStatementKeyword', s_greena, s_NONE, 'bold')
 Hi('typescriptTry', s_orangea, s_NONE, 'bold')
 Hi('typescriptVariable', s_goldmono, s_NONE, 'bold')
-Hi('vimCommentTitle', s_swansdown, s_woodsmoke, 'bold')
+Hi('vimCommentTitle', s_white0, s_woodsmoke, 'bold')
 Hi('vimVarScope', s_botticelli)
+
 hi link AliasKeyword Type
 hi link BladeDelimiter Delimiter
 hi link BladeKeyword Keyword
 hi link Case KeywordAlt
 hi link Class Keyword
-hi link CocErrorFloat CocInlayHintParameter
-hi link CocFloatActive MessageWindow
-hi link CocFloating MessageWindow
-hi link CocHintFloat CocInlayHintParameter
-hi link CocHintSign CocInlayHintParameter
-hi link CocHintVirtualText CocInlayHintParameter
-hi link CocInlayHint CocInlayHintParameter
-hi link CocInlayHintType CocInlayHintParameter
-hi link CocListBgBlue Statement
-hi link CocListFgBlue MessageWindow
-hi link CocMarkdownLink MessageWindow
-hi link CocMenuSel PmenuSel
-hi link CocNotificationProgress MessageWindow
-hi link CocSearch MessageWindow
-hi link CocWarningFloat MessageWindow
 hi link Conditional Keyword
 hi link CssAttrRegion cssProp
 hi link CurSearch Search
@@ -271,12 +229,9 @@ hi link Define BPO
 hi link Delimiter BPO
 hi link DiffAdd DiffAdded
 hi link DiffDelete Removed
-hi link Directory Normal
 hi link Directory netrwDir
 hi link Error bbNullFalseUndefined
-hi link FgCocHintFloatBgCocFloating Exception
-hi link FgCocWarningFloatBgCocFloating CocInfoFloat
-hi link FugitiveblameTime BPO 
+hi link FugitiveblameTime BPO
 hi link KeywordAlt heading2
 hi link Label Constant
 hi link Method Normal
@@ -285,6 +240,7 @@ hi link Noise BPO
 hi link NonText EndOfBuffer
 hi link PmenuExtra Pmenu
 hi link PopupNotification MessageWindow
+hi link PreProc Normal
 hi link RubyClass Class
 hi link RubyControl Keyword
 hi link RubyDefine Keyword
@@ -295,7 +251,7 @@ hi link RubyViewHelper Keyword
 hi link StorageClass Question
 hi link Structure Type
 hi link ToolbarButton TabLineSel
-hi link Typedef Type 
+hi link Typedef Type
 hi link TypescriptAssign BPO
 hi link VisualNOS Visual
 hi link WildMenu Pmenu
@@ -314,7 +270,6 @@ hi link cssAtRule KeywordAlt
 hi link cssAtRuleLogical KeywordAlt
 hi link cssAttributeSelector Constant
 hi link cssBackgroundProp cssProp
-hi link cssBorderProp cscssProp
 hi link cssBorderProp cssProp
 hi link cssBoxAttr cssValue
 hi link cssBoxProp cssProp
@@ -362,8 +317,6 @@ hi link htmlEventDQ String
 hi link htmlH1 heading1
 hi link htmlH2 heading2
 hi link htmlH3 heading3
-hi link htmlH4 heading4
-hi link htmlH5 heading5
 hi link htmlScriptTag htmlTag
 hi link htmlSpecialChar Normal
 hi link htmlSpecialTagName htmlTag
@@ -372,7 +325,7 @@ hi link htmlTagName htmlTag
 hi link javaScript Normal
 hi link javaScriptGlobal Normal
 hi link javaScriptMember Normal
-hi link javascriptBraces BPO 
+hi link javascriptBraces BPO
 hi link javascriptFunction Keyword
 hi link javascriptIdentifier Identifier
 hi link javascriptOperator BPO
@@ -405,7 +358,6 @@ hi link jsxExpressionBlock Constant
 hi link jsxOpenPunct jsxTagName
 hi link jsxTag Constant
 hi link lCursor Cursor
-hi link markdownError NONE
 hi link markdownH1 heading1
 hi link markdownH2 heading2
 hi link markdownH3 heading3
@@ -432,7 +384,7 @@ hi link phpNullValue bbNullFalseUndefined
 hi link phpOperator BPO
 hi link phpParent typescriptParens
 hi link phpRegion FuncName
-hi link phpStatement Keyword 
+hi link phpStatement Keyword
 hi link phpVarSelector Identifier
 hi link pythonImport import
 hi link shOperator BPO
@@ -447,7 +399,7 @@ hi link typescriptAliasDeclaration Normal
 hi link typescriptAliasKeyword AliasKeyword
 hi link typescriptArrowFunc Normal
 hi link typescriptBOM Method
-hi link typescriptBOMWindowMethod Method 
+hi link typescriptBOMWindowMethod Method
 hi link typescriptBOMWindowProp Identifier
 hi link typescriptBinaryOp Keyword
 hi link typescriptBomLocationMethod Method
@@ -455,6 +407,7 @@ hi link typescriptBoolean Boolean
 hi link typescriptBraces BPODark
 hi link typescriptBranch typescriptStatementKeyword
 hi link typescriptCacheMethod Method
+hi link typescriptCall Normal
 hi link typescriptCase Case
 hi link typescriptCastKeyword BPO
 hi link typescriptConditional Keyword
@@ -470,7 +423,7 @@ hi link typescriptDestructureComma BPO
 hi link typescriptDestructureVariable typescriptVariableDeclaration
 hi link typescriptDocNamedParamType typescriptDocParamType
 hi link typescriptDocNotation typescriptDocTags
-hi link typescriptDocParam typescriptDocParamType 
+hi link typescriptDocParam typescriptDocParamType
 hi link typescriptDomDocMethod Method
 hi link typescriptDomEventTargetMethod Method
 hi link typescriptDomNodeMethod Method
@@ -479,11 +432,13 @@ hi link typescriptEndColons BPO
 hi link typescriptEnum Identifier
 hi link typescriptEnumKeyword AliasKeyword
 hi link typescriptExceptions Exception
+hi link typescriptFuncCallArg import
 hi link typescriptFuncComma BPO
 hi link typescriptFuncKeyword Keyword
 hi link typescriptFuncName FuncName
 hi link typescriptFuncTypeArrow typescriptArrowFunc
-hi link typescriptGlobalConsoleDot typescriptDotNotation 
+hi link typescriptGlobal Identifier
+hi link typescriptGlobalConsoleDot typescriptDotNotation
 hi link typescriptGlobalMethod Method
 hi link typescriptHeadersMethod Method
 hi link typescriptIdentifier Identifier
@@ -517,8 +472,8 @@ hi link typescriptUnion TypescriptAssign
 hi link typescriptVariableDeclaration Constant
 hi link vim9CommentTitle heading1
 hi link vimCommand Keyword
-hi link vimCommentString vimComment
-hi link vimCommentTitleLeader vimComment
+hi link vimCommentString Comment
+hi link vimCommentTitleLeader Comment
 hi link vimFgBgAttrib Normal
 hi link vimFuncBang BPO
 hi link vimFuncBody BPO
@@ -536,14 +491,33 @@ hi link vimTodo Todo
 hi link vimType Type
 hi link vimUserFunc Method
 hi link vimVar Normal
-hi link vueSurroundingTag htmlTag 
+hi link vueSurroundingTag htmlTag
 hi link vue_typescript htmlArg
 hi link yamlBlockMappingKey Keyword
 hi! link CursorLineNr BPO
 hi! link LineNr BPODarker
-# CHECK IT: these should probably just be gone
-hi link PreProc Normal
-hi link typescriptCall Normal
-hi link typescriptGlobal Identifier
-hi link typescriptFuncCallArg import
+
+# CoC: specific to Conquer of Completion plugin
+Hi('CocErrorVirtualText', s_red1, s_black3, '')
+Hi('CocFloatingDiagnostic', '', s_red2)
+Hi('CocFloatingDiagnosticBorder', s_yellow0, s_white1)
+Hi('CocInlayHintParameter', s_orangedark, s_woodsmoke)
 Hi('CocListLine', s_NONE, s_navylight)
+Hi('CocVirtualText', s_gray3)
+hi link CocErrorFloat CocInlayHintParameter
+hi link CocFloatActive MessageWindow
+hi link CocFloating MessageWindow
+hi link CocHintFloat CocInlayHintParameter
+hi link CocHintSign CocInlayHintParameter
+hi link CocHintVirtualText CocInlayHintParameter
+hi link CocInlayHint CocInlayHintParameter
+hi link CocInlayHintType CocInlayHintParameter
+hi link CocListBgBlue Statement
+hi link CocListFgBlue MessageWindow
+hi link CocMarkdownLink MessageWindow
+hi link CocMenuSel PmenuSel
+hi link CocNotificationProgress MessageWindow
+hi link CocSearch MessageWindow
+hi link CocWarningFloat MessageWindow
+hi link FgCocHintFloatBgCocFloating Exception
+hi link FgCocWarningFloatBgCocFloating CocInfoFloat
